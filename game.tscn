@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://cygmp3elu4kij"]
+[gd_scene load_steps=7 format=3 uid="uid://cygmp3elu4kij"]
 
 [ext_resource type="Script" path="res://game.gd" id="1_67put"]
 [ext_resource type="Texture2D" uid="uid://dv8hml4jqfej1" path="res://Sprites/Maps/map1.PNG" id="2_cey4v"]
 [ext_resource type="Script" path="res://Sprites/Switch/Switch.gd" id="3_gwxeo"]
 [ext_resource type="Texture2D" uid="uid://bvp45mugj0pvi" path="res://Sprites/Switch/off.PNG" id="3_tksxr"]
+[ext_resource type="Texture2D" uid="uid://cpiutjtj20tfu" path="res://Sprites/Lamps/off.PNG" id="5_4jnr2"]
+[ext_resource type="Script" path="res://Sprites/Lamps/Lamp.gd" id="6_ampmk"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_67put")
@@ -74,3 +76,31 @@ scale = Vector2(0.05, 0.05)
 texture = ExtResource("3_tksxr")
 script = ExtResource("3_gwxeo")
 metadata/id = 6
+
+[node name="Lamp_1" type="Sprite2D" parent="MarginContainer"]
+position = Vector2(604, 425)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("5_4jnr2")
+script = ExtResource("6_ampmk")
+metadata/id = 1
+
+[node name="Lamp 2" type="Sprite2D" parent="MarginContainer"]
+position = Vector2(834, 425)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("5_4jnr2")
+script = ExtResource("6_ampmk")
+metadata/id = 2
+
+[node name="Lamp 3" type="Sprite2D" parent="MarginContainer"]
+position = Vector2(1100, 425)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("5_4jnr2")
+script = ExtResource("6_ampmk")
+metadata/id = 3
+
+[node name="Lamp 4" type="Sprite2D" parent="MarginContainer"]
+position = Vector2(1323, 425)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("5_4jnr2")
+script = ExtResource("6_ampmk")
+metadata/id = 4
