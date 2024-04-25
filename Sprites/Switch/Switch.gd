@@ -16,7 +16,12 @@ func _input(event):
 
 
 func updateSprite():
+	toggleStatus(isOn)
 	if isOn:
 		texture = onTexture
 	else:
 		texture = offTexture
+
+func toggleStatus(_isOn):
+	if get_tree().current_scene.has_method("switch_activated"):
+		get_tree().current_scene.switch_activated(self.get_meta("id"), isOn)

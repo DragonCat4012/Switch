@@ -1,6 +1,4 @@
-extends Node
-
-
+extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -11,3 +9,9 @@ func _process(delta):
 	pass
 
 
+func ee():
+	print("ee")
+
+
+func switch_activated(_switch_number, _isOn):
+	print("yeeees")
