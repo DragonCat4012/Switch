@@ -4,6 +4,13 @@ extends Node2D
 @onready var lamp2 = $"MarginContainer/Lamp 2"
 @onready var lamp3 = $"MarginContainer/Lamp 3"
 @onready var lamp4 = $"MarginContainer/Lamp 4"
+@onready var numberLabel = $CenterContainer/VBoxContainer/NumberLabel
+@onready var numberPreviewLabel = $CenterContainer/VBoxContainer/NumberPreview
+@onready var scoreLabel = $CenterContainer2/ScoreLabel
+
+var currentNumber = 0
+var goalNumber = -1
+var score = 0
 
 var map_dict = { # key=switch, value=lamp
 	1: 4,
@@ -15,14 +22,20 @@ var map_dict = { # key=switch, value=lamp
 }
 
 func _ready():
-	lamp1.reset()
-	lamp2.reset()
-	lamp3.reset()
-	lamp4.reset()
+	scoreLabel.text = "Score: 0"
+	_init_game()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+
+func _init_game():
+	lamp1.reset()
+	lamp2.reset()
+	lamp3.reset()
+	lamp4.reset()
+	initNumber()
+	updateCurrentNumber(true)
 
 func switch_activated(_switch_number, _isOn):
 	toggleLamp(map_dict[_switch_number])
@@ -36,6 +49,31 @@ func toggleLamp(_lampID):
 		lamp3.toggleStatus()
 	elif _lampID == 4:
 		lamp4.toggleStatus()
+	updateCurrentNumber()
 
-func randomBool():
-	return randi() % 2
+func initNumber():
+	var num = randi_range(1, 12)
+	numberLabel.text = str(num)
+	goalNumber = num 
+	
+func updateCurrentNumber(_init = false):
+	var x = 0
+	if lamp1.isOn:
+		x += 1
+	if lamp2.isOn:
+		x += 2
+	if lamp3.isOn:
+		x += 4
+	if lamp4.isOn:
+		x += 8
+		
+	currentNumber = x
+	numberPreviewLabel.text = str(currentNumber)
+	
+	if x == goalNumber and _init: # prevent instant success qwq
+		lamp1.toggleStatus()
+	elif x == goalNumber:
+		score += 1
+		scoreLabel.text = "Score: " + str(score)
+		_init_game()
+	

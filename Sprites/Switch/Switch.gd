@@ -14,7 +14,6 @@ func _input(event):
 			isOn = !isOn
 			updateSprite()
 
-
 func updateSprite():
 	toggleStatus(isOn)
 	if isOn:
