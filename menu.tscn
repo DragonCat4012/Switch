@@ -1,8 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://ba77nc8755alf"]
 
 [ext_resource type="Script" path="res://MainMenu.gd" id="1_45lx5"]
-
-[sub_resource type="FontVariation" id="FontVariation_y3l0l"]
+[ext_resource type="FontFile" uid="uid://b2cswqm32sj5f" path="res://Lex.ttf" id="2_wwa65"]
 
 [node name="Menu" type="Node2D"]
 
@@ -22,14 +21,15 @@ layout_mode = 2
 [node name="VBoxContainer" type="VBoxContainer" parent="MainMenu/CenterContainer"]
 custom_minimum_size = Vector2(1200, 700)
 layout_mode = 2
+theme_override_constants/separation = 100
 
 [node name="CenterContainer" type="CenterContainer" parent="MainMenu/CenterContainer/VBoxContainer"]
 layout_mode = 2
 
 [node name="Label" type="Label" parent="MainMenu/CenterContainer/VBoxContainer/CenterContainer"]
 layout_mode = 2
-theme_override_fonts/font = SubResource("FontVariation_y3l0l")
-theme_override_font_sizes/font_size = 100
+theme_override_fonts/font = ExtResource("2_wwa65")
+theme_override_font_sizes/font_size = 120
 text = "Switch"
 
 [node name="CenterContainer2" type="CenterContainer" parent="MainMenu/CenterContainer/VBoxContainer"]
@@ -47,20 +47,23 @@ layout_mode = 2
 [node name="Selector" type="Label" parent="MainMenu/CenterContainer/VBoxContainer/CenterContainer2/HBoxContainer2/VBoxContainer"]
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
-theme_override_font_sizes/font_size = 50
+theme_override_fonts/font = ExtResource("2_wwa65")
+theme_override_font_sizes/font_size = 90
 text = ">"
 
 [node name="Selector2" type="Label" parent="MainMenu/CenterContainer/VBoxContainer/CenterContainer2/HBoxContainer2/VBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
-theme_override_font_sizes/font_size = 50
+theme_override_fonts/font = ExtResource("2_wwa65")
+theme_override_font_sizes/font_size = 90
 text = ">"
 
 [node name="Selector3" type="Label" parent="MainMenu/CenterContainer/VBoxContainer/CenterContainer2/HBoxContainer2/VBoxContainer"]
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
-theme_override_font_sizes/font_size = 50
+theme_override_fonts/font = ExtResource("2_wwa65")
+theme_override_font_sizes/font_size = 90
 text = ">"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="MainMenu/CenterContainer/VBoxContainer/CenterContainer2/HBoxContainer2"]
@@ -70,17 +73,20 @@ layout_mode = 2
 [node name="Label2" type="Label" parent="MainMenu/CenterContainer/VBoxContainer/CenterContainer2/HBoxContainer2/VBoxContainer2"]
 custom_minimum_size = Vector2(180, 0)
 layout_mode = 2
-theme_override_font_sizes/font_size = 50
-text = "opt1"
+theme_override_fonts/font = ExtResource("2_wwa65")
+theme_override_font_sizes/font_size = 90
+text = "Start"
 
 [node name="Label" type="Label" parent="MainMenu/CenterContainer/VBoxContainer/CenterContainer2/HBoxContainer2/VBoxContainer2"]
 custom_minimum_size = Vector2(180, 0)
 layout_mode = 2
-theme_override_font_sizes/font_size = 50
+theme_override_fonts/font = ExtResource("2_wwa65")
+theme_override_font_sizes/font_size = 90
 text = "opt 2"
 
 [node name="Label3" type="Label" parent="MainMenu/CenterContainer/VBoxContainer/CenterContainer2/HBoxContainer2/VBoxContainer2"]
 custom_minimum_size = Vector2(180, 0)
 layout_mode = 2
-theme_override_font_sizes/font_size = 50
+theme_override_fonts/font = ExtResource("2_wwa65")
+theme_override_font_sizes/font_size = 90
 text = "Exit"

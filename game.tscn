@@ -6,4 +6,12 @@
 
 [node name="Map1" type="Sprite2D" parent="."]
 position = Vector2(960, 540)
+scale = Vector2(1, 1)
 texture = ExtResource("1_mhnrs")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(48.12, 27.2)
+color = Color(0, 0, 0, 1)
