@@ -8,6 +8,10 @@ func _ready():
 	set_process_input(true)
 	texture = offTexture
 
+func reset():
+	isOn = randi() % 2
+	_updateSprite()
+
 func toggleStatus():
 	isOn = !isOn
 	_updateSprite()

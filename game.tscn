@@ -36,7 +36,7 @@ scale = Vector2(1, 1)
 texture = ExtResource("2_cey4v")
 
 [node name="Switch 1" type="Sprite2D" parent="MarginContainer"]
-position = Vector2(160, 965)
+position = Vector2(145, 965)
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("3_tksxr")
 script = ExtResource("3_gwxeo")
@@ -50,14 +50,14 @@ script = ExtResource("3_gwxeo")
 metadata/id = 2
 
 [node name="Switch 3" type="Sprite2D" parent="MarginContainer"]
-position = Vector2(306, 965)
+position = Vector2(350, 965)
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("3_tksxr")
 script = ExtResource("3_gwxeo")
 metadata/id = 3
 
 [node name="Switch 4" type="Sprite2D" parent="MarginContainer"]
-position = Vector2(1511, 965)
+position = Vector2(1494, 965)
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("3_tksxr")
 script = ExtResource("3_gwxeo")
@@ -71,13 +71,13 @@ script = ExtResource("3_gwxeo")
 metadata/id = 5
 
 [node name="Switch 6" type="Sprite2D" parent="MarginContainer"]
-position = Vector2(1647, 965)
+position = Vector2(1684, 965)
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("3_tksxr")
 script = ExtResource("3_gwxeo")
 metadata/id = 6
 
-[node name="Lamp_1" type="Sprite2D" parent="MarginContainer"]
+[node name="Lamp 1" type="Sprite2D" parent="MarginContainer"]
 position = Vector2(604, 425)
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("5_4jnr2")
