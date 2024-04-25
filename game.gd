@@ -7,6 +7,7 @@ extends Node2D
 @onready var numberLabel = $CenterContainer/VBoxContainer/NumberLabel
 @onready var numberPreviewLabel = $CenterContainer/VBoxContainer/NumberPreview
 @onready var scoreLabel = $CenterContainer2/ScoreLabel
+@onready var audioPlayer = $"AudioStreamPlayer"
 
 var currentNumber = 0
 var goalNumber = -1
@@ -27,7 +28,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if Input.is_action_just_pressed("ui_cancel"):
+		get_tree().change_scene_to_file("res://menu.tscn")
 
 func _init_game():
 	lamp1.reset()
@@ -38,6 +40,8 @@ func _init_game():
 	updateCurrentNumber(true)
 
 func switch_activated(_switch_number, _isOn):
+	if not audioPlayer.playing:
+			audioPlayer.play()
 	toggleLamp(map_dict[_switch_number])
 	
 func toggleLamp(_lampID):

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cygmp3elu4kij"]
+[gd_scene load_steps=9 format=3 uid="uid://cygmp3elu4kij"]
 
 [ext_resource type="Script" path="res://game.gd" id="1_67put"]
 [ext_resource type="Texture2D" uid="uid://dv8hml4jqfej1" path="res://Sprites/Maps/map1.PNG" id="2_cey4v"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bvp45mugj0pvi" path="res://Sprites/Switch/off.PNG" id="3_tksxr"]
 [ext_resource type="Texture2D" uid="uid://cpiutjtj20tfu" path="res://Sprites/Lamps/off.PNG" id="5_4jnr2"]
 [ext_resource type="Script" path="res://Sprites/Lamps/Lamp.gd" id="6_ampmk"]
+[ext_resource type="AudioStream" uid="uid://yfmc76ec18kr" path="res://Sounds/zap.mp3" id="8_q7x5g"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_67put")
@@ -135,3 +136,6 @@ theme_override_fonts/font = ExtResource("2_q8ujg")
 theme_override_font_sizes/font_size = 100
 text = "OwO
 "
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_q7x5g")

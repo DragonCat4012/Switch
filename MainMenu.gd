@@ -7,6 +7,7 @@ extends MarginContainer
 @onready var selector_three = $CenterContainer/VBoxContainer/CenterContainer2/HBoxContainer2/VBoxContainer/Selector3
 
 var currentSelection = 0
+var lastSelection = 0
 
 func _ready():
 	set_current_selection(0)
@@ -35,6 +36,10 @@ func handle_selection(_current_selection):
 		get_tree().quit()
 	
 func set_current_selection(_current_selection):
+	if currentSelection != lastSelection:
+		if not $"../AudioStreamPlayer".playing:
+			$"../AudioStreamPlayer".play()
+		
 	selector_one.text = ""
 	selector_two.text = ""
 	selector_three.text = ""
@@ -45,3 +50,5 @@ func set_current_selection(_current_selection):
 		selector_two.text = ">"
 	elif _current_selection == 2:
 		selector_three.text=">"
+		
+	lastSelection = _current_selection
