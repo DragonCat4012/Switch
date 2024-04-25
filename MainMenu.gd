@@ -9,7 +9,6 @@ extends MarginContainer
 var currentSelection = 0
 
 func _ready():
-	print("ayyyy")
 	set_current_selection(0)
 	
 func _process(delta):

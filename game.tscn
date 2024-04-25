@@ -1,21 +1,78 @@
-[gd_scene load_steps=3 format=3 uid="uid://cygmp3elu4kij"]
+[gd_scene load_steps=5 format=3 uid="uid://cygmp3elu4kij"]
 
-[ext_resource type="Script" path="res://GameScene.gd" id="1_0etv3"]
-[ext_resource type="Texture2D" uid="uid://bwmk67nxmuxpv" path="res://map1.jpg" id="1_mhnrs"]
+[ext_resource type="Texture2D" uid="uid://dv8hml4jqfej1" path="res://Sprites/Maps/map1.PNG" id="2_cey4v"]
+[ext_resource type="Script" path="res://Sprites/Switch/Switch.gd" id="3_gwxeo"]
+[ext_resource type="Texture2D" uid="uid://bvp45mugj0pvi" path="res://Sprites/Switch/off.PNG" id="3_tksxr"]
+
+[sub_resource type="GDScript" id="GDScript_g15of"]
+script/source = "extends MarginContainer
+#const first_scene = preload(\"res://menu.tscn\")
+
+func _process(delta):
+	if Input.is_action_just_pressed(\"ui_cancel\"):
+		get_tree().change_scene_to_file(\"res://menu.tscn\")
+"
 
 [node name="Game" type="Node2D"]
+script = SubResource("GDScript_g15of")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+offset_top = 952.0
+offset_right = 1920.0
+offset_bottom = 2032.0
+scale = Vector2(1, 0.12)
+
+[node name="NumberLabel" type="Label" parent="CenterContainer"]
+custom_minimum_size = Vector2(300, 200)
+layout_mode = 2
+text = "UwU"
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 offset_right = 1920.0
 offset_bottom = 1080.0
-script = ExtResource("1_0etv3")
 
-[node name="Map1" type="Sprite2D" parent="MarginContainer"]
+[node name="Map" type="Sprite2D" parent="MarginContainer"]
 position = Vector2(960, 540)
 scale = Vector2(1, 1)
-texture = ExtResource("1_mhnrs")
+texture = ExtResource("2_cey4v")
 
-[node name="ColorRect" type="ColorRect" parent="MarginContainer"]
-visible = false
-layout_mode = 2
-color = Color(0, 0, 0, 1)
+[node name="Switch 1" type="Sprite2D" parent="MarginContainer"]
+position = Vector2(160, 965)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("3_tksxr")
+script = ExtResource("3_gwxeo")
+
+[node name="Switch 2" type="Sprite2D" parent="MarginContainer"]
+position = Vector2(239, 965)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("3_tksxr")
+script = ExtResource("3_gwxeo")
+
+[node name="Switch 3" type="Sprite2D" parent="MarginContainer"]
+position = Vector2(306, 965)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("3_tksxr")
+script = ExtResource("3_gwxeo")
+
+[node name="Switch 4" type="Sprite2D" parent="MarginContainer"]
+position = Vector2(1511, 965)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("3_tksxr")
+script = ExtResource("3_gwxeo")
+
+[node name="Switch 5" type="Sprite2D" parent="MarginContainer"]
+position = Vector2(1582, 965)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("3_tksxr")
+script = ExtResource("3_gwxeo")
+
+[node name="Switch 6" type="Sprite2D" parent="MarginContainer"]
+position = Vector2(1647, 965)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("3_tksxr")
+script = ExtResource("3_gwxeo")
