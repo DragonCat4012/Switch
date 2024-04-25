@@ -1,17 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://cygmp3elu4kij"]
+[gd_scene load_steps=3 format=3 uid="uid://cygmp3elu4kij"]
 
+[ext_resource type="Script" path="res://GameScene.gd" id="1_0etv3"]
 [ext_resource type="Texture2D" uid="uid://bwmk67nxmuxpv" path="res://map1.jpg" id="1_mhnrs"]
 
 [node name="Game" type="Node2D"]
 
-[node name="Map1" type="Sprite2D" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+script = ExtResource("1_0etv3")
+
+[node name="Map1" type="Sprite2D" parent="MarginContainer"]
 position = Vector2(960, 540)
 scale = Vector2(1, 1)
 texture = ExtResource("1_mhnrs")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="MarginContainer"]
 visible = false
-offset_right = 40.0
-offset_bottom = 40.0
-scale = Vector2(48.12, 27.2)
+layout_mode = 2
 color = Color(0, 0, 0, 1)

@@ -1,6 +1,6 @@
 extends MarginContainer
 
-const first_scene = preload("res://game.tscn")
+#const first_scene = preload("res://game.tscn")
 
 @onready var selector_one = $CenterContainer/VBoxContainer/CenterContainer2/HBoxContainer2/VBoxContainer/Selector
 @onready var selector_two = $CenterContainer/VBoxContainer/CenterContainer2/HBoxContainer2/VBoxContainer/Selector2
@@ -9,6 +9,7 @@ const first_scene = preload("res://game.tscn")
 var currentSelection = 0
 
 func _ready():
+	print("ayyyy")
 	set_current_selection(0)
 	
 func _process(delta):
@@ -28,8 +29,7 @@ func _process(delta):
 	
 func handle_selection(_current_selection):
 	if _current_selection == 0: #start option
-		get_parent().add_child(first_scene.instantiate())
-		queue_free()
+		get_tree().change_scene_to_file("res://game.tscn")
 	elif _current_selection == 1: # Options
 		print("Add Options uwu")
 	elif _current_selection == 2: # Exit
