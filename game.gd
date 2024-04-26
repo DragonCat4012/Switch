@@ -16,12 +16,14 @@ var isEndianSwitchingEnabled = true
 @onready var numberLabel = $CenterContainer/VBoxContainer/NumberLabel
 @onready var numberPreviewLabel = $CenterContainer/VBoxContainer/NumberPreview
 @onready var scoreLabel = $CenterContainer2/ScoreLabel
+@onready var mapLabel = $CenterContainer3/HBoxContainer/MapLabel
 
-# Audiol
+# Audio
 @onready var audioPlayer = $"AudioStreamPlayer"
 
 # Map
 @onready var mapObject = $MarginContainer/Map
+@onready var timerLabel = $CenterContainer3/HBoxContainer/TimerLabel
 var mapRessources = ["res://Sprites/Maps/map_0.PNG","res://Sprites/Maps/map_1.PNG","res://Sprites/Maps/map_2.PNG"]
 var mapIndex = 0
 
@@ -31,7 +33,9 @@ var goalNumber = -1
 var smallEndian = false
 
 # General
+var timerLeft = 0
 var score = 0
+var timer = Timer.new()
 
 var map_dict = { # key=switch, value=lamp
 	0: {
@@ -69,12 +73,21 @@ var map_dict = { # key=switch, value=lamp
 func _ready():
 	loadOptions()
 	scoreLabel.text = "Score: 0"
+	
+	add_child(timer)
+	timer.connect("timeout", _on_timer_timeout)
+	
 	_init_game()
+	
+func _on_timer_timeout():
+	print("ayyyy") # TODO: return to main screen or smth
+	timer.stop()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if Input.is_action_just_pressed("ui_cancel"):
 		get_tree().change_scene_to_file("res://menu.tscn")
+	timerLabel.text = str(round(timer.time_left))
 
 func loadOptions():
 	if FileAccess.file_exists((File_name)):
@@ -98,7 +111,10 @@ func _init_game():
 		smallEndian = randi()% 2 == 0
 	else:
 		smallEndian = false
+		
 	updateEndian()
+	timer.wait_time = 30
+	timer.start()
 	
 func updateEndian():
 	if smallEndian:
@@ -181,3 +197,12 @@ func updateCurrentNumber(_init = false):
 func setupt_map():
 	mapIndex = randi_range(0, len(mapRessources)-1)
 	mapObject.texture = load(mapRessources[mapIndex])
+	mapLabel.text = "["+str(mapIndex+1)+"]"
+
+# Timer
+func resetTimer():
+	score = 0
+	timerLeft = 0
+	
+func startTimer():
+	timerLeft = 50
