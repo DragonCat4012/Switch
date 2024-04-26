@@ -1,5 +1,10 @@
 extends Node2D
 
+# Settings
+const File_name = "user://saves.json"
+var isEndianSwitchingEnabled = true
+
+# Nodes
 @onready var lamp1 = $"MarginContainer/Lamp 1"
 @onready var lamp2 = $"MarginContainer/Lamp 2"
 @onready var lamp3 = $"MarginContainer/Lamp 3"
@@ -27,6 +32,7 @@ var map_dict = { # key=switch, value=lamp
 }
 
 func _ready():
+	loadOptions()
 	scoreLabel.text = "Score: 0"
 	_init_game()
 
@@ -34,6 +40,12 @@ func _ready():
 func _process(delta):
 	if Input.is_action_just_pressed("ui_cancel"):
 		get_tree().change_scene_to_file("res://menu.tscn")
+
+func loadOptions():
+	if FileAccess.file_exists((File_name)):
+		var file = FileAccess.open(File_name, FileAccess.READ)
+		var dict = JSON.parse_string(file.get_as_text())
+		isEndianSwitchingEnabled = dict[isEndianSwitchingEnabled]
 
 func _init_game():
 	lamp1.reset()
@@ -43,7 +55,10 @@ func _init_game():
 	initNumber()
 	updateCurrentNumber(true)
 	
-	smallEndian = randi()% 2 == 0
+	if isEndianSwitchingEnabled:
+		smallEndian = randi()% 2 == 0
+	else:
+		smallEndian = false
 	updateEndian()
 	
 func updateEndian():
