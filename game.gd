@@ -86,7 +86,7 @@ func _on_timer_timeout():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if Input.is_action_just_pressed("ui_cancel"):
-		get_tree().change_scene_to_file("res://menu.tscn")
+		get_tree().change_scene_to_file("res://Scenes/menu.tscn") # TODO: meh
 	timerLabel.text = str(round(timer.time_left))
 
 func loadOptions():

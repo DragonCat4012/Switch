@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://ba77nc8755alf"]
 
-[ext_resource type="Script" path="res://MainMenu.gd" id="1_45lx5"]
+[ext_resource type="Script" path="res://Scenes/MainMenu.gd" id="1_45lx5"]
 [ext_resource type="FontFile" uid="uid://b2cswqm32sj5f" path="res://Lex.ttf" id="2_wwa65"]
 [ext_resource type="AudioStream" uid="uid://yfmc76ec18kr" path="res://Sounds/zap.mp3" id="3_qr6qu"]
 

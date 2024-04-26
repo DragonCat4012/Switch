@@ -31,7 +31,7 @@ func _process(delta):
 	
 func handle_selection(_current_selection):
 	if _current_selection == 0: #start option
-		get_tree().change_scene_to_file("res://game.tscn")
+		get_tree().change_scene_to_file("res://Scenes/game.tscn")
 	elif _current_selection == 1: # Options
 		get_tree().change_scene_to_file("res://Scenes/OptionsScene.tscn")
 	elif _current_selection == 2: # Exit
