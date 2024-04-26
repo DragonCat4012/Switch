@@ -17,6 +17,8 @@ func _process(delta):
 		currentSelection += 1
 	elif Input.is_action_just_pressed("ui_up"):
 		currentSelection -= 1
+	elif Input.is_action_just_pressed("ui_cancel"):
+		get_tree().quit()
 
 	if currentSelection < 0:
 		currentSelection = 2
@@ -31,7 +33,7 @@ func handle_selection(_current_selection):
 	if _current_selection == 0: #start option
 		get_tree().change_scene_to_file("res://game.tscn")
 	elif _current_selection == 1: # Options
-		print("Add Options uwu")
+		get_tree().change_scene_to_file("res://Scenes/OptionsScene.tscn")
 	elif _current_selection == 2: # Exit
 		get_tree().quit()
 	

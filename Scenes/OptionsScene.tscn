@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=3 uid="uid://dinjnt7s281as"]
+
+[ext_resource type="FontFile" uid="uid://b2cswqm32sj5f" path="res://Lex.ttf" id="1_4y4xp"]
+[ext_resource type="Script" path="res://Scenes/OptionsScene.gd" id="1_xolb3"]
+
+[node name="OptionsScene" type="Node2D"]
+script = ExtResource("1_xolb3")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+custom_minimum_size = Vector2(1000, 0)
+layout_mode = 2
+
+[node name="CenterContainer2" type="CenterContainer" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer2"]
+custom_minimum_size = Vector2(500, 200)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_4y4xp")
+theme_override_font_sizes/font_size = 100
+text = "Settings"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer"]
+custom_minimum_size = Vector2(500, 150)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_4y4xp")
+theme_override_font_sizes/font_size = 50
+text = "Enable Endian Switching"
