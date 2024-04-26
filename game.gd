@@ -9,8 +9,12 @@ extends Node2D
 @onready var scoreLabel = $CenterContainer2/ScoreLabel
 @onready var audioPlayer = $"AudioStreamPlayer"
 
+# Current Game
 var currentNumber = 0
 var goalNumber = -1
+var smallEndian = false
+
+# General
 var score = 0
 
 var map_dict = { # key=switch, value=lamp
@@ -38,7 +42,18 @@ func _init_game():
 	lamp4.reset()
 	initNumber()
 	updateCurrentNumber(true)
-
+	
+	smallEndian = randi()% 2 == 0
+	updateEndian()
+	
+func updateEndian():
+	if smallEndian:
+		$HBoxContainer/LeftArrow.text = ">"
+		$HBoxContainer/RightArrow.text = ""
+	else:
+		$HBoxContainer/LeftArrow.text = ""
+		$HBoxContainer/RightArrow.text = "<"
+		
 func switch_activated(_switch_number, _isOn):
 	if not audioPlayer.playing:
 			audioPlayer.play()
@@ -62,14 +77,24 @@ func initNumber():
 	
 func updateCurrentNumber(_init = false):
 	var x = 0
-	if lamp1.isOn:
-		x += 1
-	if lamp2.isOn:
-		x += 2
-	if lamp3.isOn:
-		x += 4
-	if lamp4.isOn:
-		x += 8
+	if smallEndian:
+		if lamp1.isOn:
+			x += 1
+		if lamp2.isOn:
+			x += 2
+		if lamp3.isOn:
+			x += 4
+		if lamp4.isOn:
+			x += 8
+	else:
+		if lamp4.isOn:
+			x += 1
+		if lamp3.isOn:
+			x += 2
+		if lamp2.isOn:
+			x += 4
+		if lamp1.isOn:
+			x += 8
 		
 	currentNumber = x
 	numberPreviewLabel.text = str(currentNumber)
