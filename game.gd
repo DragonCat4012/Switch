@@ -9,10 +9,21 @@ var isEndianSwitchingEnabled = true
 @onready var lamp2 = $"MarginContainer/Lamp 2"
 @onready var lamp3 = $"MarginContainer/Lamp 3"
 @onready var lamp4 = $"MarginContainer/Lamp 4"
+@onready var lamp5 = $"MarginContainer/Lamp 5"
+@onready var lamp6 = $"MarginContainer/Lamp 6"
+@onready var lamp7 = $"MarginContainer/Lamp 7"
+
 @onready var numberLabel = $CenterContainer/VBoxContainer/NumberLabel
 @onready var numberPreviewLabel = $CenterContainer/VBoxContainer/NumberPreview
 @onready var scoreLabel = $CenterContainer2/ScoreLabel
+
+# Audiol
 @onready var audioPlayer = $"AudioStreamPlayer"
+
+# Map
+@onready var mapObject = $MarginContainer/Map
+var mapRessources = ["res://Sprites/Maps/map_0.PNG","res://Sprites/Maps/map_1.PNG","res://Sprites/Maps/map_2.PNG"]
+var mapIndex = 0
 
 # Current Game
 var currentNumber = 0
@@ -23,12 +34,36 @@ var smallEndian = false
 var score = 0
 
 var map_dict = { # key=switch, value=lamp
-	1: 4,
-	2: 1,
-	3:3,
-	4:4, 
-	5:2, 
-	6:3
+	0: {
+		1: 4,
+		2: 3,
+		3: 5,
+		4: 2,
+		5: 1,
+		6: 5,
+		7: 7,
+		8: 6
+	},
+	1: {
+		1: 1,
+		2: 4,
+		3: 2,
+		4: 3,
+		5: 1,
+		6: 2,
+		7: 5,
+		8:6
+	},
+	2: {
+		1: 4,
+		2: 1,
+		3: 3,
+		4: 2,
+		5: 3,
+		6: 7,
+		7: 6,
+		8: 5
+	}
 }
 
 func _ready():
@@ -45,13 +80,17 @@ func loadOptions():
 	if FileAccess.file_exists((File_name)):
 		var file = FileAccess.open(File_name, FileAccess.READ)
 		var dict = JSON.parse_string(file.get_as_text())
-		isEndianSwitchingEnabled = dict[isEndianSwitchingEnabled]
+		isEndianSwitchingEnabled = bool(dict["isEndianSwitchingEnabled"])
 
 func _init_game():
+	setupt_map()
 	lamp1.reset()
 	lamp2.reset()
 	lamp3.reset()
 	lamp4.reset()
+	lamp5.reset()
+	lamp6.reset()
+	lamp7.reset()
 	initNumber()
 	updateCurrentNumber(true)
 	
@@ -72,7 +111,7 @@ func updateEndian():
 func switch_activated(_switch_number, _isOn):
 	if not audioPlayer.playing:
 			audioPlayer.play()
-	toggleLamp(map_dict[_switch_number])
+	toggleLamp(map_dict[mapIndex][_switch_number])
 	
 func toggleLamp(_lampID):
 	if _lampID == 1:
@@ -83,10 +122,16 @@ func toggleLamp(_lampID):
 		lamp3.toggleStatus()
 	elif _lampID == 4:
 		lamp4.toggleStatus()
+	elif _lampID == 5:
+		lamp5.toggleStatus()
+	elif _lampID == 6:
+		lamp6.toggleStatus()
+	elif _lampID == 7:
+		lamp7.toggleStatus()
 	updateCurrentNumber()
 
 func initNumber():
-	var num = randi_range(1, 12)
+	var num = randi_range(1, 128)
 	numberLabel.text = str(num)
 	goalNumber = num 
 	
@@ -101,16 +146,27 @@ func updateCurrentNumber(_init = false):
 			x += 4
 		if lamp4.isOn:
 			x += 8
+		if lamp5.isOn:
+			x += 16
+		if lamp6.isOn:
+			x += 32
+		if lamp7.isOn:
+			x += 64
 	else:
-		if lamp4.isOn:
+		if lamp7.isOn:
 			x += 1
-		if lamp3.isOn:
+		if lamp6.isOn:
 			x += 2
-		if lamp2.isOn:
+		if lamp5.isOn:
 			x += 4
-		if lamp1.isOn:
+		if lamp4.isOn:
 			x += 8
-		
+		if lamp3.isOn:
+			x += 16
+		if lamp2.isOn:
+			x += 32
+		if lamp1.isOn:
+			x += 64
 	currentNumber = x
 	numberPreviewLabel.text = str(currentNumber)
 	
@@ -121,3 +177,7 @@ func updateCurrentNumber(_init = false):
 		scoreLabel.text = "Score: " + str(score)
 		_init_game()
 	
+# Map
+func setupt_map():
+	mapIndex = randi_range(0, len(mapRessources)-1)
+	mapObject.texture = load(mapRessources[mapIndex])

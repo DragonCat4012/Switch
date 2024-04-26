@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=3 uid="uid://cygmp3elu4kij"]
 
 [ext_resource type="Script" path="res://game.gd" id="1_67put"]
-[ext_resource type="Texture2D" uid="uid://dv8hml4jqfej1" path="res://Sprites/Maps/map1.PNG" id="2_cey4v"]
 [ext_resource type="FontFile" uid="uid://b2cswqm32sj5f" path="res://Lex.ttf" id="2_q8ujg"]
 [ext_resource type="Script" path="res://Sprites/Switch/Switch.gd" id="3_gwxeo"]
+[ext_resource type="Texture2D" uid="uid://q7pg1xi85gxc" path="res://Sprites/Maps/map_1.PNG" id="3_lyxkw"]
 [ext_resource type="Texture2D" uid="uid://bvp45mugj0pvi" path="res://Sprites/Switch/off.PNG" id="3_tksxr"]
 [ext_resource type="Texture2D" uid="uid://cpiutjtj20tfu" path="res://Sprites/Lamps/off.PNG" id="5_4jnr2"]
 [ext_resource type="Script" path="res://Sprites/Lamps/Lamp.gd" id="6_ampmk"]
@@ -50,77 +50,112 @@ offset_bottom = 1080.0
 
 [node name="Map" type="Sprite2D" parent="MarginContainer"]
 position = Vector2(960, 540)
-texture = ExtResource("2_cey4v")
+texture = ExtResource("3_lyxkw")
 
 [node name="Switch 1" type="Sprite2D" parent="MarginContainer"]
-position = Vector2(145, 965)
+position = Vector2(260, 965)
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("3_tksxr")
 script = ExtResource("3_gwxeo")
 metadata/id = 1
 
 [node name="Switch 2" type="Sprite2D" parent="MarginContainer"]
-position = Vector2(239, 965)
+position = Vector2(364, 965)
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("3_tksxr")
 script = ExtResource("3_gwxeo")
 metadata/id = 2
 
 [node name="Switch 3" type="Sprite2D" parent="MarginContainer"]
-position = Vector2(308, 965)
+position = Vector2(469, 965)
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("3_tksxr")
 script = ExtResource("3_gwxeo")
 metadata/id = 3
 
 [node name="Switch 4" type="Sprite2D" parent="MarginContainer"]
-position = Vector2(1508, 965)
+position = Vector2(563, 965)
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("3_tksxr")
 script = ExtResource("3_gwxeo")
 metadata/id = 4
 
 [node name="Switch 5" type="Sprite2D" parent="MarginContainer"]
-position = Vector2(1582, 965)
+position = Vector2(1238, 965)
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("3_tksxr")
 script = ExtResource("3_gwxeo")
 metadata/id = 5
 
 [node name="Switch 6" type="Sprite2D" parent="MarginContainer"]
-position = Vector2(1632, 965)
+position = Vector2(1345, 965)
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("3_tksxr")
 script = ExtResource("3_gwxeo")
 metadata/id = 6
 
+[node name="Switch 7" type="Sprite2D" parent="MarginContainer"]
+position = Vector2(1458, 965)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("3_tksxr")
+script = ExtResource("3_gwxeo")
+metadata/id = 7
+
+[node name="Switch 8" type="Sprite2D" parent="MarginContainer"]
+position = Vector2(1561, 965)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("3_tksxr")
+script = ExtResource("3_gwxeo")
+metadata/id = 8
+
 [node name="Lamp 1" type="Sprite2D" parent="MarginContainer"]
-position = Vector2(604, 425)
+position = Vector2(207, 425)
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("5_4jnr2")
 script = ExtResource("6_ampmk")
 metadata/id = 1
 
 [node name="Lamp 2" type="Sprite2D" parent="MarginContainer"]
-position = Vector2(834, 425)
+position = Vector2(442, 425)
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("5_4jnr2")
 script = ExtResource("6_ampmk")
 metadata/id = 2
 
 [node name="Lamp 3" type="Sprite2D" parent="MarginContainer"]
-position = Vector2(1100, 425)
+position = Vector2(673, 425)
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("5_4jnr2")
 script = ExtResource("6_ampmk")
 metadata/id = 3
 
 [node name="Lamp 4" type="Sprite2D" parent="MarginContainer"]
-position = Vector2(1323, 425)
+position = Vector2(926, 425)
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("5_4jnr2")
 script = ExtResource("6_ampmk")
 metadata/id = 4
+
+[node name="Lamp 5" type="Sprite2D" parent="MarginContainer"]
+position = Vector2(1180, 425)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("5_4jnr2")
+script = ExtResource("6_ampmk")
+metadata/id = 5
+
+[node name="Lamp 6" type="Sprite2D" parent="MarginContainer"]
+position = Vector2(1405, 425)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("5_4jnr2")
+script = ExtResource("6_ampmk")
+metadata/id = 6
+
+[node name="Lamp 7" type="Sprite2D" parent="MarginContainer"]
+position = Vector2(1629, 425)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("5_4jnr2")
+script = ExtResource("6_ampmk")
+metadata/id = 7
 
 [node name="CenterContainer2" type="CenterContainer" parent="."]
 offset_top = 50.0
@@ -140,9 +175,9 @@ text = "OwO
 stream = ExtResource("8_q7x5g")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-offset_left = 464.0
+offset_left = 78.0
 offset_top = 377.0
-offset_right = 1464.0
+offset_right = 1778.0
 offset_bottom = 477.0
 
 [node name="LeftArrow" type="Label" parent="HBoxContainer"]
