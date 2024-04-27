@@ -80,8 +80,9 @@ func _ready():
 	_init_game()
 	
 func _on_timer_timeout():
-	print("ayyyy") # TODO: return to main screen or smth
 	timer.stop()
+	saveSettings()
+	get_tree().change_scene_to_file("res://Scenes/GameOver.tscn")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -206,3 +207,14 @@ func resetTimer():
 	
 func startTimer():
 	timerLeft = 50
+
+func saveSettings():
+	var saveDict = {
+	"isEndianSwitchingEnabled": isEndianSwitchingEnabled
+	}
+
+	var file = FileAccess.open(File_name, FileAccess.WRITE)
+	saveDict["Score"] = score
+	
+	file.store_string(JSON.stringify(saveDict))
+	file.close()
