@@ -54,7 +54,7 @@ var map_dict = { # key=switch, value=lamp
 		3: 2,
 		4: 3,
 		5: 1,
-		6: 2,
+		6: 7,
 		7: 5,
 		8:6
 	},
@@ -114,7 +114,7 @@ func _init_game():
 		smallEndian = false
 		
 	updateEndian()
-	timer.wait_time = 30
+	timer.wait_time = 50
 	timer.start()
 	
 func updateEndian():
@@ -198,7 +198,7 @@ func updateCurrentNumber(_init = false):
 func setupt_map():
 	mapIndex = randi_range(0, len(mapRessources)-1)
 	mapObject.texture = load(mapRessources[mapIndex])
-	mapLabel.text = "["+str(mapIndex+1)+"]"
+	mapLabel.text = "["+str(mapIndex)+"]"
 
 # Timer
 func resetTimer():
