@@ -88,7 +88,11 @@ func _on_timer_timeout():
 func _process(delta):
 	if Input.is_action_just_pressed("ui_cancel"):
 		get_tree().change_scene_to_file("res://Scenes/menu.tscn") # TODO: meh
-	timerLabel.text = str(round(timer.time_left))
+	timerLabel.text = str(round(timer.time_left)) + " s"
+	
+	if timer.time_left <= 5:
+		var red = Color(1.0,0.0,0.0,1.0)
+		timerLabel.set("theme_override_colors/font_color",red)
 
 func loadOptions():
 	if FileAccess.file_exists((File_name)):
@@ -115,6 +119,8 @@ func _init_game():
 		
 	updateEndian()
 	timer.wait_time = 50
+	var white = Color(1.0,1.0,1.0,1.0)
+	timerLabel.set("theme_override_colors/font_color", white)
 	timer.start()
 	
 func updateEndian():

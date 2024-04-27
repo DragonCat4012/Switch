@@ -39,6 +39,7 @@ text = "OwO
 custom_minimum_size = Vector2(100, 80)
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.564962, 0.564962, 0.564962, 1)
 theme_override_fonts/font = ExtResource("2_q8ujg")
 theme_override_font_sizes/font_size = 70
 text = "OwO
@@ -213,4 +214,5 @@ text = "uwu"
 
 [node name="MapLabel" type="Label" parent="CenterContainer3/HBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.564706, 0.564706, 0.564706, 1)
 text = "[ ]"
