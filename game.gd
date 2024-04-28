@@ -35,6 +35,10 @@ var smallEndian = false
 # General
 var timerLeft = 0
 var score = 0
+
+# Timer
+var timerTime = 50
+var timerIteration = 0
 var timer = Timer.new()
 
 var map_dict = { # key=switch, value=lamp
@@ -118,7 +122,7 @@ func _init_game():
 		smallEndian = false
 		
 	updateEndian()
-	timer.wait_time = 50
+	timer.wait_time = timerTime
 	var white = Color(1.0,1.0,1.0,1.0)
 	timerLabel.set("theme_override_colors/font_color", white)
 	timer.start()
@@ -154,7 +158,7 @@ func toggleLamp(_lampID):
 	updateCurrentNumber()
 
 func initNumber():
-	var num = randi_range(1, 128)
+	var num = randi_range(1, 127)
 	numberLabel.text = str(num)
 	goalNumber = num 
 	
@@ -196,7 +200,16 @@ func updateCurrentNumber(_init = false):
 	if x == goalNumber and _init: # prevent instant success qwq
 		lamp1.toggleStatus()
 	elif x == goalNumber:
-		score += 1
+		score += int(timer.time_left)
+		timerIteration += 1
+		if timerIteration == 40:
+			timerTime -= 10
+		if timerIteration == 30:
+			timerTime -= 10
+		elif timerIteration == 20:
+			timerTime -= 10
+		elif timerIteration == 10:
+			timerTime -= 10
 		scoreLabel.text = "Score: " + str(score)
 		_init_game()
 	

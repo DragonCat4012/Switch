@@ -6,7 +6,7 @@ extends Node2D
 var imgCount = 11
 var currentIndex = 0
 var texts =  ["This is a lamp", "This is an active lamp", "These are wires connecting lamps and stuff",
-"These are switches", "They can change the lamps status", "This is the number we want to display in Binar (lamp on = 1, lamp off = 0)",
+"These are switches", "They can change the lamps status", "This is the number we want to display in Binary (lamp on = 1, lamp off = 0)",
 "This is our current number displayed by the lamps", "This is your current score", "Your time left in seconds, You will loose if you run out of time", "The current map", 
 "From where to read the number in Binary. You´ve finished the tutorial"]
 
