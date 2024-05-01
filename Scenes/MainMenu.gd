@@ -5,12 +5,31 @@ extends MarginContainer
 @onready var selector_one = $CenterContainer/VBoxContainer/CenterContainer2/HBoxContainer2/VBoxContainer/Selector
 @onready var selector_two = $CenterContainer/VBoxContainer/CenterContainer2/HBoxContainer2/VBoxContainer/Selector2
 @onready var selector_three = $CenterContainer/VBoxContainer/CenterContainer2/HBoxContainer2/VBoxContainer/Selector3
+@onready var labelTutorial = $CenterContainer/VBoxContainer/CenterContainer2/HBoxContainer2/VBoxContainer2/Label
+@onready var labelStart = $CenterContainer/VBoxContainer/CenterContainer2/HBoxContainer2/VBoxContainer2/Label2
+@onready var labelExit = $CenterContainer/VBoxContainer/CenterContainer2/HBoxContainer2/VBoxContainer2/Label3
 
 var currentSelection = 0
 var lastSelection = 0
 
 func _ready():
 	set_current_selection(0)
+	
+func _input(event): # Handle Touch Inut
+	var newSelection = 0
+	if event is InputEventMouseButton:
+		if labelTutorial.get_global_rect().has_point(get_global_mouse_position()):
+			newSelection = 1
+		if labelStart.get_global_rect().has_point(get_global_mouse_position()):
+			newSelection = 0
+		if labelTutorial.get_global_rect().has_point(get_global_mouse_position()):
+			labelExit = 2
+			
+	if currentSelection == newSelection:
+		handle_selection(currentSelection)
+	else:
+		currentSelection = newSelection
+		set_current_selection(newSelection)
 	
 func _process(delta):
 	if Input.is_action_just_pressed("ui_down"):

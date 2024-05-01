@@ -19,9 +19,9 @@ color = Color(0, 0, 0, 1)
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 offset_left = 3.0
-offset_top = 897.0
+offset_top = 840.0
 offset_right = 1923.0
-offset_bottom = 1081.0
+offset_bottom = 1024.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
 layout_mode = 2
@@ -31,7 +31,7 @@ custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("2_q8ujg")
-theme_override_font_sizes/font_size = 100
+theme_override_font_sizes/font_size = 90
 text = "OwO
 "
 
@@ -41,7 +41,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0.564962, 0.564962, 0.564962, 1)
 theme_override_fonts/font = ExtResource("2_q8ujg")
-theme_override_font_sizes/font_size = 70
+theme_override_font_sizes/font_size = 60
 text = "OwO
 "
 
@@ -54,57 +54,57 @@ position = Vector2(960, 540)
 texture = ExtResource("3_lyxkw")
 
 [node name="Switch 1" type="Sprite2D" parent="MarginContainer"]
-position = Vector2(260, 965)
-scale = Vector2(0.05, 0.05)
+position = Vector2(259.835, 933.26)
+scale = Vector2(0.07, 0.07)
 texture = ExtResource("3_tksxr")
 script = ExtResource("3_gwxeo")
 metadata/id = 1
 
 [node name="Switch 2" type="Sprite2D" parent="MarginContainer"]
-position = Vector2(364, 965)
-scale = Vector2(0.05, 0.05)
+position = Vector2(363.835, 933.26)
+scale = Vector2(0.07, 0.07)
 texture = ExtResource("3_tksxr")
 script = ExtResource("3_gwxeo")
 metadata/id = 2
 
 [node name="Switch 3" type="Sprite2D" parent="MarginContainer"]
-position = Vector2(469, 965)
-scale = Vector2(0.05, 0.05)
+position = Vector2(468.835, 933.26)
+scale = Vector2(0.07, 0.07)
 texture = ExtResource("3_tksxr")
 script = ExtResource("3_gwxeo")
 metadata/id = 3
 
 [node name="Switch 4" type="Sprite2D" parent="MarginContainer"]
-position = Vector2(563, 965)
-scale = Vector2(0.05, 0.05)
+position = Vector2(562.835, 933.26)
+scale = Vector2(0.07, 0.07)
 texture = ExtResource("3_tksxr")
 script = ExtResource("3_gwxeo")
 metadata/id = 4
 
 [node name="Switch 5" type="Sprite2D" parent="MarginContainer"]
-position = Vector2(1238, 965)
-scale = Vector2(0.05, 0.05)
+position = Vector2(1237.83, 933.26)
+scale = Vector2(0.07, 0.07)
 texture = ExtResource("3_tksxr")
 script = ExtResource("3_gwxeo")
 metadata/id = 5
 
 [node name="Switch 6" type="Sprite2D" parent="MarginContainer"]
-position = Vector2(1345, 965)
-scale = Vector2(0.05, 0.05)
+position = Vector2(1344.83, 933.26)
+scale = Vector2(0.07, 0.07)
 texture = ExtResource("3_tksxr")
 script = ExtResource("3_gwxeo")
 metadata/id = 6
 
 [node name="Switch 7" type="Sprite2D" parent="MarginContainer"]
-position = Vector2(1458, 965)
-scale = Vector2(0.05, 0.05)
+position = Vector2(1457.83, 933.26)
+scale = Vector2(0.07, 0.07)
 texture = ExtResource("3_tksxr")
 script = ExtResource("3_gwxeo")
 metadata/id = 7
 
 [node name="Switch 8" type="Sprite2D" parent="MarginContainer"]
-position = Vector2(1561, 965)
-scale = Vector2(0.05, 0.05)
+position = Vector2(1560.83, 933.26)
+scale = Vector2(0.07, 0.07)
 texture = ExtResource("3_tksxr")
 script = ExtResource("3_gwxeo")
 metadata/id = 8
@@ -159,9 +159,10 @@ script = ExtResource("6_ampmk")
 metadata/id = 7
 
 [node name="CenterContainer2" type="CenterContainer" parent="."]
-offset_top = 50.0
-offset_right = 1920.0
-offset_bottom = 150.0
+offset_left = 2.0
+offset_top = 94.0
+offset_right = 1922.0
+offset_bottom = 194.0
 
 [node name="ScoreLabel" type="Label" parent="CenterContainer2"]
 custom_minimum_size = Vector2(100, 100)
@@ -199,8 +200,9 @@ text = "<"
 
 [node name="CenterContainer3" type="CenterContainer" parent="."]
 offset_left = 1404.0
+offset_top = 81.0
 offset_right = 1604.0
-offset_bottom = 40.0
+offset_bottom = 121.0
 scale = Vector2(2.56, 2.68)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer3"]
