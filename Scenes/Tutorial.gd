@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var textField = $ColorRect/Label
 @onready var picture = $ColorRect/Sprite2D
-
+@onready var e = $ColorRect
 var imgCount = 11
 var currentIndex = 0
 var texts =  ["This is a lamp", "This is an active lamp", "These are wires connecting lamps and stuff",
@@ -14,6 +14,15 @@ func _ready():
 	textField.text = texts[0]
 	picture.texture = load("res://Sprites/Tutorial/t_0.JPG")
 	
+func _input(event): # Handle Touch Inut
+	var globalRect = e.get_global_rect()
+
+	if globalRect.has_point(get_global_mouse_position()):
+		if globalRect.size.y > 1920/2:
+			nextImg()
+		else:
+			beforeImage()
+			
 func _process(delta):
 	if Input.is_action_just_pressed("ui_accept"):
 		nextImg()
