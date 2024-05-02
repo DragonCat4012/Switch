@@ -1,7 +1,8 @@
 extends Node2D
 
 # Settings
-const File_name = "user://saves.json"
+const JSONHandler = preload("res://JSON.gd")
+@onready var jsonHandler = JSONHandler.JSONHandler.new()
 var isEndianSwitchingEnabled = true
 
 # Nodes
@@ -75,7 +76,8 @@ var map_dict = { # key=switch, value=lamp
 }
 
 func _ready():
-	loadOptions()
+	jsonHandler.loadGame()
+	isEndianSwitchingEnabled = jsonHandler.endian
 	scoreLabel.text = "Score: 0"
 	
 	add_child(timer)
@@ -85,7 +87,7 @@ func _ready():
 	
 func _on_timer_timeout():
 	timer.stop()
-	saveSettings()
+	jsonHandler.saveScore(score)
 	get_tree().change_scene_to_file("res://Scenes/GameOver.tscn")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -102,12 +104,6 @@ func _input(event): # Handle Touch Inut
 	var globalRect = backButton.get_global_rect()
 	if globalRect.has_point(get_global_mouse_position()) and event is InputEventScreenTouch:
 		get_tree().change_scene_to_file("res://Scenes/menu.tscn") 
-			
-func loadOptions():
-	if FileAccess.file_exists((File_name)):
-		var file = FileAccess.open(File_name, FileAccess.READ)
-		var dict = JSON.parse_string(file.get_as_text())
-		isEndianSwitchingEnabled = bool(dict["isEndianSwitchingEnabled"])
 
 func _init_game():
 	setupt_map()
@@ -231,14 +227,3 @@ func resetTimer():
 	
 func startTimer():
 	timerLeft = 50
-
-func saveSettings():
-	var saveDict = {
-	"isEndianSwitchingEnabled": isEndianSwitchingEnabled
-	}
-
-	var file = FileAccess.open(File_name, FileAccess.WRITE)
-	saveDict["Score"] = score
-	
-	file.store_string(JSON.stringify(saveDict))
-	file.close()

@@ -1,31 +1,26 @@
 extends Node2D
 
+const JSONHandler = preload("res://JSON.gd")
+@onready var jsonHandler = JSONHandler.JSONHandler.new()
 @onready var endianToggle = $CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/HBoxContainer/CenterContainer/NinePatchRect
-const File_name = "user://saves.json"
 var isEndianSwitchingEnabled = false
-var saveDict = {
-	"isEndianSwitchingEnabled": true
-}
 
+func _ready():
+	jsonHandler.loadGame()
+	
 func _input(event):
 	var x = $CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/HBoxContainer/CenterContainer/NinePatchRect
 	if event is InputEventMouseButton and event.is_pressed():
 		if x.get_rect().has_point(to_local(event.position)):
 			print("toggg") # TODO: toggle click not detected
 			isEndianSwitchingEnabled = !isEndianSwitchingEnabled
+			jsonHandler.updatEndian(isEndianSwitchingEnabled)
 			updateEndianSwitch()
 
 func _process(delta):
 	if Input.is_action_just_pressed("ui_cancel"):
-		saveSettings()
+		jsonHandler.saveGame()
 		get_tree().change_scene_to_file("res://Scenes/menu.tscn")
-		
-func saveSettings():
-	var file = FileAccess.open(File_name, FileAccess.WRITE)
-	saveDict["isEndianSwitchingEnabled"] = isEndianSwitchingEnabled
-	
-	file.store_string(JSON.stringify(saveDict))
-	file.close()
 
 # UI
 func updateEndianSwitch():
