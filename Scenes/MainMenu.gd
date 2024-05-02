@@ -9,21 +9,21 @@ const JSONHandler = preload("res://JSON.gd")
 @onready var selector_four =$CenterContainer/VBoxContainer/CenterContainer2/HBoxContainer2/VBoxContainer/Selector4
 
 @onready var labelStart = $CenterContainer/VBoxContainer/CenterContainer2/HBoxContainer2/VBoxContainer2/LabelStart
-@onready var labelTutorial = $CenterContainer/VBoxContainer/CenterContainer2/HBoxContainer2/VBoxContainer2/TutorialLabel
-@onready var labelOptions = $CenterContainer/VBoxContainer/CenterContainer2/HBoxContainer2/VBoxContainer2/LabelOptions
-@onready var labelExit = $CenterContainer/VBoxContainer/CenterContainer2/HBoxContainer2/VBoxContainer2/LabelExit
+@onready var labelTutorial := $CenterContainer/VBoxContainer/CenterContainer2/HBoxContainer2/VBoxContainer2/TutorialLabel
+@onready var labelOptions := $CenterContainer/VBoxContainer/CenterContainer2/HBoxContainer2/VBoxContainer2/LabelOptions
+@onready var labelExit := $CenterContainer/VBoxContainer/CenterContainer2/HBoxContainer2/VBoxContainer2/LabelExit
 
-@onready var labelHighScore = $CenterContainer/VBoxContainer/CenterContainer/VBoxContainer/HighScoreLabel
+@onready var labelHighScore: Label = $CenterContainer/VBoxContainer/CenterContainer/VBoxContainer/HighScoreLabel
 
 var currentSelection = 0
 var lastSelection = 0
 
 func _ready():
 	jsonHandler.loadGame()
-	if jsonHandler.score > 0:
-		labelHighScore.text = "Highscore: " + str(jsonHandler.score)
+	if jsonHandler.highScore > 0:
+		labelHighScore.text = "Highscore: " + str(jsonHandler.highScore)
 	else:
-		labelHighScore = ""
+		labelHighScore.text = ""
 	set_current_selection()
 	
 func _input(event): # Handle Touch Inut

@@ -30,11 +30,15 @@ class JSONHandler:
 	
 	func loadGame():
 		if FileAccess.file_exists((File_name)):
+			print("Load File Save")
 			var file = FileAccess.open(File_name, FileAccess.READ)
 			var dict = JSON.parse_string(file.get_as_text())
+			print(dict)
 			currentData["isEndianSwitchingEnabled"] = dict["isEndianSwitchingEnabled"]
 			currentData["score"] = dict["score"]
 			currentData["highScore"] = dict["highScore"]
+		else:
+			print("File doesnt exist")
 
 	# Getter
 	var endian: bool:
@@ -44,6 +48,10 @@ class JSONHandler:
 	var score: int:
 		get:
 			return currentData["score"]
+	
+	var highScore: int:
+		get:
+			return currentData["highScore"]
 
 # Update properties
 	func saveScore(score: int):

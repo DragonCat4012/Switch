@@ -13,6 +13,7 @@ var lastClick = Time.get_ticks_msec()
 func _ready():
 	jsonHandler.loadGame()
 	isEndianSwitchingEnabled = jsonHandler.endian
+	updateEndianSwitch()
 	
 func _input(event):
 	var currentClickTime = Time.get_ticks_msec()
