@@ -160,7 +160,7 @@ func toggleLamp(_lampID):
 	updateCurrentNumber()
 
 func initNumber():
-	var num = randi_range(1, 127)
+	var num = randi_range(1, 128)
 	numberLabel.text = str(num)
 	goalNumber = num 
 	
