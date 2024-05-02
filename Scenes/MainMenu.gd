@@ -26,7 +26,7 @@ func _input(event): # Handle Touch Inut
 			newSelection = 2
 		else:
 			newSelection = 0
-		print(newSelection)
+		
 		if currentSelection == newSelection:
 			handle_selection(currentSelection)
 		else:
