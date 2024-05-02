@@ -10,6 +10,8 @@ var offTexture = load("res://Sprites/Toggle/off.PNG")
 
 var lastClick = Time.get_ticks_msec()
 
+@onready var backButton := $CenterContainer/buttonBackTexture/BackButon
+
 func _ready():
 	jsonHandler.loadGame()
 	isEndianSwitchingEnabled = jsonHandler.endian
@@ -22,6 +24,8 @@ func _input(event):
 		isEndianSwitchingEnabled = !isEndianSwitchingEnabled
 		jsonHandler.updatEndian(isEndianSwitchingEnabled)
 		updateEndianSwitch()
+	if backButton.get_global_rect().has_point(get_global_mouse_position()) and event is InputEventScreenTouch:
+		get_tree().change_scene_to_file("res://Scenes/menu.tscn") 
 
 func _process(delta):
 	if Input.is_action_just_pressed("ui_cancel"):
