@@ -1,11 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://cygmp3elu4kij"]
+[gd_scene load_steps=11 format=3 uid="uid://cygmp3elu4kij"]
 
 [ext_resource type="Script" path="res://game.gd" id="1_67put"]
 [ext_resource type="FontFile" uid="uid://b2cswqm32sj5f" path="res://Lex.ttf" id="2_q8ujg"]
 [ext_resource type="Script" path="res://Sprites/Switch/Switch.gd" id="3_gwxeo"]
 [ext_resource type="Texture2D" uid="uid://q7pg1xi85gxc" path="res://Sprites/Maps/map_1.PNG" id="3_lyxkw"]
 [ext_resource type="Texture2D" uid="uid://bvp45mugj0pvi" path="res://Sprites/Switch/off.PNG" id="3_tksxr"]
+[ext_resource type="Texture2D" uid="uid://bg2v8g0rhtklx" path="res://Sprites/Maps/map_deco.PNG" id="4_tswrj"]
 [ext_resource type="Texture2D" uid="uid://cpiutjtj20tfu" path="res://Sprites/Lamps/off.PNG" id="5_4jnr2"]
+[ext_resource type="Texture2D" uid="uid://bwvpxew6qd2m5" path="res://Sprites/Maps/map_border.PNG" id="5_nvd4p"]
 [ext_resource type="Script" path="res://Sprites/Lamps/Lamp.gd" id="6_ampmk"]
 [ext_resource type="AudioStream" uid="uid://yfmc76ec18kr" path="res://Sounds/zap.mp3" id="8_q7x5g"]
 
@@ -38,9 +40,9 @@ text = "Back"
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 offset_left = 3.0
-offset_top = 840.0
+offset_top = 77.0
 offset_right = 1923.0
-offset_bottom = 1024.0
+offset_bottom = 261.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
 layout_mode = 2
@@ -72,57 +74,65 @@ offset_bottom = 1080.0
 position = Vector2(960, 540)
 texture = ExtResource("3_lyxkw")
 
+[node name="Map_deco" type="Sprite2D" parent="MarginContainer"]
+position = Vector2(960, 540)
+texture = ExtResource("4_tswrj")
+
+[node name="Map_border" type="Sprite2D" parent="MarginContainer"]
+position = Vector2(960, 540)
+texture = ExtResource("5_nvd4p")
+
 [node name="Switch 1" type="Sprite2D" parent="MarginContainer"]
-position = Vector2(259.835, 933.26)
+position = Vector2(252, 933)
 scale = Vector2(0.07, 0.07)
 texture = ExtResource("3_tksxr")
 script = ExtResource("3_gwxeo")
 metadata/id = 1
 
 [node name="Switch 2" type="Sprite2D" parent="MarginContainer"]
-position = Vector2(363.835, 933.26)
+position = Vector2(371, 933)
 scale = Vector2(0.07, 0.07)
 texture = ExtResource("3_tksxr")
 script = ExtResource("3_gwxeo")
 metadata/id = 2
 
 [node name="Switch 3" type="Sprite2D" parent="MarginContainer"]
-position = Vector2(468.835, 933.26)
+position = Vector2(483, 933.26)
 scale = Vector2(0.07, 0.07)
 texture = ExtResource("3_tksxr")
 script = ExtResource("3_gwxeo")
 metadata/id = 3
 
 [node name="Switch 4" type="Sprite2D" parent="MarginContainer"]
-position = Vector2(562.835, 933.26)
+position = Vector2(600, 933.26)
 scale = Vector2(0.07, 0.07)
 texture = ExtResource("3_tksxr")
 script = ExtResource("3_gwxeo")
 metadata/id = 4
 
 [node name="Switch 5" type="Sprite2D" parent="MarginContainer"]
-position = Vector2(1237.83, 933.26)
+position = Vector2(1320, 933.26)
 scale = Vector2(0.07, 0.07)
 texture = ExtResource("3_tksxr")
 script = ExtResource("3_gwxeo")
 metadata/id = 5
 
 [node name="Switch 6" type="Sprite2D" parent="MarginContainer"]
-position = Vector2(1344.83, 933.26)
+position = Vector2(1438, 933.26)
 scale = Vector2(0.07, 0.07)
 texture = ExtResource("3_tksxr")
 script = ExtResource("3_gwxeo")
 metadata/id = 6
 
 [node name="Switch 7" type="Sprite2D" parent="MarginContainer"]
-position = Vector2(1457.83, 933.26)
+position = Vector2(1549, 933.26)
 scale = Vector2(0.07, 0.07)
 texture = ExtResource("3_tksxr")
 script = ExtResource("3_gwxeo")
 metadata/id = 7
 
 [node name="Switch 8" type="Sprite2D" parent="MarginContainer"]
-position = Vector2(1560.83, 933.26)
+position = Vector2(1668, 933.26)
 scale = Vector2(0.07, 0.07)
 texture = ExtResource("3_tksxr")
 script = ExtResource("3_gwxeo")
@@ -178,17 +188,17 @@ script = ExtResource("6_ampmk")
 metadata/id = 7
 
 [node name="CenterContainer2" type="CenterContainer" parent="."]
-offset_left = 2.0
-offset_top = 94.0
-offset_right = 1922.0
-offset_bottom = 194.0
+offset_left = 1279.0
+offset_top = 189.0
+offset_right = 1919.0
+offset_bottom = 289.0
 
 [node name="ScoreLabel" type="Label" parent="CenterContainer2"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("2_q8ujg")
-theme_override_font_sizes/font_size = 100
+theme_override_font_sizes/font_size = 60
 text = "OwO
 "
 

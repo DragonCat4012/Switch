@@ -42,7 +42,7 @@ var timerIteration = 0
 var timer = Timer.new()
 
 var map_dict = { # key=switch, value=lamp
-	0: {
+	2: {
 		1: 4,
 		2: 3,
 		3: 5,
@@ -52,7 +52,7 @@ var map_dict = { # key=switch, value=lamp
 		7: 7,
 		8: 6
 	},
-	1: {
+	0: {
 		1: 1,
 		2: 4,
 		3: 2,
@@ -62,7 +62,7 @@ var map_dict = { # key=switch, value=lamp
 		7: 5,
 		8:6
 	},
-	2: {
+	1: {
 		1: 4,
 		2: 1,
 		3: 3,
