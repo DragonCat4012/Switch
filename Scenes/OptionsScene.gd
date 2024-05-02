@@ -2,20 +2,25 @@ extends Node2D
 
 const JSONHandler = preload("res://JSON.gd")
 @onready var jsonHandler = JSONHandler.JSONHandler.new()
-@onready var endianToggle = $CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/HBoxContainer/CenterContainer/NinePatchRect
+@onready var endianToggle = $CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/HBoxContainer
 var isEndianSwitchingEnabled = false
+
+var onTexture = load("res://Sprites/Toggle/on.PNG")
+var offTexture = load("res://Sprites/Toggle/off.PNG")
+
+var lastClick = Time.get_ticks_msec()
 
 func _ready():
 	jsonHandler.loadGame()
+	isEndianSwitchingEnabled = jsonHandler.endian
 	
 func _input(event):
-	var x = $CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/HBoxContainer/CenterContainer/NinePatchRect
-	if event is InputEventMouseButton and event.is_pressed():
-		if x.get_rect().has_point(to_local(event.position)):
-			print("toggg") # TODO: toggle click not detected
-			isEndianSwitchingEnabled = !isEndianSwitchingEnabled
-			jsonHandler.updatEndian(isEndianSwitchingEnabled)
-			updateEndianSwitch()
+	var currentClickTime = Time.get_ticks_msec()
+	if event is InputEventScreenTouch and endianToggle.get_global_rect().has_point(get_global_mouse_position()) and currentClickTime > lastClick + 0.8*1000:
+		lastClick = Time.get_ticks_msec()
+		isEndianSwitchingEnabled = !isEndianSwitchingEnabled
+		jsonHandler.updatEndian(isEndianSwitchingEnabled)
+		updateEndianSwitch()
 
 func _process(delta):
 	if Input.is_action_just_pressed("ui_cancel"):
@@ -24,10 +29,8 @@ func _process(delta):
 
 # UI
 func updateEndianSwitch():
-	var onTexture = "res://Sprites/Toggle/on.PNG"
-	var offTexture = "res://Sprites/Toggle/off.PNG"
-	var toggle = $CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/HBoxContainer/CenterContainer/NinePatchRect
+	var toggle = $CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/HBoxContainer/SwitchEndian
 	if isEndianSwitchingEnabled:
-		toggle.texture = load(onTexture)
+		toggle.texture = onTexture
 	else:
-		toggle.texture = load(offTexture)
+		toggle.texture = offTexture

@@ -43,10 +43,7 @@ theme_override_fonts/font = ExtResource("1_4y4xp")
 theme_override_font_sizes/font_size = 50
 text = "Enable Endian Switching"
 
-[node name="CenterContainer" type="CenterContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-
-[node name="NinePatchRect" type="NinePatchRect" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/HBoxContainer/CenterContainer"]
-custom_minimum_size = Vector2(110, 50)
-layout_mode = 2
+[node name="SwitchEndian" type="Sprite2D" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/HBoxContainer"]
+position = Vector2(591, 76)
+scale = Vector2(0.0799976, 0.0799976)
 texture = ExtResource("3_lkvmw")
