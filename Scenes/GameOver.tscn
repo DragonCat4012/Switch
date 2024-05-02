@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bx0l71rn4jm7"]
 
-[ext_resource type="FontFile" uid="uid://b2cswqm32sj5f" path="res://Lex.ttf" id="1_kn07d"]
+[ext_resource type="FontFile" uid="uid://b2cswqm32sj5f" path="res://Ressources/Lex.ttf" id="1_kn07d"]
 [ext_resource type="Script" path="res://Scenes/GameOverScene.gd" id="1_vy6yu"]
 
 [node name="GameOver" type="Node2D"]

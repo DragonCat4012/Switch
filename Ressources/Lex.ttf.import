@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://b2cswqm32sj5f"
-path="res://.godot/imported/Lex.ttf-950f84ab16233ec46d304dc003cd3ddf.fontdata"
+path="res://.godot/imported/Lex.ttf-57bdae83d18fbd85bb7123b42b1bd552.fontdata"
 
 [deps]
 
-source_file="res://Lex.ttf"
-dest_files=["res://.godot/imported/Lex.ttf-950f84ab16233ec46d304dc003cd3ddf.fontdata"]
+source_file="res://Ressources/Lex.ttf"
+dest_files=["res://.godot/imported/Lex.ttf-57bdae83d18fbd85bb7123b42b1bd552.fontdata"]
 
 [params]
 

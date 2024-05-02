@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scenes/Tutorial.gd" id="1_1jo7f"]
 [ext_resource type="Texture2D" uid="uid://cmjs4dg6c6hta" path="res://Sprites/Tutorial/t_11.JPG" id="2_priwj"]
-[ext_resource type="FontFile" uid="uid://b2cswqm32sj5f" path="res://Lex.ttf" id="3_0cq0s"]
+[ext_resource type="FontFile" uid="uid://b2cswqm32sj5f" path="res://Ressources/Lex.ttf" id="3_0cq0s"]
 
 [node name="Tutorial" type="Node2D"]
 script = ExtResource("1_1jo7f")

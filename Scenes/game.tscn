@@ -1,8 +1,8 @@
 [gd_scene load_steps=12 format=3 uid="uid://cygmp3elu4kij"]
 
-[ext_resource type="Script" path="res://game.gd" id="1_67put"]
+[ext_resource type="Script" path="res://Scenes/game.gd" id="1_67put"]
 [ext_resource type="Texture2D" uid="uid://cf83i6ab4h457" path="res://Sprites/button.PNG" id="2_cvfho"]
-[ext_resource type="FontFile" uid="uid://b2cswqm32sj5f" path="res://Lex.ttf" id="2_q8ujg"]
+[ext_resource type="FontFile" uid="uid://b2cswqm32sj5f" path="res://Ressources/Lex.ttf" id="2_q8ujg"]
 [ext_resource type="Script" path="res://Sprites/Switch/Switch.gd" id="3_gwxeo"]
 [ext_resource type="Texture2D" uid="uid://q7pg1xi85gxc" path="res://Sprites/Maps/map_1.PNG" id="3_lyxkw"]
 [ext_resource type="Texture2D" uid="uid://bvp45mugj0pvi" path="res://Sprites/Switch/off.PNG" id="3_tksxr"]
