@@ -1,6 +1,6 @@
 # Switch
 Binary Lamp Switch Game - Crewate Binary Numbers (from 0 to 127) using Lamps :3
-With each iteration your time becomes less :3 yay :3
+With each iteration your time becomes less :3 yay :3 Every ten seconds the time gets less unless you jsut have 10s uwu
 
 Since i started adding mobile support some things can be broken, like onClick Sensor things...
 Otherwise naviagtion is possible ith Arrow Keys, ESC, Enter/SpaceBar and ofc just clicking on things. 
