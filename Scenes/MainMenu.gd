@@ -1,6 +1,7 @@
 extends MarginContainer
 
-#const first_scene = preload("res://game.tscn")
+const JSONHandler = preload("res://JSON.gd")
+@onready var jsonHandler = JSONHandler.JSONHandler.new()
 
 @onready var selector_one = $CenterContainer/VBoxContainer/CenterContainer2/HBoxContainer2/VBoxContainer/Selector
 @onready var selector_two = $CenterContainer/VBoxContainer/CenterContainer2/HBoxContainer2/VBoxContainer/Selector2
@@ -8,11 +9,16 @@ extends MarginContainer
 @onready var labelTutorial = $CenterContainer/VBoxContainer/CenterContainer2/HBoxContainer2/VBoxContainer2/TutorialLabel
 @onready var labelStart = $CenterContainer/VBoxContainer/CenterContainer2/HBoxContainer2/VBoxContainer2/LabelStart
 @onready var labelExit = $CenterContainer/VBoxContainer/CenterContainer2/HBoxContainer2/VBoxContainer2/LabelExit
-
+@onready var labelHighScore = $CenterContainer/VBoxContainer/CenterContainer/VBoxContainer/HighScoreLabel
 var currentSelection = 0
 var lastSelection = 0
 
 func _ready():
+	jsonHandler.loadGame()
+	if jsonHandler.score > 0:
+		labelHighScore.text = "Highscore: " + str(jsonHandler.score)
+	else:
+		labelHighScore = ""
 	set_current_selection()
 	
 func _input(event): # Handle Touch Inut
