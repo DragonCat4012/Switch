@@ -17,7 +17,7 @@ var isEndianSwitchingEnabled = true
 @onready var numberPreviewLabel = $CenterContainer/VBoxContainer/NumberPreview
 @onready var scoreLabel = $CenterContainer2/ScoreLabel
 @onready var mapLabel = $CenterContainer3/HBoxContainer/MapLabel
-@onready var backButton = $ColorRect/ColorRect/BackButon
+@onready var backButton = $ColorRect/buttonBackTexture/BackButon
 # Audio
 @onready var audioPlayer = $"AudioStreamPlayer"
 
