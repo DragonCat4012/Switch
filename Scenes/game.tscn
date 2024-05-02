@@ -17,6 +17,25 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 color = Color(0, 0, 0, 1)
 
+[node name="ColorRect" type="ColorRect" parent="ColorRect"]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 88.0
+offset_right = 322.0
+offset_bottom = 178.0
+color = Color(0.336607, 0.336608, 0.336608, 1)
+
+[node name="BackButon" type="CenterContainer" parent="ColorRect/ColorRect"]
+layout_mode = 0
+offset_right = 230.0
+offset_bottom = 90.0
+
+[node name="Label" type="Label" parent="ColorRect/ColorRect/BackButon"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_q8ujg")
+theme_override_font_sizes/font_size = 70
+text = "Back"
+
 [node name="CenterContainer" type="CenterContainer" parent="."]
 offset_left = 3.0
 offset_top = 840.0

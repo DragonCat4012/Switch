@@ -19,7 +19,7 @@ func _input(event): # Handle Touch Inut
 	var globalRect = e.get_global_rect()
 	var currentClickTime = Time.get_ticks_msec()
 
-	if globalRect.has_point(get_global_mouse_position()) and currentClickTime > lastClick + 0.8*1000:
+	if globalRect.has_point(get_global_mouse_position()) and event is InputEventScreenTouch and currentClickTime > lastClick + 0.8*1000:
 		lastClick = Time.get_ticks_msec()
 		if globalRect.size.y > 1920/2:
 			nextImg()

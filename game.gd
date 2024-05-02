@@ -17,7 +17,7 @@ var isEndianSwitchingEnabled = true
 @onready var numberPreviewLabel = $CenterContainer/VBoxContainer/NumberPreview
 @onready var scoreLabel = $CenterContainer2/ScoreLabel
 @onready var mapLabel = $CenterContainer3/HBoxContainer/MapLabel
-
+@onready var backButton = $ColorRect/ColorRect/BackButon
 # Audio
 @onready var audioPlayer = $"AudioStreamPlayer"
 
@@ -91,13 +91,18 @@ func _on_timer_timeout():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if Input.is_action_just_pressed("ui_cancel"):
-		get_tree().change_scene_to_file("res://Scenes/menu.tscn") # TODO: meh
+		get_tree().change_scene_to_file("res://Scenes/menu.tscn") 
 	timerLabel.text = str(round(timer.time_left)) + " s"
 	
 	if timer.time_left <= 5:
 		var red = Color(1.0,0.0,0.0,1.0)
 		timerLabel.set("theme_override_colors/font_color",red)
-
+		
+func _input(event): # Handle Touch Inut
+	var globalRect = backButton.get_global_rect()
+	if globalRect.has_point(get_global_mouse_position()) and event is InputEventScreenTouch:
+		get_tree().change_scene_to_file("res://Scenes/menu.tscn") 
+			
 func loadOptions():
 	if FileAccess.file_exists((File_name)):
 		var file = FileAccess.open(File_name, FileAccess.READ)

@@ -17,7 +17,7 @@ func _ready():
 	
 func _input(event): # Handle Touch Inut
 	var newSelection = -1
-	if event is InputEventMouseButton:
+	if event is InputEventScreenTouch:
 		if labelTutorial.get_global_rect().has_point(get_global_mouse_position()):
 			newSelection = 1
 		elif labelStart.get_global_rect().has_point(get_global_mouse_position()):
@@ -25,7 +25,7 @@ func _input(event): # Handle Touch Inut
 		elif labelExit.get_global_rect().has_point(get_global_mouse_position()):
 			newSelection = 2
 		else:
-			newSelection = 0
+			return
 		
 		if currentSelection == newSelection:
 			handle_selection(currentSelection)
