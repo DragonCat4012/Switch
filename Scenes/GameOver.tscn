@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bx0l71rn4jm7"]
+[gd_scene load_steps=4 format=3 uid="uid://bx0l71rn4jm7"]
 
 [ext_resource type="FontFile" uid="uid://b2cswqm32sj5f" path="res://Ressources/Lex.ttf" id="1_kn07d"]
 [ext_resource type="Script" path="res://Scenes/GameOverScene.gd" id="1_vy6yu"]
+[ext_resource type="Texture2D" uid="uid://cf83i6ab4h457" path="res://Sprites/button.PNG" id="3_rcgn2"]
 
 [node name="GameOver" type="Node2D"]
 script = ExtResource("1_vy6yu")
@@ -30,3 +31,21 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("1_kn07d")
 theme_override_font_sizes/font_size = 70
 text = "Your Score: ?"
+
+[node name="buttonBackTexture" type="Sprite2D" parent="ColorRect/CenterContainer"]
+position = Vector2(189, 136)
+scale = Vector2(0.218072, 0.218072)
+texture = ExtResource("3_rcgn2")
+
+[node name="BackButon" type="CenterContainer" parent="ColorRect/CenterContainer/buttonBackTexture"]
+offset_left = -450.157
+offset_top = -163.559
+offset_right = -220.157
+offset_bottom = -73.5588
+scale = Vector2(3.73412, 3.73412)
+
+[node name="Label" type="Label" parent="ColorRect/CenterContainer/buttonBackTexture/BackButon"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_kn07d")
+theme_override_font_sizes/font_size = 70
+text = "Back"
