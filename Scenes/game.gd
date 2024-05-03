@@ -96,7 +96,7 @@ func _process(delta):
 		get_tree().change_scene_to_file("res://Scenes/menu.tscn") 
 	timerLabel.text = str(round(timer.time_left)) + " s"
 	
-	if timer.time_left <= 5:
+	if timer.time_left <= 5.5:
 		var red = Color(1.0,0.0,0.0,1.0)
 		timerLabel.set("theme_override_colors/font_color",red)
 		
@@ -165,6 +165,11 @@ func initNumber():
 	numberLabel.text = str(num)
 	goalNumber = num 
 	
+	if goalNumber == 128:
+		numberLabel.text = ">> 128 <<"
+		var red = Color(1.0,0.0,0.0,1.0)
+		numberLabel.set("theme_override_colors/font_color",red)
+	
 func updateCurrentNumber(_init = false):
 	var x = 0
 	if smallEndian:
@@ -199,6 +204,7 @@ func updateCurrentNumber(_init = false):
 			x += 64
 	currentNumber = x
 	numberPreviewLabel.text = str(currentNumber)
+
 	
 	if x == goalNumber and _init: # prevent instant success qwq
 		lamp1.toggleStatus()
