@@ -10,6 +10,9 @@ Goal: Find the impossible Number ;3
 
 Note: Tutorial is currently for the old UI, Textfields have been moved
 
+## Showcase
+<img src="https://kiarar.moe/images/Switch/game.png">
+
 ## Game Options
 * Endian Switching (Changes the direction form where you have to read the number in binary)
 
