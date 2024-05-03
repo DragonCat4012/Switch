@@ -136,6 +136,7 @@ func updateEndian():
 	else:
 		$HBoxContainer/LeftArrow.text = ""
 		$HBoxContainer/RightArrow.text = "<"
+	updateCurrentNumber()
 		
 func switch_activated(_switch_number, _isOn):
 	if not audioPlayer.playing:
