@@ -13,6 +13,15 @@ Note: Tutorial is currently for the old UI, Textfields have been moved
 ## Showcase
 <img src="https://kiarar.moe/images/Switch/game.png">
 
+## Game Loop
+* The game generates a random decimal number like 42
+  * You have to translate this number into binary using the lamps
+  * lamp on = 1 * 2^x, lamp of = 0 * 2^x
+  * the little arrow on the left/right of the löamps indicates from where to read the number
+* when you have corectly replicated the number the remaining time will be added to your score
+  * on every 10 iterations your time will get less
+  * there is a point where the game ends ;3, but you will always have atleast 10 seconds for a number  
+    
 ## Supported Plattforms
 | Plattform         | Status |
 |--------------|:-----:|
