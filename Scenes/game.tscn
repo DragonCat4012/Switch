@@ -16,6 +16,7 @@
 script = ExtResource("1_67put")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 offset_right = 1920.0
 offset_bottom = 1080.0
 color = Color(0, 0, 0, 1)
@@ -71,6 +72,7 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 
 [node name="Map" type="Sprite2D" parent="MarginContainer"]
+visible = false
 position = Vector2(960, 540)
 texture = ExtResource("3_lyxkw")
 

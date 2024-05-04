@@ -14,6 +14,15 @@ var isEndianSwitchingEnabled = true
 @onready var lamp6 = $"MarginContainer/Lamp 6"
 @onready var lamp7 = $"MarginContainer/Lamp 7"
 
+@onready var switch1 = $"MarginContainer/Switch 1"
+@onready var switch2 = $"MarginContainer/Switch 2"
+@onready var switch3 = $"MarginContainer/Switch 3"
+@onready var switch4 = $"MarginContainer/Switch 4"
+@onready var switch5 = $"MarginContainer/Switch 5"
+@onready var switch6 = $"MarginContainer/Switch 6"
+@onready var switch7 = $"MarginContainer/Switch 7"
+@onready var switch8 = $"MarginContainer/Switch 8"
+
 @onready var numberLabel = $CenterContainer/VBoxContainer/NumberLabel
 @onready var numberPreviewLabel = $CenterContainer/VBoxContainer/NumberPreview
 @onready var scoreLabel = $CenterContainer2/ScoreLabel
@@ -233,8 +242,31 @@ func setupt_map():
 	
 func createWires():
 	var arr = wireHandler.createMapping()
+	var from = Vector2(20,20)
+	var to = Vector2(1190, 1190)
+	var color = Color(1,0,0,1)
+	var minDiff = 25
 	print(arr)
-
+	
+	var switches = [switch1, switch2, switch3, switch4, switch5, switch6, switch7, switch8]
+	var lamps = [lamp1, lamp2, lamp3, lamp4, lamp5, lamp6, lamp7]
+	var levelDistances = (switch1.position.y - minDiff - lamp1.position.y + minDiff) / lamps.size() 
+	
+	for w in arr:
+		# line form above
+		var lamp_y: int = int(snapped(lamps[w.lamp-1].position.y + (w.level * levelDistances), 1))#- minDiff
+		draw_line(lamps[w.lamp-1].position + Vector2(0, minDiff), Vector2(lamps[w.lamp-1].position.x, lamp_y)- Vector2(0, minDiff)  ,color)
+		
+		# line below
+		var switch_y: int = int(snapped(switches[w.lamp-1].position.y - ((lamps.size() -w.level) * levelDistances), 1))#+ minDiff
+		draw_line(switches[w.lamp-1].position + Vector2(0, minDiff), Vector2(switches[w.lamp-1].position.x, switch_y)- Vector2(0, minDiff) ,color)
+		
+	 	# horizontal line
+		draw_line(Vector2(switches[w.lamp-1].position.x, lamp_y) - Vector2(0, minDiff), Vector2(lamps[w.lamp-1].position.x, lamp_y) - Vector2(0, minDiff),color)
+	
+func _draw():
+	createWires()
+	
 # Timer
 func resetTimer():
 	score = 0

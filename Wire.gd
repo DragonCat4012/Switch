@@ -51,4 +51,4 @@ class Wire:
 		self.level = level
 	
 	func _to_string():
-		return "(" + str(lamp) + ", " + str(switch) + "): " +str(level)
+		return "(l: " + str(lamp) + ", s: " + str(switch) + ") l: " +str(level)
