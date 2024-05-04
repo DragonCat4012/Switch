@@ -21,7 +21,7 @@ Note: Tutorial is currently for the old UI, Textfields have been moved
 * when you have corectly replicated the number the remaining time will be added to your score
   * on every 10 iterations your time will get less
   * there is a point where the game ends ;3, but you will always have atleast 10 seconds for a number  
-    
+	
 ## Supported Plattforms
 | Plattform         | Status |
 |--------------|:-----:|

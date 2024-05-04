@@ -27,6 +27,8 @@ var isEndianSwitchingEnabled = true
 @onready var timerLabel = $CenterContainer3/HBoxContainer/TimerLabel
 var mapRessources = ["res://Sprites/Maps/map_0.PNG","res://Sprites/Maps/map_1.PNG","res://Sprites/Maps/map_2.PNG"]
 var mapIndex = 0
+const WireHandler = preload("res://Wire.gd")
+@onready var wireHandler = WireHandler.WireHandler.new()
 
 # Current Game
 var currentNumber = 0
@@ -84,6 +86,7 @@ func _ready():
 	timer.connect("timeout", _on_timer_timeout)
 	
 	_init_game()
+	createWires()
 	
 func _on_timer_timeout():
 	timer.stop()
@@ -227,6 +230,10 @@ func setupt_map():
 	mapIndex = randi_range(0, len(mapRessources)-1)
 	mapObject.texture = load(mapRessources[mapIndex])
 	mapLabel.text = "["+str(mapIndex)+"]"
+	
+func createWires():
+	var arr = wireHandler.createMapping()
+	print(arr)
 
 # Timer
 func resetTimer():

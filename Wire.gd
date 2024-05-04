@@ -7,7 +7,7 @@ class WireHandler:
 		nr_lamps = nr_lamps
 		nr_switches = nr_switches
 	
-	func createMappingDict():
+	func createMapping():
 		# Init everything
 		var dict = {} # lamp: swicth
 		var levels = nr_lamps
@@ -46,6 +46,9 @@ class Wire:
 	var level = 0
 	
 	func _init(lamp: int = 0, switch: int = 0, level: int = 0):
-		lamp = lamp
-		switch = switch
-		level = level
+		self.lamp = lamp
+		self.switch = switch
+		self.level = level
+	
+	func _to_string():
+		return "(" + str(lamp) + ", " + str(switch) + "): " +str(level)
