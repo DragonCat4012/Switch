@@ -14,19 +14,29 @@ var isEndianSwitchingEnabled = true
 @onready var lamp6 = $"MarginContainer/Lamp 6"
 @onready var lamp7 = $"MarginContainer/Lamp 7"
 
+@onready var switch1 = $"MarginContainer/Switch 1"
+@onready var switch2 = $"MarginContainer/Switch 2"
+@onready var switch3 = $"MarginContainer/Switch 3"
+@onready var switch4 = $"MarginContainer/Switch 4"
+@onready var switch5 = $"MarginContainer/Switch 5"
+@onready var switch6 = $"MarginContainer/Switch 6"
+@onready var switch7 = $"MarginContainer/Switch 7"
+@onready var switch8 = $"MarginContainer/Switch 8"
+
 @onready var numberLabel = $CenterContainer/VBoxContainer/NumberLabel
 @onready var numberPreviewLabel = $CenterContainer/VBoxContainer/NumberPreview
 @onready var scoreLabel = $CenterContainer2/ScoreLabel
 @onready var mapLabel = $CenterContainer3/HBoxContainer/MapLabel
-@onready var backButton = $ColorRect/buttonBackTexture/BackButon
+@onready var backButton = $buttonBackTexture/BackButon
+
 # Audio
 @onready var audioPlayer = $"AudioStreamPlayer"
 
 # Map
-@onready var mapObject = $MarginContainer/Map
 @onready var timerLabel = $CenterContainer3/HBoxContainer/TimerLabel
-var mapRessources = ["res://Sprites/Maps/map_0.PNG","res://Sprites/Maps/map_1.PNG","res://Sprites/Maps/map_2.PNG"]
 var mapIndex = 0
+const WireHandler = preload("res://Wire.gd")
+@onready var wireHandler = WireHandler.WireHandler.new()
 
 # Current Game
 var currentNumber = 0
@@ -42,38 +52,7 @@ var timerTime = 50
 var timerIteration = 0
 var timer = Timer.new()
 
-var map_dict = { # key=switch, value=lamp
-	2: {
-		1: 4,
-		2: 3,
-		3: 5,
-		4: 2,
-		5: 1,
-		6: 5,
-		7: 7,
-		8: 6
-	},
-	0: {
-		1: 1,
-		2: 4,
-		3: 2,
-		4: 3,
-		5: 1,
-		6: 7,
-		7: 5,
-		8:6
-	},
-	1: {
-		1: 4,
-		2: 1,
-		3: 3,
-		4: 2,
-		5: 3,
-		6: 7,
-		7: 6,
-		8: 5
-	}
-}
+var mapping_dict = {} # key=switch, value=lamp
 
 func _ready():
 	jsonHandler.loadGame()
@@ -84,6 +63,7 @@ func _ready():
 	timer.connect("timeout", _on_timer_timeout)
 	
 	_init_game()
+	createWires()
 	
 func _on_timer_timeout():
 	timer.stop()
@@ -107,7 +87,9 @@ func _input(event): # Handle Touch Inut
 		get_tree().change_scene_to_file("res://Scenes/menu.tscn") 
 
 func _init_game():
-	setupt_map()
+	queue_redraw()
+	mapLabel.text = "["+str(mapIndex)+"]"
+	
 	lamp1.reset()
 	lamp2.reset()
 	lamp3.reset()
@@ -141,7 +123,7 @@ func updateEndian():
 func switch_activated(_switch_number, _isOn):
 	if not audioPlayer.playing:
 			audioPlayer.play()
-	toggleLamp(map_dict[mapIndex][_switch_number])
+	toggleLamp(mapping_dict[_switch_number])
 	
 func toggleLamp(_lampID):
 	if _lampID == 1:
@@ -223,11 +205,48 @@ func updateCurrentNumber(_init = false):
 		_init_game()
 	
 # Map
-func setupt_map():
-	mapIndex = randi_range(0, len(mapRessources)-1)
-	mapObject.texture = load(mapRessources[mapIndex])
-	mapLabel.text = "["+str(mapIndex)+"]"
+func createWires():
+	var arr = wireHandler.createMapping()
+	setDict(arr)
+	var minDiff = 40
+	var minVec = Vector2(0, minDiff)
+	var minDiffSwitch = 55
+	var minswicthVec = Vector2(0, minDiffSwitch)
 
+	var switches = [switch1, switch2, switch3, switch4, switch5, switch6, switch7, switch8]
+	var lamps = [lamp1, lamp2, lamp3, lamp4, lamp5, lamp6, lamp7]
+	
+	var levelDistances = (switch1.position.y - lamp1.position.y) / lamps.size() - minDiffSwitch + minDiff # 69
+	var levelPad: int = (levelDistances / lamps.size()) *2
+
+	var line_width = 3
+	
+	for w in arr:
+		var minY = switches[w.lamp-1].position.y - minDiffSwitch
+		var maxLevelks = levelDistances * lamps.size() 
+		
+		var p3 = switches[w.switch-1].position - minswicthVec
+		var p2 =  p3 - Vector2(0, maxLevelks - w.level * levelDistances) -  minswicthVec
+		
+		var p0 = lamps[w.lamp-1].position + minVec
+		var p1 = Vector2(p0.x, p2.y)
+		
+		# up -down
+		draw_line(p0, p1, w.color, line_width)
+		# down-> up
+		draw_line(p3, p2, w.color, line_width)
+	 	# horizontal line
+		draw_line(p1, p2, w.color, line_width)
+		
+func setDict(mapping):
+	var dict = {} # switch: lamp
+	for w in mapping:
+		dict[w.switch] = w.lamp
+	mapping_dict = dict
+	
+func _draw():
+	createWires()
+	
 # Timer
 func resetTimer():
 	score = 0

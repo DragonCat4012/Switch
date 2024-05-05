@@ -1,10 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://cygmp3elu4kij"]
+[gd_scene load_steps=11 format=3 uid="uid://cygmp3elu4kij"]
 
 [ext_resource type="Script" path="res://Scenes/game.gd" id="1_67put"]
 [ext_resource type="Texture2D" uid="uid://cf83i6ab4h457" path="res://Sprites/button.PNG" id="2_cvfho"]
 [ext_resource type="FontFile" uid="uid://b2cswqm32sj5f" path="res://Ressources/Lex.ttf" id="2_q8ujg"]
 [ext_resource type="Script" path="res://Sprites/Switch/Switch.gd" id="3_gwxeo"]
-[ext_resource type="Texture2D" uid="uid://q7pg1xi85gxc" path="res://Sprites/Maps/map_1.PNG" id="3_lyxkw"]
 [ext_resource type="Texture2D" uid="uid://bvp45mugj0pvi" path="res://Sprites/Switch/off.PNG" id="3_tksxr"]
 [ext_resource type="Texture2D" uid="uid://bg2v8g0rhtklx" path="res://Sprites/Maps/map_deco.PNG" id="4_tswrj"]
 [ext_resource type="Texture2D" uid="uid://cpiutjtj20tfu" path="res://Sprites/Lamps/off.PNG" id="5_4jnr2"]
@@ -15,24 +14,19 @@
 [node name="Game" type="Node2D"]
 script = ExtResource("1_67put")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_right = 1920.0
-offset_bottom = 1080.0
-color = Color(0, 0, 0, 1)
-
-[node name="buttonBackTexture" type="Sprite2D" parent="ColorRect"]
+[node name="buttonBackTexture" type="Sprite2D" parent="."]
 position = Vector2(189, 136)
 scale = Vector2(0.218072, 0.218072)
 texture = ExtResource("2_cvfho")
 
-[node name="BackButon" type="CenterContainer" parent="ColorRect/buttonBackTexture"]
+[node name="BackButon" type="CenterContainer" parent="buttonBackTexture"]
 offset_left = -450.157
 offset_top = -163.559
 offset_right = -220.157
 offset_bottom = -73.5588
 scale = Vector2(3.73412, 3.73412)
 
-[node name="Label" type="Label" parent="ColorRect/buttonBackTexture/BackButon"]
+[node name="Label" type="Label" parent="buttonBackTexture/BackButon"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_q8ujg")
 theme_override_font_sizes/font_size = 70
@@ -69,10 +63,6 @@ text = "OwO
 [node name="MarginContainer" type="MarginContainer" parent="."]
 offset_right = 1920.0
 offset_bottom = 1080.0
-
-[node name="Map" type="Sprite2D" parent="MarginContainer"]
-position = Vector2(960, 540)
-texture = ExtResource("3_lyxkw")
 
 [node name="Map_deco" type="Sprite2D" parent="MarginContainer"]
 position = Vector2(960, 540)
