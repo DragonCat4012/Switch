@@ -47,6 +47,7 @@ p3': Center Position of the Switch sx
 p3: Postion of sx with padding pad2
 p2: p3 extended on the y-axis to the assigned level fx
 <img src="https://kiarar.moe/images/Switch/map1.png" height= 300>
+
 ## Game Options
 * Endian Switching (Changes the direction form where you have to read the number in binary)
 
