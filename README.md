@@ -36,6 +36,7 @@ ArrowK Keys Left/Right & Sapcebar/Enter: naviagte in Tutorial
 ### Map Generation
 #### Pairing Lamps and Switches
 Each lamp becomes a random switch assigned, one random lamps becomes a second random switch
+
 <img src="https://kiarar.moe/images/Switch/map2.png" height= 250>
 
 #### Drawing Wires
@@ -46,6 +47,7 @@ p1: p0 extended on the y-axis to the assigned level fx
 p3': Center Position of the Switch sx
 p3: Postion of sx with padding pad2
 p2: p3 extended on the y-axis to the assigned level fx
+
 <img src="https://kiarar.moe/images/Switch/map1.png" height= 300>
 
 ## Game Options
