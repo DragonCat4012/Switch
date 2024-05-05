@@ -53,6 +53,7 @@ var timerTime = 50
 var timerIteration = 0
 var timer = Timer.new()
 
+var mapping_dict = {} # key=switch, value=lamp
 var map_dict = { # key=switch, value=lamp
 	2: {
 		1: 4,
@@ -153,7 +154,8 @@ func updateEndian():
 func switch_activated(_switch_number, _isOn):
 	if not audioPlayer.playing:
 			audioPlayer.play()
-	toggleLamp(map_dict[mapIndex][_switch_number])
+	#toggleLamp(map_dict[mapIndex][_switch_number])
+	toggleLamp(mapping_dict[_switch_number])
 	
 func toggleLamp(_lampID):
 	if _lampID == 1:
@@ -242,27 +244,42 @@ func setupt_map():
 	
 func createWires():
 	var arr = wireHandler.createMapping()
-	var from = Vector2(20,20)
-	var to = Vector2(1190, 1190)
-	var color = Color(1,0,0,1)
-	var minDiff = 25
-	print(arr)
-	
+	setDict(arr)
+	var minDiff = 40
+	var minVec = Vector2(0, minDiff)
+	var minDiffSwitch = 55
+	var minswicthVec = Vector2(0, minDiffSwitch)
+
 	var switches = [switch1, switch2, switch3, switch4, switch5, switch6, switch7, switch8]
 	var lamps = [lamp1, lamp2, lamp3, lamp4, lamp5, lamp6, lamp7]
-	var levelDistances = (switch1.position.y - minDiff - lamp1.position.y + minDiff) / lamps.size() 
+	
+	var levelDistances = (switch1.position.y - lamp1.position.y) / lamps.size() - minDiffSwitch + minDiff # 69
+	var levelPad: int = (levelDistances / lamps.size()) *2
+
+	var line_width = 3
 	
 	for w in arr:
-		# line form above
-		var lamp_y: int = int(snapped(lamps[w.lamp-1].position.y + (w.level * levelDistances), 1))#- minDiff
-		draw_line(lamps[w.lamp-1].position + Vector2(0, minDiff), Vector2(lamps[w.lamp-1].position.x, lamp_y)- Vector2(0, minDiff)  ,color)
+		var minY = switches[w.lamp-1].position.y - minDiffSwitch
+		var maxLevelks = levelDistances * lamps.size() 
 		
-		# line below
-		var switch_y: int = int(snapped(switches[w.lamp-1].position.y - ((lamps.size() -w.level) * levelDistances), 1))#+ minDiff
-		draw_line(switches[w.lamp-1].position + Vector2(0, minDiff), Vector2(switches[w.lamp-1].position.x, switch_y)- Vector2(0, minDiff) ,color)
+		var p3 = switches[w.switch-1].position - minswicthVec
+		var p2 =  p3 - Vector2(0, maxLevelks - w.level * levelDistances) -  minswicthVec
 		
+		var p0 = lamps[w.lamp-1].position + minVec
+		var p1 = Vector2(p0.x, p2.y)
+		
+		# up -down
+		draw_line(p0, p1, w.color, line_width)
+		# down-> up
+		draw_line(p3, p2, w.color, line_width)
 	 	# horizontal line
-		draw_line(Vector2(switches[w.lamp-1].position.x, lamp_y) - Vector2(0, minDiff), Vector2(lamps[w.lamp-1].position.x, lamp_y) - Vector2(0, minDiff),color)
+		draw_line(p1, p2, w.color, line_width)
+		
+func setDict(mapping):
+	var dict = {} # switch: lamp
+	for w in mapping:
+		dict[w.switch] = w.lamp
+	mapping_dict = dict
 	
 func _draw():
 	createWires()
