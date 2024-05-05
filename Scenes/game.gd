@@ -216,9 +216,7 @@ func createWires():
 	var switches = [switch1, switch2, switch3, switch4, switch5, switch6, switch7, switch8]
 	var lamps = [lamp1, lamp2, lamp3, lamp4, lamp5, lamp6, lamp7]
 	
-	var levelDistances = (switch1.position.y - lamp1.position.y) / lamps.size() - minDiffSwitch + minDiff # 69
-	var levelPad: int = (levelDistances / lamps.size()) *2
-
+	var levelDistances = (switch1.position.y - lamp1.position.y) / lamps.size() - minDiffSwitch + minDiff
 	var line_width = 3
 	
 	for w in arr:

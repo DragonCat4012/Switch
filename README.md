@@ -2,16 +2,18 @@
 Binary Lamp Switch Game - Crewate Binary Numbers (from 0 to 127) using Lamps :3
 With each iteration your time becomes less :3 yay :3 Every ten seconds the time gets less unless you jsut have 10s uwu
 
-Since i started adding mobile support some things can be broken, like onClick Sensor things...
-Otherwise naviagtion is possible ith Arrow Keys, ESC, Enter/SpaceBar and ofc just clicking on things. 
-The options Menu content Box is kinda weird, so just try clicking on differnet places a few times uwu
+> **_NOTE:_**  The options Menu content Box is kinda weird, so just try clicking on differnet places a few times uwu
 
-Goal: Find the impossible Number ;3
-
-Note: Tutorial is currently for the old UI, Textfields have been moved
+> **_NOTE:_**  Tutorial is currently for the old UI, Textfields have been moved etc
 
 ## Showcase
 <img src="https://kiarar.moe/images/Switch/game.png">
+
+### Controls Desktop Version
+ESC - naviagte Back to menu
+Arrow Keys Up/Down: Navigate Main Menu
+Enter/Sapcebar: Confirm selection in main menu
+ArrowK Keys Left/Right & Sapcebar/Enter: naviagte in Tutorial
 
 ## Game Loop
 * The game generates a random decimal number like 42
@@ -23,13 +25,28 @@ Note: Tutorial is currently for the old UI, Textfields have been moved
   * there is a point where the game ends ;3, but you will always have atleast 10 seconds for a number  
 	
 ## Supported Plattforms
-| Plattform         | Status |
-|--------------|:-----:|
-| iOS | [x] |  
-| MacOS      |  [ ] | 
-| Android |  [] |   
-| Windows      |  [x] | 
+| Plattform         | Status | Supported | Tested |
+|--------------|:-----:| :----: | :----: |
+| iOS | Testflight | :heavy_check_mark: | :heavy_check_mark:
+| MacOS      |  WIP | :x:| :x:
+| Android |  WIP  | :heavy_check_mark:| :x:
+| Windows      |  WIP | :heavy_check_mark:| :x:
 
+## Development
+### Map Generation
+#### Pairing Lamps and Switches
+Each lamp becomes a random switch assigned, one random lamps becomes a second random switch
+<img src="https://kiarar.moe/images/Switch/map2.png" height= 250>
+
+#### Drawing Wires
+p0': Position of the lamp lx
+p0: Position of the lamp + padding pad1 (since we dont want the line to start in the middle of the lamp but rather bvelow the lamp)
+p1: p0 extended on the y-axis to the assigned level fx
+
+p3': Center Position of the Switch sx
+p3: Postion of sx with padding pad2
+p2: p3 extended on the y-axis to the assigned level fx
+<img src="https://kiarar.moe/images/Switch/map1.png" height= 300>
 ## Game Options
 * Endian Switching (Changes the direction form where you have to read the number in binary)
 
