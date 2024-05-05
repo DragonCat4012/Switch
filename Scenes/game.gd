@@ -27,14 +27,13 @@ var isEndianSwitchingEnabled = true
 @onready var numberPreviewLabel = $CenterContainer/VBoxContainer/NumberPreview
 @onready var scoreLabel = $CenterContainer2/ScoreLabel
 @onready var mapLabel = $CenterContainer3/HBoxContainer/MapLabel
-@onready var backButton = $ColorRect/buttonBackTexture/BackButon
+@onready var backButton = $buttonBackTexture/BackButon
+
 # Audio
 @onready var audioPlayer = $"AudioStreamPlayer"
 
 # Map
-@onready var mapObject = $MarginContainer/Map
 @onready var timerLabel = $CenterContainer3/HBoxContainer/TimerLabel
-var mapRessources = ["res://Sprites/Maps/map_0.PNG","res://Sprites/Maps/map_1.PNG","res://Sprites/Maps/map_2.PNG"]
 var mapIndex = 0
 const WireHandler = preload("res://Wire.gd")
 @onready var wireHandler = WireHandler.WireHandler.new()
@@ -54,38 +53,6 @@ var timerIteration = 0
 var timer = Timer.new()
 
 var mapping_dict = {} # key=switch, value=lamp
-var map_dict = { # key=switch, value=lamp
-	2: {
-		1: 4,
-		2: 3,
-		3: 5,
-		4: 2,
-		5: 1,
-		6: 5,
-		7: 7,
-		8: 6
-	},
-	0: {
-		1: 1,
-		2: 4,
-		3: 2,
-		4: 3,
-		5: 1,
-		6: 7,
-		7: 5,
-		8:6
-	},
-	1: {
-		1: 4,
-		2: 1,
-		3: 3,
-		4: 2,
-		5: 3,
-		6: 7,
-		7: 6,
-		8: 5
-	}
-}
 
 func _ready():
 	jsonHandler.loadGame()
@@ -120,7 +87,9 @@ func _input(event): # Handle Touch Inut
 		get_tree().change_scene_to_file("res://Scenes/menu.tscn") 
 
 func _init_game():
-	setupt_map()
+	queue_redraw()
+	mapLabel.text = "["+str(mapIndex)+"]"
+	
 	lamp1.reset()
 	lamp2.reset()
 	lamp3.reset()
@@ -154,7 +123,6 @@ func updateEndian():
 func switch_activated(_switch_number, _isOn):
 	if not audioPlayer.playing:
 			audioPlayer.play()
-	#toggleLamp(map_dict[mapIndex][_switch_number])
 	toggleLamp(mapping_dict[_switch_number])
 	
 func toggleLamp(_lampID):
@@ -237,11 +205,6 @@ func updateCurrentNumber(_init = false):
 		_init_game()
 	
 # Map
-func setupt_map():
-	mapIndex = randi_range(0, len(mapRessources)-1)
-	mapObject.texture = load(mapRessources[mapIndex])
-	mapLabel.text = "["+str(mapIndex)+"]"
-	
 func createWires():
 	var arr = wireHandler.createMapping()
 	setDict(arr)
