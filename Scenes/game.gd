@@ -1,7 +1,7 @@
 extends Node2D
 
 # Settings
-const JSONHandler = preload("res://JSON.gd")
+const JSONHandler = preload("res://Util/JSON.gd")
 @onready var jsonHandler = JSONHandler.JSONHandler.new()
 var isEndianSwitchingEnabled = true
 
@@ -35,7 +35,7 @@ var isEndianSwitchingEnabled = true
 # Map
 @onready var timerLabel = $CenterContainer3/HBoxContainer/TimerLabel
 var mapIndex = 0
-const WireHandler = preload("res://Wire.gd")
+const WireHandler = preload("res://Util/Wire.gd")
 @onready var wireHandler = WireHandler.WireHandler.new()
 
 # Current Game

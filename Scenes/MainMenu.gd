@@ -1,6 +1,6 @@
 extends MarginContainer
 
-const JSONHandler = preload("res://JSON.gd")
+const JSONHandler = preload("res://Util/JSON.gd")
 @onready var jsonHandler = JSONHandler.JSONHandler.new()
 
 @onready var selector_one = $CenterContainer/VBoxContainer/CenterContainer2/HBoxContainer2/VBoxContainer/Selector

@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var scoreLabel = $ColorRect/CenterContainer/VBoxContainer/Label
-const JSONHandler = preload("res://JSON.gd")
+const JSONHandler = preload("res://Util/JSON.gd")
 @onready var jsonHandler = JSONHandler.JSONHandler.new()
 @onready var backButton := $ColorRect/CenterContainer/buttonBackTexture/BackButon
 

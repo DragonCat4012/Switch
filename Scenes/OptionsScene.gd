@@ -1,6 +1,6 @@
 extends Node2D
 
-const JSONHandler = preload("res://JSON.gd")
+const JSONHandler = preload("res://Util/JSON.gd")
 @onready var jsonHandler = JSONHandler.JSONHandler.new()
 @onready var endianToggle = $CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/HBoxContainer
 var isEndianSwitchingEnabled = false
