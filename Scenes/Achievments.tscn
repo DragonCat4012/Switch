@@ -1,0 +1,188 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddgxj20xsro70"]
+
+[ext_resource type="Script" path="res://Scenes/Achievments.gd" id="1_0xukb"]
+[ext_resource type="FontFile" uid="uid://b2cswqm32sj5f" path="res://Ressources/Lex.ttf" id="1_d44rw"]
+
+[node name="Achievments" type="Node2D"]
+script = ExtResource("1_0xukb")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer"]
+clip_contents = false
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ScrollContainer"]
+custom_minimum_size = Vector2(1800, 2000)
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="TitleContainer" type="HBoxContainer" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/ScrollContainer/VBoxContainer/TitleContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Title" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/TitleContainer/CenterContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_d44rw")
+theme_override_font_sizes/font_size = 100
+text = "Achievements"
+
+[node name="Found128" type="CenterContainer" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/Found128"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_d44rw")
+theme_override_font_sizes/font_size = 50
+text = "?"
+
+[node name="ScoreOver50" type="CenterContainer" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/ScoreOver50"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_d44rw")
+theme_override_font_sizes/font_size = 50
+text = "?"
+
+[node name="ScoreOver100" type="CenterContainer" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/ScoreOver100"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_d44rw")
+theme_override_font_sizes/font_size = 50
+text = "?"
+
+[node name="ScoreOver1000" type="CenterContainer" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/ScoreOver1000"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_d44rw")
+theme_override_font_sizes/font_size = 50
+text = "?"
+
+[node name="CenterContainer6" type="CenterContainer" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/CenterContainer6"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_d44rw")
+theme_override_font_sizes/font_size = 50
+text = "?
+"
+
+[node name="CenterContainer7" type="CenterContainer" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/CenterContainer7"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_d44rw")
+theme_override_font_sizes/font_size = 50
+text = "?"
+
+[node name="CenterContainer8" type="CenterContainer" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/CenterContainer8"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_d44rw")
+theme_override_font_sizes/font_size = 50
+text = "?"
+
+[node name="CenterContainer9" type="CenterContainer" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/CenterContainer9"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_d44rw")
+theme_override_font_sizes/font_size = 50
+text = "?"
+
+[node name="CenterContainer10" type="CenterContainer" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/CenterContainer10"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_d44rw")
+theme_override_font_sizes/font_size = 50
+text = "?"
+
+[node name="CenterContainer11" type="CenterContainer" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/CenterContainer11"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_d44rw")
+theme_override_font_sizes/font_size = 50
+text = "?"
+
+[node name="CenterContainer12" type="CenterContainer" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/CenterContainer12"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_d44rw")
+theme_override_font_sizes/font_size = 50
+text = "?"
+
+[node name="CenterContainer13" type="CenterContainer" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/CenterContainer13"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_d44rw")
+theme_override_font_sizes/font_size = 50
+text = "?"
+
+[node name="CenterContainer14" type="CenterContainer" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/CenterContainer14"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_d44rw")
+theme_override_font_sizes/font_size = 50
+text = "?"
+
+[node name="CenterContainer15" type="CenterContainer" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/CenterContainer15"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_d44rw")
+theme_override_font_sizes/font_size = 50
+text = "?"
+
+[node name="CenterContainer16" type="CenterContainer" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/CenterContainer16"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_d44rw")
+theme_override_font_sizes/font_size = 50
+text = "?"
