@@ -1,6 +1,8 @@
 const File_name = "user://saves.json"
 
 class JSONHandler:
+	var achievementHandler;
+	
 	var currentData = {
 		"isEndianSwitchingEnabled": true,
 		"score": 0,
@@ -8,6 +10,9 @@ class JSONHandler:
 	}
 
 	func _init():
+		var AchievementsHandler = load("res://Util/AchievementHandler.gd")
+		achievementHandler = AchievementsHandler.AchievementsHandler.new()
+		
 		loadGame()
 		
 	func saveGame():
@@ -58,8 +63,18 @@ class JSONHandler:
 		currentData["score"] = score
 		if score > currentData["highScore"]:
 			currentData["highScore"] = score
+		if score > 50:
+			achievementHandler.add_scoreOver50()
+		if score > 100:
+			achievementHandler.add_scoreOver100()
+		if score > 1000:
+			achievementHandler.add_scoreOver1000()
 		saveGame()
 	
 	func updatEndian(status: bool):
 		currentData["isEndianSwitchingEnabled"] = status
 		saveGame()
+		
+# Add Achievements
+	func add128achievement():
+		achievementHandler.add_found128()

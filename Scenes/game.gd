@@ -151,6 +151,7 @@ func initNumber():
 		numberLabel.text = ">> 128 <<"
 		var red = Color(1.0,0.0,0.0,1.0)
 		numberLabel.set("theme_override_colors/font_color",red)
+		jsonHandler.add128achievement()
 	
 func updateCurrentNumber(_init = false):
 	var x = 0

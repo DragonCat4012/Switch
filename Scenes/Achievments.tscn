@@ -23,58 +23,58 @@ custom_minimum_size = Vector2(1800, 2000)
 layout_mode = 2
 theme_override_constants/separation = 40
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+[node name="TitleContainer" type="HBoxContainer" parent="MarginContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer"]
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/ScrollContainer/VBoxContainer/TitleContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Title" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer/CenterContainer"]
+[node name="Title" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/TitleContainer/CenterContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_d44rw")
 theme_override_font_sizes/font_size = 100
 text = "Achievements"
 
-[node name="CenterContainer2" type="CenterContainer" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+[node name="Found128" type="CenterContainer" parent="MarginContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/CenterContainer2"]
+[node name="Label" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/Found128"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_d44rw")
 theme_override_font_sizes/font_size = 50
-text = "alooha"
+text = "?"
 
-[node name="CenterContainer3" type="CenterContainer" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+[node name="ScoreOver50" type="CenterContainer" parent="MarginContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/CenterContainer3"]
+[node name="Label" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/ScoreOver50"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_d44rw")
 theme_override_font_sizes/font_size = 50
-text = "alooha"
+text = "?"
 
-[node name="CenterContainer4" type="CenterContainer" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+[node name="ScoreOver100" type="CenterContainer" parent="MarginContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/CenterContainer4"]
+[node name="Label" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/ScoreOver100"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_d44rw")
 theme_override_font_sizes/font_size = 50
-text = "alooha"
+text = "?"
 
-[node name="CenterContainer5" type="CenterContainer" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+[node name="ScoreOver1000" type="CenterContainer" parent="MarginContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/CenterContainer5"]
+[node name="Label" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/ScoreOver1000"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_d44rw")
 theme_override_font_sizes/font_size = 50
-text = "alooha"
+text = "?"
 
 [node name="CenterContainer6" type="CenterContainer" parent="MarginContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
@@ -84,7 +84,8 @@ size_flags_horizontal = 3
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_d44rw")
 theme_override_font_sizes/font_size = 50
-text = "alooha"
+text = "?
+"
 
 [node name="CenterContainer7" type="CenterContainer" parent="MarginContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
@@ -94,7 +95,7 @@ size_flags_horizontal = 3
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_d44rw")
 theme_override_font_sizes/font_size = 50
-text = "alooha"
+text = "?"
 
 [node name="CenterContainer8" type="CenterContainer" parent="MarginContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
@@ -104,7 +105,7 @@ size_flags_horizontal = 3
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_d44rw")
 theme_override_font_sizes/font_size = 50
-text = "alooha"
+text = "?"
 
 [node name="CenterContainer9" type="CenterContainer" parent="MarginContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
@@ -114,7 +115,7 @@ size_flags_horizontal = 3
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_d44rw")
 theme_override_font_sizes/font_size = 50
-text = "alooha"
+text = "?"
 
 [node name="CenterContainer10" type="CenterContainer" parent="MarginContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
@@ -124,7 +125,7 @@ size_flags_horizontal = 3
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_d44rw")
 theme_override_font_sizes/font_size = 50
-text = "alooha"
+text = "?"
 
 [node name="CenterContainer11" type="CenterContainer" parent="MarginContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
@@ -134,7 +135,7 @@ size_flags_horizontal = 3
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_d44rw")
 theme_override_font_sizes/font_size = 50
-text = "alooha"
+text = "?"
 
 [node name="CenterContainer12" type="CenterContainer" parent="MarginContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
@@ -144,7 +145,7 @@ size_flags_horizontal = 3
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_d44rw")
 theme_override_font_sizes/font_size = 50
-text = "alooha"
+text = "?"
 
 [node name="CenterContainer13" type="CenterContainer" parent="MarginContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
@@ -154,7 +155,7 @@ size_flags_horizontal = 3
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_d44rw")
 theme_override_font_sizes/font_size = 50
-text = "alooha"
+text = "?"
 
 [node name="CenterContainer14" type="CenterContainer" parent="MarginContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
@@ -164,7 +165,7 @@ size_flags_horizontal = 3
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_d44rw")
 theme_override_font_sizes/font_size = 50
-text = "alooha"
+text = "?"
 
 [node name="CenterContainer15" type="CenterContainer" parent="MarginContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
@@ -174,7 +175,7 @@ size_flags_horizontal = 3
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_d44rw")
 theme_override_font_sizes/font_size = 50
-text = "alooha"
+text = "?"
 
 [node name="CenterContainer16" type="CenterContainer" parent="MarginContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
@@ -184,4 +185,4 @@ size_flags_horizontal = 3
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_d44rw")
 theme_override_font_sizes/font_size = 50
-text = "Eeee"
+text = "?"
