@@ -7,8 +7,10 @@ const JSONHandler = preload("res://JSON.gd")
 @onready var selector_two = $CenterContainer/VBoxContainer/CenterContainer2/HBoxContainer2/VBoxContainer/Selector2
 @onready var selector_three = $CenterContainer/VBoxContainer/CenterContainer2/HBoxContainer2/VBoxContainer/Selector3
 @onready var selector_four =$CenterContainer/VBoxContainer/CenterContainer2/HBoxContainer2/VBoxContainer/Selector4
+@onready var selector_five =$CenterContainer/VBoxContainer/CenterContainer2/HBoxContainer2/VBoxContainer/Selector5
 
-@onready var labelStart = $CenterContainer/VBoxContainer/CenterContainer2/HBoxContainer2/VBoxContainer2/LabelStart
+@onready var labelStart := $CenterContainer/VBoxContainer/CenterContainer2/HBoxContainer2/VBoxContainer2/LabelStart
+@onready var labelAchievemnts := $CenterContainer/VBoxContainer/CenterContainer2/HBoxContainer2/VBoxContainer2/AchievLabel
 @onready var labelTutorial := $CenterContainer/VBoxContainer/CenterContainer2/HBoxContainer2/VBoxContainer2/TutorialLabel
 @onready var labelOptions := $CenterContainer/VBoxContainer/CenterContainer2/HBoxContainer2/VBoxContainer2/LabelOptions
 @onready var labelExit := $CenterContainer/VBoxContainer/CenterContainer2/HBoxContainer2/VBoxContainer2/LabelExit
@@ -29,14 +31,16 @@ func _ready():
 func _input(event): # Handle Touch Inut
 	var newSelection = -1
 	if event is InputEventScreenTouch:
-		if labelTutorial.get_global_rect().has_point(get_global_mouse_position()):
-			newSelection = 1
-		elif labelStart.get_global_rect().has_point(get_global_mouse_position()):
+		if labelStart.get_global_rect().has_point(get_global_mouse_position()):
 			newSelection = 0
-		elif labelOptions.get_global_rect().has_point(get_global_mouse_position()):
+		elif labelAchievemnts.get_global_rect().has_point(get_global_mouse_position()):
+			newSelection = 1
+		elif labelTutorial.get_global_rect().has_point(get_global_mouse_position()):
 			newSelection = 2
-		elif labelExit.get_global_rect().has_point(get_global_mouse_position()):
+		elif labelOptions.get_global_rect().has_point(get_global_mouse_position()):
 			newSelection = 3
+		elif labelExit.get_global_rect().has_point(get_global_mouse_position()):
+			newSelection = 4
 		else:
 			return
 		
@@ -61,17 +65,19 @@ func _process(delta):
 func handle_selection(_current_selection):
 	if _current_selection == 0: #start option
 		get_tree().change_scene_to_file("res://Scenes/game.tscn")
-	elif _current_selection == 1: # Tuorial
+	elif _current_selection == 1: # Achievments
+		get_tree().change_scene_to_file("res://Scenes/Achievments.tscn")
+	elif _current_selection == 2: # Tutorial
 		get_tree().change_scene_to_file("res://Scenes/Tutorial.tscn")
-	elif _current_selection == 2: # Options
+	elif _current_selection == 3: # Options
 		get_tree().change_scene_to_file("res://Scenes/OptionsScene.tscn")
-	elif _current_selection == 3: # Exit
+	elif _current_selection == 4: # Exit
 		get_tree().quit()
 	
 func set_current_selection():
 	if currentSelection < 0:
-		currentSelection = 3
-	if currentSelection > 3:
+		currentSelection = 4
+	if currentSelection > 4:
 		currentSelection = 0
 		
 	if currentSelection != lastSelection:
@@ -82,6 +88,7 @@ func set_current_selection():
 	selector_two.text = ""
 	selector_three.text = ""
 	selector_four.text = ""
+	selector_five.text = ""
 		
 	if currentSelection == 0 :
 		selector_one.text = ">"
@@ -91,5 +98,7 @@ func set_current_selection():
 		selector_three.text=">"
 	elif currentSelection == 3:
 		selector_four.text=">"
+	elif currentSelection == 4:
+		selector_five.text=">"
 		
 	lastSelection = currentSelection
