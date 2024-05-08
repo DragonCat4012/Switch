@@ -8,6 +8,10 @@ const AchievementsHandler = preload("res://Util/AchievementHandler.gd")
 @onready var a3 = $MarginContainer/ScrollContainer/VBoxContainer/ScoreOver100/Label
 @onready var a4 = $MarginContainer/ScrollContainer/VBoxContainer/ScoreOver1000/Label
 @onready var a5 = $MarginContainer/ScrollContainer/VBoxContainer/AllLightsOn/Label
+@onready var a6 = $MarginContainer/ScrollContainer/VBoxContainer/Win10Times/Label
+@onready var a7 = $MarginContainer/ScrollContainer/VBoxContainer/Win100Times/Label
+@onready var a8 = $MarginContainer/ScrollContainer/VBoxContainer/Loose10Times/Label
+@onready var a9 = $MarginContainer/ScrollContainer/VBoxContainer/Loose100Times/Label
 
 func _ready():
 	_setLabels()
@@ -27,3 +31,12 @@ func _setLabels():
 		a4.text = "Achieve a score over 1000"
 	if achievementHandler.allLightsOn:
 		a5.text = "Let there be light - turn on all lamps"
+		
+	if achievementHandler.allLightsOn:
+		a6.text = "Solve 10 Maps"
+	if achievementHandler.scoreOver1000:
+		a7.text = "Solve 100 Maps"
+	if achievementHandler.allLightsOn:
+		a8.text = "Loose 10 Times"
+	if achievementHandler.allLightsOn:
+		a9.text = "Loose 100 Times"

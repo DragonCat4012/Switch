@@ -97,41 +97,41 @@ theme_override_fonts/font = ExtResource("1_d44rw")
 theme_override_font_sizes/font_size = 50
 text = "?"
 
-[node name="CenterContainer8" type="CenterContainer" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+[node name="Win10Times" type="CenterContainer" parent="MarginContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/CenterContainer8"]
+[node name="Label" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/Win10Times"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_d44rw")
 theme_override_font_sizes/font_size = 50
 text = "?"
 
-[node name="CenterContainer9" type="CenterContainer" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+[node name="win100Times" type="CenterContainer" parent="MarginContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/CenterContainer9"]
+[node name="Label" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/win100Times"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_d44rw")
 theme_override_font_sizes/font_size = 50
 text = "?"
 
-[node name="CenterContainer10" type="CenterContainer" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+[node name="Loose10Times" type="CenterContainer" parent="MarginContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/CenterContainer10"]
+[node name="Label" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/Loose10Times"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_d44rw")
 theme_override_font_sizes/font_size = 50
 text = "?"
 
-[node name="CenterContainer11" type="CenterContainer" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+[node name="Loose100Times" type="CenterContainer" parent="MarginContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/CenterContainer11"]
+[node name="Label" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/Loose100Times"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_d44rw")
 theme_override_font_sizes/font_size = 50
