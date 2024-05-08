@@ -78,3 +78,6 @@ class JSONHandler:
 # Add Achievements
 	func add128achievement():
 		achievementHandler.add_found128()
+		
+	func addAllLightsOn():
+		achievementHandler.add_allLightsOn()

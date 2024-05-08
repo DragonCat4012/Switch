@@ -187,6 +187,8 @@ func updateCurrentNumber(_init = false):
 			x += 64
 	currentNumber = x
 	numberPreviewLabel.text = str(currentNumber)
+	if x == 127:
+		jsonHandler.addAllLightsOn()
 
 	
 	if x == goalNumber and _init: # prevent instant success qwq

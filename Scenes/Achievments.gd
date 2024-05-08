@@ -7,6 +7,7 @@ const AchievementsHandler = preload("res://Util/AchievementHandler.gd")
 @onready var a2 = $MarginContainer/ScrollContainer/VBoxContainer/ScoreOver50/Label
 @onready var a3 = $MarginContainer/ScrollContainer/VBoxContainer/ScoreOver100/Label
 @onready var a4 = $MarginContainer/ScrollContainer/VBoxContainer/ScoreOver1000/Label
+@onready var a5 = $MarginContainer/ScrollContainer/VBoxContainer/AllLightsOn/Label
 
 func _ready():
 	_setLabels()
@@ -24,3 +25,5 @@ func _setLabels():
 		a3.text = "Achieve a score over 100"
 	if achievementHandler.scoreOver1000:
 		a4.text = "Achieve a score over 1000"
+	if achievementHandler.allLightsOn:
+		a5.text = "Let there be light - turn on all lamps"
