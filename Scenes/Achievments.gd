@@ -13,6 +13,8 @@ const AchievementsHandler = preload("res://Util/AchievementHandler.gd")
 @onready var a8 = $MarginContainer/ScrollContainer/VBoxContainer/Loose10Times/Label
 @onready var a9 = $MarginContainer/ScrollContainer/VBoxContainer/Loose100Times/Label
 
+@onready var backButton = $buttonBackTexture/BackButon
+
 func _ready():
 	_setLabels()
 	
@@ -20,23 +22,43 @@ func _process(delta):
 	if Input.is_action_just_pressed("ui_cancel"):
 		get_tree().change_scene_to_file("res://Scenes/menu.tscn") 
 
+func _input(event): # Handle Touch Inut
+	var globalRect = backButton.get_global_rect()
+	if globalRect.has_point(get_global_mouse_position()) and event is InputEventScreenTouch:
+		get_tree().change_scene_to_file("res://Scenes/menu.tscn") 
+		
 func _setLabels():
+	var labels = [a1,a2,a3,a4,a5,a6,a7,a8,a9]
+	var white = Color(1.0,1.0,1.0,1.0)
+	var gray = Color(1.0,1.0,1.0,0.3)
+	for l in labels:
+		l.set("theme_override_colors/font_color", gray)
+	
 	if achievementHandler.found128:
 		a1.text = "Find the hidden number"
+		a1.set("theme_override_colors/font_color", white)
 	if achievementHandler.scoreOver50:
 		a2.text = "Achieve a score over 50"
+		a2.set("theme_override_colors/font_color", white)
 	if achievementHandler.scoreOver100:
 		a3.text = "Achieve a score over 100"
+		a3.set("theme_override_colors/font_color", white)
 	if achievementHandler.scoreOver1000:
 		a4.text = "Achieve a score over 1000"
+		a4.set("theme_override_colors/font_color", white)
 	if achievementHandler.allLightsOn:
 		a5.text = "Let there be light - turn on all lamps"
+		a5.set("theme_override_colors/font_color", white)
 		
-	if achievementHandler.add_won10Games():
+	if achievementHandler.won10:
 		a6.text = "Solve 10 Maps"
-	if achievementHandler.add_won100Games:
+		a6.set("theme_override_colors/font_color", white)
+	if achievementHandler.won100:
 		a7.text = "Solve 100 Maps"
+		a7.set("theme_override_colors/font_color", white)
 	if achievementHandler.lost10:
 		a8.text = "Loose 10 Times"
+		a8.set("theme_override_colors/font_color", white)
 	if achievementHandler.lost100:
 		a9.text = "Loose 100 Times"
+		a9.set("theme_override_colors/font_color", white)

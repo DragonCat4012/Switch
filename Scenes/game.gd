@@ -25,34 +25,29 @@ var isEndianSwitchingEnabled = true
 
 @onready var numberLabel = $CenterContainer/VBoxContainer/NumberLabel
 @onready var numberPreviewLabel = $CenterContainer/VBoxContainer/NumberPreview
-@onready var scoreLabel = $CenterContainer2/ScoreLabel
-@onready var mapLabel = $CenterContainer3/HBoxContainer/MapLabel
+@onready var scoreLabel = $CenterContainer3/VBoxContainer/ScoreLabel
 @onready var backButton = $buttonBackTexture/BackButon
 
 # Audio
 @onready var audioPlayer = $"AudioStreamPlayer"
 
 # Map
-@onready var timerLabel = $CenterContainer3/HBoxContainer/TimerLabel
-var mapIndex = 0
+var mapping_dict = {} # key=switch, value=lamp
+@onready var timerLabel = $CenterContainer3/VBoxContainer/TimerLabel
 const WireHandler = preload("res://Util/Wire.gd")
 @onready var wireHandler = WireHandler.WireHandler.new()
 
 # Current Game
+var score = 0
 var currentNumber = 0
 var goalNumber = -1
 var smallEndian = false
 
-# General
-var timerLeft = 0
-var score = 0
-
 # Timer
+var timerLeft = 0
 var timerTime = 50
 var timerIteration = 0
 var timer = Timer.new()
-
-var mapping_dict = {} # key=switch, value=lamp
 
 func _ready():
 	jsonHandler.loadGame()
@@ -89,7 +84,6 @@ func _input(event): # Handle Touch Inut
 
 func _init_game():
 	queue_redraw()
-	mapLabel.text = "["+str(mapIndex)+"]"
 	
 	lamp1.reset()
 	lamp2.reset()
