@@ -68,6 +68,7 @@ func _ready():
 func _on_timer_timeout():
 	timer.stop()
 	jsonHandler.saveScore(score)
+	jsonHandler.saveLostMap()
 	get_tree().change_scene_to_file("res://Scenes/GameOver.tscn")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -195,6 +196,8 @@ func updateCurrentNumber(_init = false):
 		lamp1.toggleStatus()
 	elif x == goalNumber:
 		score += int(timer.time_left)
+		jsonHandler.saveWonMap()
+		
 		timerIteration += 1
 		if timerIteration == 40:
 			timerTime -= 10

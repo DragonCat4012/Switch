@@ -6,7 +6,11 @@ class AchievementsHandler:
 		"scoreOver50": false,
 		"scoreOver100": false,
 		"scoreOver1000": false,
-		"allLightsOn": false
+		"allLightsOn": false,
+		"won10": false,
+		"won100": false,
+		"lost10": false,
+		"lost100": false
 	}
 
 	func _init():
@@ -53,6 +57,23 @@ class AchievementsHandler:
 	var allLightsOn: bool:
 		get: 
 			return stats["allLightsOn"]
+			
+	var won10: bool:
+		get:
+			return stats["won10"]
+			
+	var won100: bool:
+		get:
+			return stats["won100"]
+			
+	var lost10: bool:
+		get:
+			return stats["lost10"]
+			
+	var lost100: bool:
+		get: 
+			return stats["lost100"]
+			
 	# Update properties
 	func add_found128():
 		_updateKey("found128")
@@ -68,6 +89,18 @@ class AchievementsHandler:
 		
 	func add_allLightsOn():
 		_updateKey("allLightsOn")
+	
+	func add_won10Games():
+		_updateKey("won10")
+		
+	func add_won100Games():
+		_updateKey("won100")
+		
+	func add_lost10Games():
+		_updateKey("lost10")
+		
+	func add_lost100Games():
+		_updateKey("lost100")
 		
 	func _updateKey(key: String, value: bool = true):
 		if stats[key] == true:

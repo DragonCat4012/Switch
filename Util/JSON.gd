@@ -6,7 +6,9 @@ class JSONHandler:
 	var currentData = {
 		"isEndianSwitchingEnabled": true,
 		"score": 0,
-		"highScore": 0
+		"highScore": 0,
+		"mapsWon": 0,
+		"mapsLost": 0
 	}
 
 	func _init():
@@ -16,17 +18,12 @@ class JSONHandler:
 		loadGame()
 		
 	func saveGame():
-		var saveDict = {
-			"isEndianSwitchingEnabled": true,
-			"score": 0,
-			"highScore": 0
-		}
+		var saveDict = {}
 		var file = FileAccess.open(File_name, FileAccess.WRITE)
 		
-		saveDict["isEndianSwitchingEnabled"] = currentData["isEndianSwitchingEnabled"]
-		saveDict["score"] = currentData["score"]
-		saveDict["highScore"] = currentData["highScore"]
-		
+		for key in currentData.keys():
+			saveDict[key] = currentData[key]
+
 		print("save")
 		print(saveDict)
 		
@@ -35,15 +32,17 @@ class JSONHandler:
 	
 	func loadGame():
 		if FileAccess.file_exists((File_name)):
-			print("Load File Save")
+		
 			var file = FileAccess.open(File_name, FileAccess.READ)
 			var dict = JSON.parse_string(file.get_as_text())
+			print("Load File Save")
 			print(dict)
-			currentData["isEndianSwitchingEnabled"] = dict["isEndianSwitchingEnabled"]
-			currentData["score"] = dict["score"]
-			currentData["highScore"] = dict["highScore"]
+			
+			for key in currentData.keys():
+				if key in dict.keys():
+					currentData[key] = dict[key]
 		else:
-			print("File doesnt exist")
+			print("Save File doesnt exist")
 
 	# Getter
 	var endian: bool:
@@ -69,6 +68,23 @@ class JSONHandler:
 			achievementHandler.add_scoreOver100()
 		if score > 1000:
 			achievementHandler.add_scoreOver1000()
+	
+		saveGame()
+	
+	func saveWonMap():
+		currentData["mapsWon"] = currentData["mapsWon"] + 1
+		if currentData["mapsWon"] > 100:
+			achievementHandler.add_won100Games()
+		elif currentData["mapsWon"] > 10:
+			achievementHandler.add_won10Games()
+		saveGame()
+		
+	func saveLostMap():
+		currentData["mapsLost"] = currentData["mapsLost"] + 1
+		if currentData["mapsLost"] > 100:
+			achievementHandler.add_lost100Games()
+		elif currentData["mapsLost"] > 10:
+			achievementHandler.add_lost10Games()
 		saveGame()
 	
 	func updatEndian(status: bool):

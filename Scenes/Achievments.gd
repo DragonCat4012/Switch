@@ -32,11 +32,11 @@ func _setLabels():
 	if achievementHandler.allLightsOn:
 		a5.text = "Let there be light - turn on all lamps"
 		
-	if achievementHandler.allLightsOn:
+	if achievementHandler.add_won10Games():
 		a6.text = "Solve 10 Maps"
-	if achievementHandler.scoreOver1000:
+	if achievementHandler.add_won100Games:
 		a7.text = "Solve 100 Maps"
-	if achievementHandler.allLightsOn:
+	if achievementHandler.lost10:
 		a8.text = "Loose 10 Times"
-	if achievementHandler.allLightsOn:
+	if achievementHandler.lost100:
 		a9.text = "Loose 100 Times"
