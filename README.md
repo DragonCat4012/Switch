@@ -32,6 +32,9 @@ ArrowK Keys Left/Right & Sapcebar/Enter: naviagte in Tutorial
 | Android |  WIP  | :heavy_check_mark:| :x:
 | Windows      |  WIP | :heavy_check_mark:| :x:
 
+### Compiling for iOS
+> **_NOTE:_**  Pls edit the build version in the project file to not be the same as the version number
+
 ## Development
 ### Map Generation
 #### Pairing Lamps and Switches
