@@ -11,9 +11,13 @@ With each iteration your time becomes less :3 yay :3 Every ten seconds the time 
 
 ### Controls Desktop Version
 ESC - naviagte Back to menu
+
 Arrow Keys Up/Down: Navigate Main Menu
+
 Enter/Sapcebar: Confirm selection in main menu
+
 ArrowK Keys Left/Right & Sapcebar/Enter: naviagte in Tutorial
+
 
 ## Game Loop
 * The game generates a random decimal number like 42
