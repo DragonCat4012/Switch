@@ -23,12 +23,12 @@ var isEndianSwitchingEnabled = true
 
 @onready var numberLabel = $CenterContainer/VBoxContainer/NumberLabel
 @onready var numberPreviewLabel = $CenterContainer/VBoxContainer/NumberPreview
-@onready var scoreLabel = $CenterContainer3/VBoxContainer/ScoreLabel
+@onready var scoreLabel = $VBoxContainer/ScoreLabel
 @onready var backButton = $buttonBackTexture/BackButon
 
 # Map
 var mapping_dict = {} # key=switch, value=lamp
-@onready var timerLabel = $CenterContainer3/VBoxContainer/TimerLabel
+@onready var timerLabel = $VBoxContainer/TimerLabel
 const WireHandler = preload("res://Util/Wire.gd")
 @onready var wireHandler = WireHandler.WireHandler.new()
 

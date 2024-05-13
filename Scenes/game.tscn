@@ -64,6 +64,7 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 
 [node name="Map_deco" type="Sprite2D" parent="MarginContainer"]
+visible = false
 position = Vector2(960, 540)
 texture = ExtResource("4_tswrj")
 
@@ -204,27 +205,23 @@ theme_override_fonts/font = ExtResource("2_q8ujg")
 theme_override_font_sizes/font_size = 80
 text = "<"
 
-[node name="CenterContainer3" type="CenterContainer" parent="."]
-offset_left = 1404.0
-offset_top = 81.0
-offset_right = 1604.0
-offset_bottom = 121.0
-scale = Vector2(2.56, 2.68)
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 1554.0
+offset_top = 83.0
+offset_right = 1854.0
+offset_bottom = 233.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer3"]
-layout_mode = 2
-
-[node name="TimerLabel" type="Label" parent="CenterContainer3/VBoxContainer"]
+[node name="TimerLabel" type="Label" parent="VBoxContainer"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_q8ujg")
+theme_override_font_sizes/font_size = 50
 text = "uwu"
 
-[node name="ScoreLabel" type="Label" parent="CenterContainer3/VBoxContainer"]
+[node name="ScoreLabel" type="Label" parent="VBoxContainer"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
-size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("2_q8ujg")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 60
 text = "OwO
 "

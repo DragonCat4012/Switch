@@ -1,14 +1,12 @@
 extends Node2D
 
 @onready var scoreLabel = $ColorRect/CenterContainer/VBoxContainer/Label
-const JSONHandler = preload("res://Util/JSON.gd")
-@onready var jsonHandler = JSONHandler.JSONHandler.new()
 @onready var backButton := $ColorRect/CenterContainer/buttonBackTexture/BackButon
 
 func _ready():
 	scoreLabel.text = "Your Score: 0"
-	jsonHandler.loadGame()
-	scoreLabel.text = "Your Score: " + str(jsonHandler.score)
+	GameManager.jsonHandler.loadGame()
+	scoreLabel.text = "Your Score: " + str(GameManager.jsonHandler.score)
 
 func _process(delta):
 	if Input.is_action_just_pressed("ui_cancel") or  Input.is_action_just_pressed("ui_accept"):
