@@ -11,9 +11,13 @@ With each iteration your time becomes less :3 yay :3 Every ten seconds the time 
 
 ### Controls Desktop Version
 ESC - naviagte Back to menu
+
 Arrow Keys Up/Down: Navigate Main Menu
+
 Enter/Sapcebar: Confirm selection in main menu
+
 ArrowK Keys Left/Right & Sapcebar/Enter: naviagte in Tutorial
+
 
 ## Game Loop
 * The game generates a random decimal number like 42
@@ -28,9 +32,9 @@ ArrowK Keys Left/Right & Sapcebar/Enter: naviagte in Tutorial
 | Plattform         | Status | Supported | Tested |
 |--------------|:-----:| :----: | :----: |
 | iOS | Testflight | :heavy_check_mark: | :heavy_check_mark:
-| MacOS      |  WIP | :x:| :x:
-| Android |  WIP  | :heavy_check_mark:| :x:
-| Windows      |  WIP | :heavy_check_mark:| :x:
+| MacOS      |  Testflight | :heavy_check_mark:| :x:
+| Android |  WIP  | :heavy_check_mark: | :x:
+| Windows      |  WIP | :heavy_check_mark:| :heavy_check_mark:
 
 ### Compiling for iOS
 > **_NOTE:_**  Pls edit the build version in the project file to not be the same as the version number
@@ -43,13 +47,13 @@ Each lamp becomes a random switch assigned, one random lamps becomes a second ra
 <img src="https://kiarar.moe/images/Switch/map2.png" height= 250>
 
 #### Drawing Wires
-p0': Position of the lamp lx
-p0: Position of the lamp + padding pad1 (since we dont want the line to start in the middle of the lamp but rather bvelow the lamp)
-p1: p0 extended on the y-axis to the assigned level fx
+* p0': Position of the lamp lx
+* p0: Position of the lamp + padding pad1 (since we dont want the line to start in the middle of the lamp but rather bvelow the lamp)
+* p1: p0 extended on the y-axis to the assigned level fx
 
-p3': Center Position of the Switch sx
-p3: Postion of sx with padding pad2
-p2: p3 extended on the y-axis to the assigned level fx
+* p3': Center Position of the Switch sx
+* p3: Postion of sx with padding pad2
+* p2: p3 extended on the y-axis to the assigned level fx
 
 <img src="https://kiarar.moe/images/Switch/map1.png" height= 300>
 
