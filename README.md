@@ -64,6 +64,8 @@ Each lamp becomes a random switch assigned, one random lamps becomes a second ra
 * Gdoot 4.2.2
 
 ## Asset Sources
-[Sound](https://pixabay.com/sound-effects/electric-zap-001-6374/)
+[Ping Sound](https://pixabay.com/sound-effects/ping-82822/)
+
+[Background Sound](https://pixabay.com/sound-effects/daylight-14872/)
 
 [Font](http://www.pentacom.jp/pentacom/bitfontmaker2/gallery/?id=646)
