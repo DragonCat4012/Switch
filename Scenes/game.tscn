@@ -43,21 +43,21 @@ layout_mode = 2
 [node name="NumberLabel" type="Label" parent="CenterContainer/VBoxContainer"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
-size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("2_q8ujg")
 theme_override_font_sizes/font_size = 90
 text = "OwO
 "
+horizontal_alignment = 1
 
 [node name="NumberPreview" type="Label" parent="CenterContainer/VBoxContainer"]
 custom_minimum_size = Vector2(100, 80)
 layout_mode = 2
-size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0.564962, 0.564962, 0.564962, 1)
 theme_override_fonts/font = ExtResource("2_q8ujg")
 theme_override_font_sizes/font_size = 60
 text = "OwO
 "
+horizontal_alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 offset_right = 1920.0
