@@ -1,8 +1,6 @@
 extends Node2D
 
 # Settings
-const JSONHandler = preload("res://Util/JSON.gd")
-@onready var jsonHandler = JSONHandler.JSONHandler.new()
 var isEndianSwitchingEnabled = true
 
 # Nodes
@@ -28,9 +26,6 @@ var isEndianSwitchingEnabled = true
 @onready var scoreLabel = $CenterContainer3/VBoxContainer/ScoreLabel
 @onready var backButton = $buttonBackTexture/BackButon
 
-# Audio
-@onready var audioPlayer = $"AudioStreamPlayer"
-
 # Map
 var mapping_dict = {} # key=switch, value=lamp
 @onready var timerLabel = $CenterContainer3/VBoxContainer/TimerLabel
@@ -50,8 +45,9 @@ var timerIteration = 0
 var timer = Timer.new()
 
 func _ready():
-	jsonHandler.loadGame()
-	isEndianSwitchingEnabled = jsonHandler.endian
+	AudioManager.play_music_background()
+	GameManager.jsonHandler.loadGame()
+	isEndianSwitchingEnabled = GameManager.jsonHandler.endian
 	scoreLabel.text = "Score: 0"
 	
 	add_child(timer)
@@ -62,8 +58,8 @@ func _ready():
 	
 func _on_timer_timeout():
 	timer.stop()
-	jsonHandler.saveScore(score)
-	jsonHandler.saveLostMap()
+	GameManager.jsonHandler.saveScore(score)
+	GameManager.jsonHandler.saveLostMap()
 	get_tree().change_scene_to_file("res://Scenes/GameOver.tscn")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -79,7 +75,7 @@ func _process(delta):
 func _input(event): # Handle Touch Inut
 	var globalRect = backButton.get_global_rect()
 	if globalRect.has_point(get_global_mouse_position()) and event is InputEventScreenTouch:
-		jsonHandler.saveScore(score)
+		GameManager.jsonHandler.saveScore(score)
 		get_tree().change_scene_to_file("res://Scenes/menu.tscn") 
 
 func _init_game():
@@ -116,8 +112,7 @@ func updateEndian():
 	updateCurrentNumber()
 		
 func switch_activated(_switch_number, _isOn):
-	if not audioPlayer.playing:
-			audioPlayer.play()
+	AudioManager.playZap()
 	toggleLamp(mapping_dict[_switch_number])
 	
 func toggleLamp(_lampID):
@@ -146,7 +141,7 @@ func initNumber():
 		numberLabel.text = ">> 128 <<"
 		var red = Color(1.0,0.0,0.0,1.0)
 		numberLabel.set("theme_override_colors/font_color",red)
-		jsonHandler.add128achievement()
+		GameManager.jsonHandler.add128achievement()
 	
 func updateCurrentNumber(_init = false):
 	var x = 0
@@ -183,14 +178,14 @@ func updateCurrentNumber(_init = false):
 	currentNumber = x
 	numberPreviewLabel.text = str(currentNumber)
 	if x == 127:
-		jsonHandler.addAllLightsOn()
+		GameManager.jsonHandler.addAllLightsOn()
 
 	
 	if x == goalNumber and _init: # prevent instant success qwq
 		lamp1.toggleStatus()
 	elif x == goalNumber:
 		score += int(timer.time_left)
-		jsonHandler.saveWonMap()
+		GameManager.jsonHandler.saveWonMap()
 		
 		timerIteration += 1
 		if timerIteration == 40:

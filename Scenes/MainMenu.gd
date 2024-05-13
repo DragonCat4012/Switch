@@ -1,8 +1,5 @@
 extends MarginContainer
 
-const JSONHandler = preload("res://Util/JSON.gd")
-@onready var jsonHandler = JSONHandler.JSONHandler.new()
-
 @onready var selector_one = $CenterContainer/VBoxContainer/CenterContainer2/HBoxContainer2/VBoxContainer/Selector
 @onready var selector_two = $CenterContainer/VBoxContainer/CenterContainer2/HBoxContainer2/VBoxContainer/Selector2
 @onready var selector_three = $CenterContainer/VBoxContainer/CenterContainer2/HBoxContainer2/VBoxContainer/Selector3
@@ -21,9 +18,9 @@ var currentSelection = 0
 var lastSelection = 0
 
 func _ready():
-	jsonHandler.loadGame()
-	if jsonHandler.highScore > 0:
-		labelHighScore.text = "Highscore: " + str(jsonHandler.highScore)
+	GameManager.jsonHandler.loadGame()
+	if GameManager.jsonHandler.highScore > 0:
+		labelHighScore.text = "Highscore: " + str(GameManager.jsonHandler.highScore)
 	else:
 		labelHighScore.text = ""
 	set_current_selection()
@@ -81,8 +78,7 @@ func set_current_selection():
 		currentSelection = 0
 		
 	if currentSelection != lastSelection:
-		if not $"../AudioStreamPlayer".playing:
-			$"../AudioStreamPlayer".play()
+		AudioManager.playZap()
 		
 	selector_one.text = ""
 	selector_two.text = ""
