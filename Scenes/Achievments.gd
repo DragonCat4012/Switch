@@ -35,19 +35,19 @@ func _setLabels():
 		l.set("theme_override_colors/font_color", gray)
 	
 	if achievementHandler.found128:
-		a1.text = "Find the hidden number"
+		a1.text = "Find the hidden number - 128"
 		a1.set("theme_override_colors/font_color", white)
 	if achievementHandler.scoreOver50:
 		a2.text = "Achieve a score over 50"
 		a2.set("theme_override_colors/font_color", white)
 	if achievementHandler.scoreOver100:
-		a3.text = "Achieve a score over 100"
+		a3.text = "Achieve a Score over 100"
 		a3.set("theme_override_colors/font_color", white)
 	if achievementHandler.scoreOver1000:
-		a4.text = "Achieve a score over 1000"
+		a4.text = "Achieve a Score over 1000"
 		a4.set("theme_override_colors/font_color", white)
 	if achievementHandler.allLightsOn:
-		a5.text = "Let there be light - turn on all lamps"
+		a5.text = "Let there be Light - turn on all Lamps"
 		a5.set("theme_override_colors/font_color", white)
 		
 	if achievementHandler.won10:
@@ -60,5 +60,5 @@ func _setLabels():
 		a8.text = "Loose 10 Times"
 		a8.set("theme_override_colors/font_color", white)
 	if achievementHandler.lost100:
-		a9.text = "Loose 100 Times"
+		a9.text = "Skill Issue - Loose 100 Times"
 		a9.set("theme_override_colors/font_color", white)
