@@ -59,7 +59,181 @@ text = "OwO
 "
 horizontal_alignment = 1
 
+[node name="Lamp_1" type="TextureRect" parent="."]
+offset_left = 153.0
+offset_top = 296.0
+offset_right = 1343.0
+offset_bottom = 1486.0
+scale = Vector2(0.0910947, 0.0910947)
+texture = ExtResource("5_4jnr2")
+expand_mode = 2
+script = ExtResource("6_ampmk")
+metadata/ID = 1
+
+[node name="Lamp_2" type="TextureRect" parent="."]
+offset_left = 389.0
+offset_top = 296.0
+offset_right = 1579.0
+offset_bottom = 1486.0
+scale = Vector2(0.0910947, 0.0910947)
+texture = ExtResource("5_4jnr2")
+expand_mode = 2
+script = ExtResource("6_ampmk")
+metadata/ID = 2
+
+[node name="Lamp_3" type="TextureRect" parent="."]
+offset_left = 618.0
+offset_top = 296.0
+offset_right = 1808.0
+offset_bottom = 1486.0
+scale = Vector2(0.0910947, 0.0910947)
+texture = ExtResource("5_4jnr2")
+expand_mode = 2
+script = ExtResource("6_ampmk")
+metadata/ID = 3
+
+[node name="Lamp_4" type="TextureRect" parent="."]
+offset_left = 874.0
+offset_top = 296.0
+offset_right = 2064.0
+offset_bottom = 1486.0
+scale = Vector2(0.0910947, 0.0910947)
+texture = ExtResource("5_4jnr2")
+expand_mode = 2
+script = ExtResource("6_ampmk")
+metadata/ID = 4
+
+[node name="Lamp_5" type="TextureRect" parent="."]
+offset_left = 1126.0
+offset_top = 296.0
+offset_right = 2316.0
+offset_bottom = 1486.0
+scale = Vector2(0.0910947, 0.0910947)
+texture = ExtResource("5_4jnr2")
+expand_mode = 2
+script = ExtResource("6_ampmk")
+metadata/ID = 5
+
+[node name="Lamp_6" type="TextureRect" parent="."]
+offset_left = 1353.0
+offset_top = 296.0
+offset_right = 2543.0
+offset_bottom = 1486.0
+scale = Vector2(0.0910947, 0.0910947)
+texture = ExtResource("5_4jnr2")
+expand_mode = 2
+script = ExtResource("6_ampmk")
+metadata/ID = 6
+
+[node name="Lamp_7" type="TextureRect" parent="."]
+offset_left = 1579.0
+offset_top = 296.0
+offset_right = 2769.0
+offset_bottom = 1486.0
+scale = Vector2(0.0910947, 0.0910947)
+texture = ExtResource("5_4jnr2")
+expand_mode = 2
+script = ExtResource("6_ampmk")
+metadata/ID = 7
+
+[node name="Switch_1" type="TextureRect" parent="."]
+offset_left = 223.0
+offset_top = 875.0
+offset_right = 1413.0
+offset_bottom = 2065.0
+scale = Vector2(0.048, 0.096)
+texture = ExtResource("6_1cxes")
+expand_mode = 2
+script = ExtResource("3_gwxeo")
+metadata/isDark = false
+metadata/ID = 1
+
+[node name="Switch_2" type="TextureRect" parent="."]
+offset_left = 342.0
+offset_top = 875.0
+offset_right = 1532.0
+offset_bottom = 2065.0
+scale = Vector2(0.048, 0.096)
+texture = ExtResource("6_1cxes")
+expand_mode = 2
+script = ExtResource("3_gwxeo")
+metadata/isDark = false
+metadata/ID = 2
+
+[node name="Switch_3" type="TextureRect" parent="."]
+offset_left = 454.0
+offset_top = 875.0
+offset_right = 1644.0
+offset_bottom = 2065.0
+scale = Vector2(0.048, 0.096)
+texture = ExtResource("6_1cxes")
+expand_mode = 2
+script = ExtResource("3_gwxeo")
+metadata/isDark = false
+metadata/ID = 3
+
+[node name="Switch_4" type="TextureRect" parent="."]
+offset_left = 571.0
+offset_top = 875.0
+offset_right = 1761.0
+offset_bottom = 2065.0
+scale = Vector2(0.048, 0.096)
+texture = ExtResource("6_1cxes")
+expand_mode = 2
+script = ExtResource("3_gwxeo")
+metadata/isDark = false
+metadata/ID = 4
+
+[node name="Switch_5" type="TextureRect" parent="."]
+offset_left = 1291.0
+offset_top = 875.0
+offset_right = 2481.0
+offset_bottom = 2065.0
+scale = Vector2(0.048, 0.096)
+texture = ExtResource("6_1cxes")
+expand_mode = 2
+script = ExtResource("3_gwxeo")
+metadata/isDark = false
+metadata/ID = 5
+
+[node name="Switch_6" type="TextureRect" parent="."]
+offset_left = 1410.0
+offset_top = 875.0
+offset_right = 2600.0
+offset_bottom = 2065.0
+scale = Vector2(0.048, 0.096)
+texture = ExtResource("6_1cxes")
+expand_mode = 2
+script = ExtResource("3_gwxeo")
+metadata/isDark = false
+metadata/ID = 6
+
+[node name="Switch_7" type="TextureRect" parent="."]
+offset_left = 1522.0
+offset_top = 875.0
+offset_right = 2712.0
+offset_bottom = 2065.0
+scale = Vector2(0.048, 0.096)
+texture = ExtResource("6_1cxes")
+expand_mode = 2
+script = ExtResource("3_gwxeo")
+metadata/isDark = false
+metadata/ID = 7
+
+[node name="Switch_8" type="TextureRect" parent="."]
+offset_left = 1639.0
+offset_top = 875.0
+offset_right = 2829.0
+offset_bottom = 2065.0
+scale = Vector2(0.048, 0.096)
+texture = ExtResource("6_1cxes")
+expand_mode = 2
+script = ExtResource("3_gwxeo")
+metadata/isDark = false
+metadata/ID = 8
+
 [node name="MarginContainer" type="MarginContainer" parent="."]
+visible = false
 offset_right = 1920.0
 offset_bottom = 1080.0
 
@@ -76,7 +250,6 @@ texture = ExtResource("5_nvd4p")
 position = Vector2(252, 933)
 scale = Vector2(0.0958469, 0.0958469)
 texture = ExtResource("6_1cxes")
-script = ExtResource("3_gwxeo")
 metadata/id = 1
 metadata/isDark = false
 
@@ -84,7 +257,6 @@ metadata/isDark = false
 position = Vector2(371, 933)
 scale = Vector2(0.096, 0.096)
 texture = ExtResource("6_1cxes")
-script = ExtResource("3_gwxeo")
 metadata/id = 2
 metadata/isDark = false
 
@@ -92,7 +264,6 @@ metadata/isDark = false
 position = Vector2(483, 933.26)
 scale = Vector2(0.096, 0.096)
 texture = ExtResource("6_1cxes")
-script = ExtResource("3_gwxeo")
 metadata/id = 3
 metadata/isDark = false
 
@@ -100,7 +271,6 @@ metadata/isDark = false
 position = Vector2(600, 933.26)
 scale = Vector2(0.0958086, 0.096)
 texture = ExtResource("6_1cxes")
-script = ExtResource("3_gwxeo")
 metadata/id = 4
 metadata/isDark = false
 
@@ -108,7 +278,6 @@ metadata/isDark = false
 position = Vector2(1320, 933.26)
 scale = Vector2(0.096, 0.096)
 texture = ExtResource("6_1cxes")
-script = ExtResource("3_gwxeo")
 metadata/id = 5
 metadata/isDark = false
 
@@ -116,7 +285,6 @@ metadata/isDark = false
 position = Vector2(1438, 933.26)
 scale = Vector2(0.096, 0.096)
 texture = ExtResource("6_1cxes")
-script = ExtResource("3_gwxeo")
 metadata/id = 6
 metadata/isDark = false
 
@@ -124,7 +292,6 @@ metadata/isDark = false
 position = Vector2(1549, 933.26)
 scale = Vector2(0.096, 0.096)
 texture = ExtResource("6_1cxes")
-script = ExtResource("3_gwxeo")
 metadata/id = 7
 metadata/isDark = false
 
@@ -132,7 +299,6 @@ metadata/isDark = false
 position = Vector2(1668, 933.26)
 scale = Vector2(0.096, 0.096)
 texture = ExtResource("6_1cxes")
-script = ExtResource("3_gwxeo")
 metadata/id = 8
 metadata/isDark = false
 
@@ -140,49 +306,42 @@ metadata/isDark = false
 position = Vector2(207, 425)
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("5_4jnr2")
-script = ExtResource("6_ampmk")
 metadata/id = 1
 
 [node name="Lamp 2" type="Sprite2D" parent="MarginContainer"]
 position = Vector2(442, 425)
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("5_4jnr2")
-script = ExtResource("6_ampmk")
 metadata/id = 2
 
 [node name="Lamp 3" type="Sprite2D" parent="MarginContainer"]
 position = Vector2(673, 425)
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("5_4jnr2")
-script = ExtResource("6_ampmk")
 metadata/id = 3
 
 [node name="Lamp 4" type="Sprite2D" parent="MarginContainer"]
 position = Vector2(926, 425)
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("5_4jnr2")
-script = ExtResource("6_ampmk")
 metadata/id = 4
 
 [node name="Lamp 5" type="Sprite2D" parent="MarginContainer"]
 position = Vector2(1180, 425)
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("5_4jnr2")
-script = ExtResource("6_ampmk")
 metadata/id = 5
 
 [node name="Lamp 6" type="Sprite2D" parent="MarginContainer"]
 position = Vector2(1405, 425)
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("5_4jnr2")
-script = ExtResource("6_ampmk")
 metadata/id = 6
 
 [node name="Lamp 7" type="Sprite2D" parent="MarginContainer"]
 position = Vector2(1629, 425)
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("5_4jnr2")
-script = ExtResource("6_ampmk")
 metadata/id = 7
 
 [node name="CenterContainer2" type="CenterContainer" parent="."]
@@ -193,9 +352,9 @@ offset_bottom = 289.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 offset_left = 78.0
-offset_top = 377.0
+offset_top = 300.0
 offset_right = 1778.0
-offset_bottom = 477.0
+offset_bottom = 400.0
 
 [node name="LeftArrow" type="Label" parent="HBoxContainer"]
 layout_mode = 2

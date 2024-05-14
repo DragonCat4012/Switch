@@ -90,6 +90,13 @@ theme_override_fonts/font = ExtResource("2_wwa65")
 theme_override_font_sizes/font_size = 90
 text = ">"
 
+[node name="Selector6" type="Label" parent="MainMenu/CenterContainer/VBoxContainer/CenterContainer2/HBoxContainer2/VBoxContainer"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_wwa65")
+theme_override_font_sizes/font_size = 90
+text = ">"
+
 [node name="VBoxContainer2" type="VBoxContainer" parent="MainMenu/CenterContainer/VBoxContainer/CenterContainer2/HBoxContainer2"]
 custom_minimum_size = Vector2(180, 150)
 layout_mode = 2
@@ -123,6 +130,13 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("2_wwa65")
 theme_override_font_sizes/font_size = 90
 text = "Options"
+
+[node name="LabelMultiplayer" type="Label" parent="MainMenu/CenterContainer/VBoxContainer/CenterContainer2/HBoxContainer2/VBoxContainer2"]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_wwa65")
+theme_override_font_sizes/font_size = 90
+text = "Multiplayer"
 
 [node name="LabelExit" type="Label" parent="MainMenu/CenterContainer/VBoxContainer/CenterContainer2/HBoxContainer2/VBoxContainer2"]
 custom_minimum_size = Vector2(180, 0)

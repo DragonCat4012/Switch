@@ -1,4 +1,4 @@
-extends Sprite2D
+extends TextureRect
 
 var onTexture = load("res://Sprites/Lamps/on.PNG")
 var offTexture = load("res://Sprites/Lamps/off.PNG")
@@ -21,3 +21,7 @@ func _updateSprite(): # Private
 		texture = onTexture
 	else:
 		texture = offTexture
+		
+# Geo
+func getCenterPoint():
+	return get_rect().get_center()

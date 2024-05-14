@@ -4,22 +4,22 @@ extends Node2D
 var isEndianSwitchingEnabled = true
 
 # Nodes
-@onready var lamp1 = $"MarginContainer/Lamp 1"
-@onready var lamp2 = $"MarginContainer/Lamp 2"
-@onready var lamp3 = $"MarginContainer/Lamp 3"
-@onready var lamp4 = $"MarginContainer/Lamp 4"
-@onready var lamp5 = $"MarginContainer/Lamp 5"
-@onready var lamp6 = $"MarginContainer/Lamp 6"
-@onready var lamp7 = $"MarginContainer/Lamp 7"
+@onready var lamp1 = $Lamp_1
+@onready var lamp2 = $Lamp_2
+@onready var lamp3 = $Lamp_3
+@onready var lamp4 = $Lamp_4
+@onready var lamp5 = $Lamp_5
+@onready var lamp6 = $Lamp_6
+@onready var lamp7 = $Lamp_7
 
-@onready var switch1 = $"MarginContainer/Switch 1"
-@onready var switch2 = $"MarginContainer/Switch 2"
-@onready var switch3 = $"MarginContainer/Switch 3"
-@onready var switch4 = $"MarginContainer/Switch 4"
-@onready var switch5 = $"MarginContainer/Switch 5"
-@onready var switch6 = $"MarginContainer/Switch 6"
-@onready var switch7 = $"MarginContainer/Switch 7"
-@onready var switch8 = $"MarginContainer/Switch 8"
+@onready var switch1 = $Switch_1
+@onready var switch2 = $Switch_2
+@onready var switch3 = $Switch_3
+@onready var switch4 = $Switch_4
+@onready var switch5 = $Switch_5
+@onready var switch6 = $Switch_6
+@onready var switch7 = $Switch_7
+@onready var switch8 = $Switch_8
 
 @onready var numberLabel = $CenterContainer/VBoxContainer/NumberLabel
 @onready var numberPreviewLabel = $CenterContainer/VBoxContainer/NumberPreview
@@ -211,17 +211,17 @@ func createWires():
 	var switches = [switch1, switch2, switch3, switch4, switch5, switch6, switch7, switch8]
 	var lamps = [lamp1, lamp2, lamp3, lamp4, lamp5, lamp6, lamp7]
 	
-	var levelDistances = (switch1.position.y - lamp1.position.y) / lamps.size() - minDiffSwitch + minDiff
+	var levelDistances = (switch1.getCenterPoint().y - lamp1.getCenterPoint().y) / lamps.size() - minDiffSwitch + minDiff
 	var line_width = 3
 	
 	for w in arr:
-		var minY = switches[w.lamp-1].position.y - minDiffSwitch
+		var minY = switches[w.lamp-1].getCenterPoint().y - minDiffSwitch
 		var maxLevelks = levelDistances * lamps.size() 
 		
-		var p3 = switches[w.switch-1].position - minswicthVec
+		var p3 = switches[w.switch-1].getCenterPoint() - minswicthVec
 		var p2 =  p3 - Vector2(0, maxLevelks - w.level * levelDistances) -  minswicthVec
 		
-		var p0 = lamps[w.lamp-1].position + minVec
+		var p0 = lamps[w.lamp-1].getCenterPoint() + minVec
 		var p1 = Vector2(p0.x, p2.y)
 		
 		# up -down
