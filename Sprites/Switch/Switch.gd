@@ -1,12 +1,15 @@
 extends Sprite2D
 
-var onTexture = load("res://Sprites/Switch/on.PNG")
-var offTexture = load("res://Sprites/Switch/off.PNG")
+var black_on_texture = load("res://Sprites/Switch/black_on.svg")
+var black_off_texture = load("res://Sprites/Switch/black_off.svg")
+var white_on_texture = load("res://Sprites/Switch/white_on.svg")
+var white_off_texture = load("res://Sprites/Switch/white_off.svg")
+
 var isOn = false
 
 func _ready():
 	set_process_input(true)
-	texture = offTexture
+	texture = white_off_texture
 
 func _input(event):
 	if event is InputEventMouseButton and event.is_pressed():
@@ -15,11 +18,12 @@ func _input(event):
 			updateSprite()
 
 func updateSprite():
+	var type = self.get_meta("isDark")
 	toggleStatus(isOn)
 	if isOn:
-		texture = onTexture
+		texture = white_on_texture
 	else:
-		texture = offTexture
+		texture = white_off_texture
 
 func toggleStatus(_isOn):
 	if get_tree().current_scene.has_method("switch_activated"):
