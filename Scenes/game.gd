@@ -66,8 +66,8 @@ func _on_timer_timeout():
 func _process(delta):
 	if Input.is_action_just_pressed("ui_cancel"):
 		get_tree().change_scene_to_file("res://Scenes/menu.tscn") 
+		
 	timerLabel.text = str(round(timer.time_left)) + " s"
-	
 	if timer.time_left <= 5.5:
 		var red = Color(1.0,0.0,0.0,1.0)
 		timerLabel.set("theme_override_colors/font_color",red)
@@ -179,7 +179,6 @@ func updateCurrentNumber(_init = false):
 	numberPreviewLabel.text = str(currentNumber)
 	if x == 127:
 		GameManager.jsonHandler.addAllLightsOn()
-
 	
 	if x == goalNumber and _init: # prevent instant success qwq
 		lamp1.toggleStatus()
@@ -239,11 +238,3 @@ func setDict(mapping):
 	
 func _draw():
 	createWires()
-	
-# Timer
-func resetTimer():
-	score = 0
-	timerLeft = 0
-	
-func startTimer():
-	timerLeft = 50

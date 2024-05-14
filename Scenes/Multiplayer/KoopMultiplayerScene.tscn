@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://d3lv4k7ojl51"]
+[gd_scene load_steps=10 format=3 uid="uid://d3lv4k7ojl51"]
 
 [ext_resource type="Script" path="res://Scenes/Multiplayer/KoopMultiplayerScene.gd" id="1_3myuo"]
 [ext_resource type="Texture2D" uid="uid://8yscnlvx11hk" path="res://Sprites/Switch/black_off.svg" id="2_a7sxp"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bkdr5x8xo7he2" path="res://Sprites/Switch/white_on.svg" id="6_ksan3"]
 [ext_resource type="Texture2D" uid="uid://cpiutjtj20tfu" path="res://Sprites/Lamps/off.PNG" id="6_nnwuf"]
 [ext_resource type="Script" path="res://Sprites/Lamps/Lamp.gd" id="7_gjff7"]
+[ext_resource type="FontFile" uid="uid://b2cswqm32sj5f" path="res://Ressources/Lex.ttf" id="9_l6at7"]
 
 [node name="KoopMultiplayerScene" type="Node2D"]
 script = ExtResource("1_3myuo")
@@ -17,9 +18,9 @@ offset_right = 960.0
 offset_bottom = 1080.0
 
 [node name="Switch_1" type="TextureRect" parent="."]
-offset_left = 407.0
+offset_left = 406.0
 offset_top = 226.0
-offset_right = 497.0
+offset_right = 496.0
 offset_bottom = 436.0
 rotation = 1.5708
 texture = ExtResource("2_a7sxp")
@@ -183,3 +184,45 @@ size_flags_vertical = 3
 texture = ExtResource("6_nnwuf")
 expand_mode = 2
 script = ExtResource("7_gjff7")
+
+[node name="DarkInfo" type="VBoxContainer" parent="."]
+offset_left = 1522.0
+offset_top = 1013.0
+offset_right = 1663.0
+offset_bottom = 1076.0
+rotation = -1.57079
+
+[node name="DarkScore" type="Label" parent="DarkInfo"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("9_l6at7")
+theme_override_font_sizes/font_size = 40
+text = "Score: ?"
+
+[node name="DarkTime" type="Label" parent="DarkInfo"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("9_l6at7")
+theme_override_font_sizes/font_size = 25
+text = "?? s"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 326.0
+offset_top = 36.0
+offset_right = 467.0
+offset_bottom = 99.0
+rotation = 1.57079
+
+[node name="LightScore" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_l6at7")
+theme_override_font_sizes/font_size = 40
+text = "Score: ?"
+
+[node name="LightTime" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_l6at7")
+theme_override_font_sizes/font_size = 25
+text = "?? s"

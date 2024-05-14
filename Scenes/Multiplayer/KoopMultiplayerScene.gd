@@ -17,6 +17,13 @@ extends Node2D
 @onready var switch7 = $Switch_7
 @onready var switch8 = $Switch_8
 
+#UtilNodes
+@onready var light_score_label = $VBoxContainer/LightScore
+@onready var dark_score_label = $DarkInfo/DarkScore
+
+@onready var light_timer_label = $VBoxContainer/LightTime
+@onready var dark_timer_label = $DarkInfo/DarkTime
+
 # Current Game
 var score = 0
 var currentNumber = 0
@@ -38,10 +45,31 @@ func _ready():
 	AudioManager.play_music_background()
 	GameManager.jsonHandler.loadGame()
 	
+	light_score_label.text = "Score: 0"
+	dark_score_label.text = "Score: 0"
+	
+	add_child(timer)
+	timer.connect("timeout", _on_timer_timeout)
+	
+	_init_game()
+	
 func _process(delta):
 	if Input.is_action_just_pressed("ui_cancel"):
 		get_tree().change_scene_to_file("res://Scenes/menu.tscn") 
+		
+	light_timer_label.text = str(round(timer.time_left)) + " s"
+	dark_timer_label.text = str(round(timer.time_left)) + " s"
+	if timer.time_left <= 5.5:
+		var red = Color(1.0,0.0,0.0,1.0)
+		light_timer_label.set("theme_override_colors/font_color", red)
+		dark_timer_label.set("theme_override_colors/font_color", red)
 
+func _on_timer_timeout():
+	timer.stop()
+	GameManager.jsonHandler.saveScore(score)
+	GameManager.jsonHandler.saveLostMap()
+	get_tree().change_scene_to_file("res://Scenes/GameOver.tscn")
+	
 func _init_game():
 	queue_redraw()
 	
@@ -53,6 +81,11 @@ func _init_game():
 	lamp6.reset()
 	lamp7.reset()
 	initNumber()
+	
+	timer.wait_time = timerTime
+	light_timer_label.set("theme_override_colors/font_color", Color.BLACK)
+	dark_timer_label.set("theme_override_colors/font_color", Color.WHITE)
+	timer.start()
 	
 func initNumber():
 	var num = randi_range(1, 128)
@@ -124,3 +157,4 @@ func updateCurrentNumber(_init = false):
 			timerTime -= 10
 		#scoreLabel.text = "Score: " + str(score)
 		#_init_game()
+	
