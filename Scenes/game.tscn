@@ -78,6 +78,7 @@ scale = Vector2(0.0958469, 0.0958469)
 texture = ExtResource("6_1cxes")
 script = ExtResource("3_gwxeo")
 metadata/id = 1
+metadata/isDark = false
 
 [node name="Switch 2" type="Sprite2D" parent="MarginContainer"]
 position = Vector2(371, 933)
@@ -85,6 +86,7 @@ scale = Vector2(0.096, 0.096)
 texture = ExtResource("6_1cxes")
 script = ExtResource("3_gwxeo")
 metadata/id = 2
+metadata/isDark = false
 
 [node name="Switch 3" type="Sprite2D" parent="MarginContainer"]
 position = Vector2(483, 933.26)
@@ -92,6 +94,7 @@ scale = Vector2(0.096, 0.096)
 texture = ExtResource("6_1cxes")
 script = ExtResource("3_gwxeo")
 metadata/id = 3
+metadata/isDark = false
 
 [node name="Switch 4" type="Sprite2D" parent="MarginContainer"]
 position = Vector2(600, 933.26)
@@ -99,6 +102,7 @@ scale = Vector2(0.0958086, 0.096)
 texture = ExtResource("6_1cxes")
 script = ExtResource("3_gwxeo")
 metadata/id = 4
+metadata/isDark = false
 
 [node name="Switch 5" type="Sprite2D" parent="MarginContainer"]
 position = Vector2(1320, 933.26)
@@ -106,6 +110,7 @@ scale = Vector2(0.096, 0.096)
 texture = ExtResource("6_1cxes")
 script = ExtResource("3_gwxeo")
 metadata/id = 5
+metadata/isDark = false
 
 [node name="Switch 6" type="Sprite2D" parent="MarginContainer"]
 position = Vector2(1438, 933.26)
@@ -113,6 +118,7 @@ scale = Vector2(0.096, 0.096)
 texture = ExtResource("6_1cxes")
 script = ExtResource("3_gwxeo")
 metadata/id = 6
+metadata/isDark = false
 
 [node name="Switch 7" type="Sprite2D" parent="MarginContainer"]
 position = Vector2(1549, 933.26)
@@ -120,6 +126,7 @@ scale = Vector2(0.096, 0.096)
 texture = ExtResource("6_1cxes")
 script = ExtResource("3_gwxeo")
 metadata/id = 7
+metadata/isDark = false
 
 [node name="Switch 8" type="Sprite2D" parent="MarginContainer"]
 position = Vector2(1668, 933.26)
@@ -127,6 +134,7 @@ scale = Vector2(0.096, 0.096)
 texture = ExtResource("6_1cxes")
 script = ExtResource("3_gwxeo")
 metadata/id = 8
+metadata/isDark = false
 
 [node name="Lamp 1" type="Sprite2D" parent="MarginContainer"]
 position = Vector2(207, 425)

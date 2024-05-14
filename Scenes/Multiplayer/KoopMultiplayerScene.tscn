@@ -26,6 +26,8 @@ texture = ExtResource("2_a7sxp")
 expand_mode = 4
 flip_h = true
 script = ExtResource("5_ru3r5")
+metadata/isDark = true
+metadata/ID = 1
 
 [node name="Switch_2" type="TextureRect" parent="."]
 offset_left = 407.0
@@ -37,6 +39,8 @@ texture = ExtResource("4_hxeay")
 expand_mode = 4
 flip_h = true
 script = ExtResource("5_ru3r5")
+metadata/isDark = true
+metadata/ID = 2
 
 [node name="Switch_3" type="TextureRect" parent="."]
 offset_left = 407.0
@@ -48,6 +52,8 @@ texture = ExtResource("4_hxeay")
 expand_mode = 4
 flip_h = true
 script = ExtResource("5_ru3r5")
+metadata/isDark = true
+metadata/ID = 3
 
 [node name="Switch_4" type="TextureRect" parent="."]
 offset_left = 407.0
@@ -59,6 +65,8 @@ texture = ExtResource("4_hxeay")
 expand_mode = 4
 flip_h = true
 script = ExtResource("5_ru3r5")
+metadata/isDark = true
+metadata/ID = 4
 
 [node name="Switch_5" type="TextureRect" parent="."]
 offset_left = 1671.0
@@ -70,6 +78,8 @@ texture = ExtResource("5_o40kw")
 expand_mode = 4
 flip_h = true
 script = ExtResource("5_ru3r5")
+metadata/isDark = false
+metadata/ID = 5
 
 [node name="Switch_6" type="TextureRect" parent="."]
 offset_left = 1671.0
@@ -81,6 +91,8 @@ texture = ExtResource("6_ksan3")
 expand_mode = 4
 flip_h = true
 script = ExtResource("5_ru3r5")
+metadata/isDark = false
+metadata/ID = 6
 
 [node name="Switch_7" type="TextureRect" parent="."]
 offset_left = 1671.0
@@ -92,6 +104,8 @@ texture = ExtResource("6_ksan3")
 expand_mode = 4
 flip_h = true
 script = ExtResource("5_ru3r5")
+metadata/isDark = false
+metadata/ID = 7
 
 [node name="Switch_8" type="TextureRect" parent="."]
 offset_left = 1671.0
@@ -103,6 +117,8 @@ texture = ExtResource("6_ksan3")
 expand_mode = 4
 flip_h = true
 script = ExtResource("5_ru3r5")
+metadata/isDark = false
+metadata/ID = 8
 
 [node name="Lamps" type="VBoxContainer" parent="."]
 offset_left = 893.0

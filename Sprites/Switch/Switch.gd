@@ -18,12 +18,12 @@ func _input(event):
 			updateSprite()
 
 func updateSprite():
-	var type = self.get_meta("isDark")
+	var isDark = self.get_meta("isDark")
 	toggleStatus(isOn)
 	if isOn:
-		texture = white_on_texture
+		texture = black_on_texture if isDark else white_on_texture
 	else:
-		texture = white_off_texture
+		texture = black_off_texture if isDark else white_off_texture
 
 func toggleStatus(_isOn):
 	if get_tree().current_scene.has_method("switch_activated"):
