@@ -24,6 +24,13 @@ extends Node2D
 @onready var light_timer_label = $VBoxContainer/LightTime
 @onready var dark_timer_label = $DarkInfo/DarkTime
 
+# Number Nodes
+@onready var light_goal_number = $LightNums/LightGoal
+@onready var dark_goal_number = $DarkNums/DarkGoal
+
+@onready var light_current_number = $LightNums/LightCurrent
+@onready var dark_current_number = $DarkNums/DarkCurrent
+
 # Current Game
 var score = 0
 var currentNumber = 0
@@ -89,13 +96,16 @@ func _init_game():
 	
 func initNumber():
 	var num = randi_range(1, 128)
-	#numberLabel.text = str(num)
+	light_goal_number.text = str(num)
+	dark_goal_number.text = str(num)
 	goalNumber = num 
 	
 	if goalNumber == 128:
-		#numberLabel.text = ">> 128 <<"
+		light_goal_number.text = ">> 128 <<"
+		dark_goal_number.text = ">> 128 <<"
 		var red = Color(1.0,0.0,0.0,1.0)
-		#numberLabel.set("theme_override_colors/font_color",red)
+		light_goal_number.set("theme_override_colors/font_color",red)
+		dark_goal_number.set("theme_override_colors/font_color",red)
 		GameManager.jsonHandler.add128achievement()
 		
 func switch_activated(_switch_number, _isOn):
@@ -136,7 +146,9 @@ func updateCurrentNumber(_init = false):
 	if lamp7.isOn:
 		x += 64
 	currentNumber = x
-	#numberPreviewLabel.text = str(currentNumber)
+	
+	dark_current_number.text = str(currentNumber)
+	light_current_number.text = str(currentNumber)
 	if x == 127:
 		GameManager.jsonHandler.addAllLightsOn()
 
@@ -155,6 +167,58 @@ func updateCurrentNumber(_init = false):
 			timerTime -= 10
 		elif timerIteration == 10:
 			timerTime -= 10
-		#scoreLabel.text = "Score: " + str(score)
-		#_init_game()
+			
+		dark_score_label.text = "Score: " + str(score)
+		light_score_label.text = "Score: " + str(score)
+		_init_game()
+# Map
+func createWires():
+	var arr = wireHandler.createKoopMapping()
+	setDict(arr)
+	var minDiff = 40
+	var minVec = Vector2(minDiff, 0)
+	var minDiffSwitch = 55
+	var minswicthVec = Vector2( minDiffSwitch, 0)
+
+	var switches = [switch1, switch2, switch3, switch4, switch5, switch6, switch7, switch8]
+	var lamps = [lamp1, lamp2, lamp3, lamp4, lamp5, lamp6, lamp7]
 	
+	var lightDistances = (lamp1.getCenterPoint().x - switch1.getCenterPoint().x) / 4 - minDiffSwitch + minDiff
+	var darkDistances = (switch5.getCenterPoint().x - lamp1.getCenterPoint().x) / 4 
+	var levelDistances = lightDistances#(switch1.getCenterPoint().y - lamp1.getCenterPoint().y) / lamps.size() - minDiffSwitch + minDiff
+	
+	var line_width = 3
+	
+	for w in arr:
+		levelDistances = darkDistances
+		var isDark = true
+		if w.switch < 5: # light
+			isDark = true
+			levelDistances = lightDistances
+			continue 
+		print(w)
+		var maxLevelks = levelDistances * 4
+		
+		var p3 = switches[w.switch-1].getCenterPoint() - minswicthVec # ig fine
+		var p2 =  p3 - Vector2((4 - w.level) * levelDistances, 0) + minswicthVec
+		
+		var p0 = lamps[w.lamp-1].global_position + Vector2(0, 56) # yay
+		var p1 = Vector2(p2.x, p0.y)
+		
+		# up -down
+		draw_line(p0, p1, Color.RED, line_width)
+		#print(p0, p1)
+		#draw_line(p0, p1, Color.RED, line_width)
+		# left-> right
+		#draw_line(p3, p2, Color.GREEN, line_width)
+	 	# horizontal line
+		#draw_line(p1, p2, w.color, line_width)
+			
+func setDict(mapping):
+	var dict = {} # switch: lamp
+	for w in mapping:
+		dict[w.switch] = w.lamp
+	mapping_dict = dict
+	
+func _draw():
+	createWires()
