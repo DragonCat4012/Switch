@@ -29,6 +29,11 @@ class WireHandler:
 		# Pair lamps & switches with level
 		for lamp in arrLamps:
 			var level = levelArr_dark.pick_random() if lamp > 4  else levelArr.pick_random()
+			if lamp > 4:
+				levelArr_dark.erase(level)
+			else:
+				levelArr.erase(level)
+				
 			var switch = arrSwicthes.pick_random()
 			var color = colorArr.pick_random()
 			var wire = (Wire.new(lamp,switch,level, color))
