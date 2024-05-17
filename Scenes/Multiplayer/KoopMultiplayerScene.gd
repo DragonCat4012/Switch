@@ -1,12 +1,12 @@
 extends Node2D
 # Nodes
-@onready var lamp1 = $Lamps/Lamp_1
-@onready var lamp2 = $Lamps/Lamp_2
-@onready var lamp3 = $Lamps/Lamp_3
-@onready var lamp4 = $Lamps/Lamp_4
-@onready var lamp5 = $Lamps/Lamp_5
-@onready var lamp6 = $Lamps/Lamp_6
-@onready var lamp7 = $Lamps/Lamp_7
+@onready var lamp1 = $Lamp_1
+@onready var lamp2 = $Lamp_2
+@onready var lamp3 = $Lamp_3
+@onready var lamp4 = $Lamp_4
+@onready var lamp5 = $Lamp_5
+@onready var lamp6 = $Lamp_6
+@onready var lamp7 = $Lamp_7
 
 @onready var switch1 = $Switch_1
 @onready var switch2 = $Switch_2

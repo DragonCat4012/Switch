@@ -70,14 +70,20 @@ metadata/isDark = true
 metadata/ID = 4
 
 [node name="Switch_5" type="TextureRect" parent="."]
-offset_left = 1671.0
-offset_top = 226.0
-offset_right = 1761.0
-offset_bottom = 436.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 1673.0
+offset_top = 223.0
+offset_right = 1763.0
+offset_bottom = 433.0
+grow_horizontal = 2
+grow_vertical = 2
 rotation = 1.5708
 texture = ExtResource("5_o40kw")
 expand_mode = 4
-flip_h = true
 script = ExtResource("5_ru3r5")
 metadata/isDark = false
 metadata/ID = 5
@@ -121,6 +127,90 @@ script = ExtResource("5_ru3r5")
 metadata/isDark = false
 metadata/ID = 8
 
+[node name="Lamp_1" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(100, 100)
+offset_left = 900.0
+offset_top = 114.0
+offset_right = 1018.0
+offset_bottom = 232.0
+size_flags_vertical = 3
+texture = ExtResource("6_nnwuf")
+expand_mode = 2
+stretch_mode = 4
+script = ExtResource("7_gjff7")
+
+[node name="Lamp_2" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(100, 100)
+offset_left = 900.0
+offset_top = 235.0
+offset_right = 1041.0
+offset_bottom = 353.0
+size_flags_vertical = 3
+texture = ExtResource("6_nnwuf")
+expand_mode = 2
+stretch_mode = 4
+script = ExtResource("7_gjff7")
+
+[node name="Lamp_3" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(100, 100)
+offset_left = 900.0
+offset_top = 356.0
+offset_right = 1075.0
+offset_bottom = 474.0
+size_flags_vertical = 3
+texture = ExtResource("6_nnwuf")
+expand_mode = 2
+stretch_mode = 4
+script = ExtResource("7_gjff7")
+
+[node name="Lamp_4" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(100, 100)
+offset_left = 900.0
+offset_top = 497.0
+offset_right = 1018.0
+offset_bottom = 615.0
+size_flags_vertical = 3
+texture = ExtResource("6_nnwuf")
+expand_mode = 2
+stretch_mode = 4
+script = ExtResource("7_gjff7")
+
+[node name="Lamp_5" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(100, 100)
+offset_left = 899.0
+offset_top = 618.0
+offset_right = 1017.0
+offset_bottom = 736.0
+size_flags_vertical = 3
+texture = ExtResource("6_nnwuf")
+expand_mode = 2
+stretch_mode = 4
+script = ExtResource("7_gjff7")
+
+[node name="Lamp_6" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(100, 100)
+offset_left = 900.0
+offset_top = 750.0
+offset_right = 1018.0
+offset_bottom = 868.0
+size_flags_vertical = 3
+texture = ExtResource("6_nnwuf")
+expand_mode = 2
+stretch_mode = 4
+script = ExtResource("7_gjff7")
+
+[node name="Lamp_7" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(100, 100)
+offset_left = 900.0
+offset_top = 866.0
+offset_right = 1018.0
+offset_bottom = 984.0
+size_flags_vertical = 3
+texture = ExtResource("6_nnwuf")
+expand_mode = 2
+stretch_mode = 4
+script = ExtResource("7_gjff7")
+
 [node name="Lamps" type="VBoxContainer" parent="."]
 offset_left = 900.0
 offset_top = 56.0
@@ -128,69 +218,6 @@ offset_right = 1036.0
 offset_bottom = 1016.0
 size_flags_vertical = 3
 theme_override_constants/separation = 22
-
-[node name="Lamp_1" type="TextureRect" parent="Lamps"]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-size_flags_vertical = 3
-texture = ExtResource("6_nnwuf")
-expand_mode = 2
-stretch_mode = 4
-script = ExtResource("7_gjff7")
-
-[node name="Lamp_2" type="TextureRect" parent="Lamps"]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-size_flags_vertical = 3
-texture = ExtResource("6_nnwuf")
-expand_mode = 2
-stretch_mode = 4
-script = ExtResource("7_gjff7")
-
-[node name="Lamp_3" type="TextureRect" parent="Lamps"]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-size_flags_vertical = 3
-texture = ExtResource("6_nnwuf")
-expand_mode = 2
-stretch_mode = 4
-script = ExtResource("7_gjff7")
-
-[node name="Lamp_4" type="TextureRect" parent="Lamps"]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-size_flags_vertical = 3
-texture = ExtResource("6_nnwuf")
-expand_mode = 2
-stretch_mode = 4
-script = ExtResource("7_gjff7")
-
-[node name="Lamp_5" type="TextureRect" parent="Lamps"]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-size_flags_vertical = 3
-texture = ExtResource("6_nnwuf")
-expand_mode = 2
-stretch_mode = 4
-script = ExtResource("7_gjff7")
-
-[node name="Lamp_6" type="TextureRect" parent="Lamps"]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-size_flags_vertical = 3
-texture = ExtResource("6_nnwuf")
-expand_mode = 2
-stretch_mode = 4
-script = ExtResource("7_gjff7")
-
-[node name="Lamp_7" type="TextureRect" parent="Lamps"]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-size_flags_vertical = 3
-texture = ExtResource("6_nnwuf")
-expand_mode = 2
-stretch_mode = 4
-script = ExtResource("7_gjff7")
 
 [node name="LightNums" type="VBoxContainer" parent="."]
 offset_left = 313.0

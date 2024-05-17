@@ -35,4 +35,3 @@ func toggleStatus(_isOn):
 # Geo
 func getCenterPoint():
 	return get_rect().get_center()
-	#return Vector2(postion.x + width/2, position.y + height/2)
