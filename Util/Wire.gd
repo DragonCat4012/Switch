@@ -50,6 +50,7 @@ class WireHandler:
 				dataArr.append(wire2)
 			
 		return dataArr
+		#return [Wire.new(1,5,3, Color.AQUA)]
 		
 	func createMapping():
 		# Init everything

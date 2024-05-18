@@ -175,44 +175,42 @@ func updateCurrentNumber(_init = false):
 func createWires():
 	var arr = wireHandler.createKoopMapping()
 	setDict(arr)
-	var minDiff = 40
+	var minDiff = 56
 	var minVec = Vector2(minDiff, 0)
-	var minDiffSwitch = 55
-	var minswicthVec = Vector2( minDiffSwitch, 0)
+	var minDiffSwitch = 210/2
+	var minswicthVec = Vector2(minDiffSwitch, 0)
 
 	var switches = [switch1, switch2, switch3, switch4, switch5, switch6, switch7, switch8]
 	var lamps = [lamp1, lamp2, lamp3, lamp4, lamp5, lamp6, lamp7]
 	
-	var lightDistances = (lamp1.getCenterPoint().x - switch1.getCenterPoint().x) / 4 - minDiffSwitch + minDiff
-	var darkDistances = (switch5.getCenterPoint().x - lamp1.getCenterPoint().x) / 4 
-	var levelDistances = lightDistances#(switch1.getCenterPoint().y - lamp1.getCenterPoint().y) / lamps.size() - minDiffSwitch + minDiff
+	var distanceSum = switch5.global_position.x - lamp1.global_position.x
+	var darkDistances = distanceSum + minDiff - minDiffSwitch
+	var lightDistances = lamp1.global_position.x - switch1.global_position.x - minDiff + minDiffSwitch
+	var levelDistances = 0
 	
 	var line_width = 3
-	
+
 	for w in arr:
-		levelDistances = darkDistances
+		levelDistances = darkDistances / 4
 		var isDark = true
 		if w.switch < 5: # light
 			isDark = true
-			levelDistances = lightDistances
+			levelDistances = lightDistances / 4
 			continue 
-		print(w)
-		var maxLevelks = levelDistances * 4
 		
-		var p3 = switches[w.switch-1].getCenterPoint() - minswicthVec # ig fine
-		var p2 =  p3 - Vector2((4 - w.level) * levelDistances, 0) + minswicthVec
+		var p3 = switches[w.switch-1].global_position - 2*minswicthVec + Vector2(0,45) # yes	
+		var p2 =  p3 - Vector2((4 - (w.level-1)) * levelDistances, 0) + 2*minswicthVec
+		print("w=", w, " p3: ", p3, ", level:, ", w.level, " -> ", (4 - (w.level -1)) * levelDistances)
 		
-		var p0 = lamps[w.lamp-1].global_position + Vector2(0, 56) # yay
-		var p1 = Vector2(p2.x, p0.y)
-		
-		# up -down
-		draw_line(p0, p1, Color.RED, line_width)
-		#print(p0, p1)
-		#draw_line(p0, p1, Color.RED, line_width)
-		# left-> right
-		#draw_line(p3, p2, Color.GREEN, line_width)
-	 	# horizontal line
-		#draw_line(p1, p2, w.color, line_width)
+		var p0 = lamps[w.lamp-1].global_position + 2*minVec + Vector2(0,minDiff)
+		var p1 = Vector2(p2.x, p0.y) 
+
+		# lamp to level
+		draw_line(p0, p1, w.color, line_width)
+		# level
+		draw_line(p3, p2, w.color, line_width)
+	 	# switch - level
+		draw_line(p1, p2, w.color, line_width)
 			
 func setDict(mapping):
 	var dict = {} # switch: lamp
