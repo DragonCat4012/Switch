@@ -186,32 +186,32 @@ func createWires():
 	var darkDistances = switch5.global_position.x - lamp1.global_position.x + minDiff - minDiffSwitch
 	var lightDistances = lamp1.global_position.x - switch1.global_position.x - minDiff + minDiffSwitch
 	var levelDistances = 0
-	var line_width = 3
+	var line_width = 5
 
 	for w in arr:
 		levelDistances = (lightDistances if w.switch < 5 else darkDistances) / 4
 		var isDark = true
 		if w.switch < 5: # light
-			isDark = true
-			continue 
-			
+			isDark = false
+		var pad = -1 if isDark else 1
 		
-		#correct
-		var p3 = switches[w.switch-1].global_position + Vector2(0,68/2) - 2*minswicthVec
-		var p0 = lamps[w.lamp-1].global_position + 2*minVec + Vector2(0,minDiff)
-		
-		# wrong
-		var p2 = p3 - Vector2((4 - w.level) * levelDistances, 0) - minswicthVec
+		var p3 = switches[w.switch-1].global_position + Vector2(0,68/2) + pad*2*minswicthVec
+		var p0 = lamps[w.lamp-1].global_position - pad*2*minVec -pad*Vector2(0,minDiff)
+		var p2 = p3 + pad*Vector2((4 - w.level) * levelDistances, 0) + pad*minswicthVec
 		if w.level == 1:
-			p2 = p3 - Vector2((1.2) * levelDistances, 0)
+			p2 = p3 + pad*Vector2((1.2) * levelDistances, 0)
 		var p1 = Vector2(p2.x, p0.y) 
-
-		#draw_line(p0+Vector2(0,10), p0+Vector2((4 - 1) * levelDistances, 10)-minswicthVec, Color.ORANGE, line_width)
-		#draw_line(p0+Vector2(0,20), p0+Vector2((4 - 2) * levelDistances, 20)-minswicthVec, Color.DARK_CYAN, line_width)
-		#draw_line(p0+Vector2(0,30), p0+Vector2((4 - 3) * levelDistances, 30)-minswicthVec, Color.ORANGE, line_width)
-		#draw_line(p0+Vector2(0,40), p0+Vector2((4 - 4) * levelDistances, 40)-minswicthVec, Color.DARK_CYAN, line_width)
 		
-	
+		if not isDark:
+			print("light")
+			p3 = switches[w.switch-1].global_position + Vector2(0,68/2)
+			p0 = lamps[w.lamp-1].global_position + minVec + Vector2(0, 118/2)
+			
+			p2 = p3 + pad*Vector2((4 - w.level) * levelDistances, 0) + pad*minswicthVec
+			if w.level == 1:
+				p2 = p3 + pad*Vector2((1.2) * levelDistances, 0)
+			p1 = Vector2(p2.x, p0.y) 
+		 
 		# lamp to level
 		draw_line(p0, p1, w.color, line_width)
 		# level

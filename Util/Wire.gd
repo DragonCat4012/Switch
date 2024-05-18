@@ -28,6 +28,7 @@ class WireHandler:
 		
 		# Pair lamps & switches with level
 		for lamp in arrLamps:
+			print(levelArr_dark, levelArr)
 			var level = levelArr_dark.pick_random() if lamp > 4  else levelArr.pick_random()
 			if lamp > 4:
 				levelArr_dark.erase(level)
@@ -50,8 +51,6 @@ class WireHandler:
 				dataArr.append(wire2)
 			
 		return dataArr
-		#return [Wire.new(3,5,3, Color.AQUA), Wire.new(3,5,4, Color.RED), Wire.new(3,5,1, Color.BLUE), Wire.new(3,5,2, Color.PURPLE)]
-		#return [Wire.new(3,5,3, Color.BLUE)]
 		
 	func createMapping():
 		# Init everything
