@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://d3lv4k7ojl51"]
+[gd_scene load_steps=11 format=3 uid="uid://d3lv4k7ojl51"]
 
 [ext_resource type="Script" path="res://Scenes/Multiplayer/KoopMultiplayerScene.gd" id="1_3myuo"]
+[ext_resource type="Script" path="res://Scenes/Multiplayer/Map_Multiplayer.gd" id="2_5ap3r"]
 [ext_resource type="Texture2D" uid="uid://8yscnlvx11hk" path="res://Sprites/Switch/black_off.svg" id="2_a7sxp"]
 [ext_resource type="Texture2D" uid="uid://blqky2hsct452" path="res://Sprites/Switch/black_on.svg" id="4_hxeay"]
 [ext_resource type="Texture2D" uid="uid://c2pe7fupsvd5j" path="res://Sprites/Switch/white_off.svg" id="5_o40kw"]
@@ -16,7 +17,9 @@ script = ExtResource("1_3myuo")
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 960.0
 offset_bottom = 1080.0
-color = Color(1, 1, 1, 0.286275)
+
+[node name="Map" type="Node2D" parent="."]
+script = ExtResource("2_5ap3r")
 
 [node name="Switch_1" type="TextureRect" parent="."]
 offset_left = 406.0
@@ -377,11 +380,22 @@ theme_override_font_sizes/font_size = 25
 text = "?? s"
 
 [node name="Arrow1" type="Label" parent="."]
-offset_left = 1000.0
+offset_left = 1049.0
 offset_top = 36.0
-offset_right = 1056.0
+offset_right = 1105.0
 offset_bottom = 124.0
 rotation = 1.57079
+theme_override_fonts/font = ExtResource("9_l6at7")
+theme_override_font_sizes/font_size = 100
+text = ">"
+
+[node name="Arrow2" type="Label" parent="."]
+offset_left = 960.0
+offset_top = 36.0
+offset_right = 1016.0
+offset_bottom = 124.0
+rotation = 1.57079
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("9_l6at7")
 theme_override_font_sizes/font_size = 100
 text = ">"

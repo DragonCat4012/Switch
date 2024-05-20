@@ -1,0 +1,57 @@
+extends Node2D
+
+var arr = []
+var switches = []
+var lamps = []
+
+func setStuff(arr2, switches2, lamps2):
+	arr = arr2
+	switches = switches2
+	lamps = lamps2
+
+func createWires():
+	if not arr or not switches:
+		return
+		
+	var minDiff = 56
+	var minVec = Vector2(minDiff, 0)
+	var minDiffSwitch = 160/2
+	var minswicthVec = Vector2(minDiffSwitch, 0)
+	
+	var darkDistances = switches[4].global_position.x - lamps[0].global_position.x + minDiff - minDiffSwitch
+	var lightDistances = lamps[0].global_position.x - switches[0].global_position.x - minDiff + minDiffSwitch
+	var levelDistances = 0
+	var line_width = 5
+
+	for w in arr:
+		levelDistances = (lightDistances if w.switch < 5 else darkDistances) / 4
+		var isDark = true
+		if w.switch < 5: # light
+			isDark = false
+		var pad = -1 if isDark else 1
+		
+		var p3 = switches[w.switch-1].global_position + Vector2(0,68/2) + pad*2*minswicthVec
+		var p0 = lamps[w.lamp-1].global_position - pad*2*minVec -pad*Vector2(0,minDiff)
+		var p2 = p3 + pad*Vector2((4 - w.level) * levelDistances, 0) + pad*minswicthVec
+		if w.level == 1:
+			p2 = p3 + pad*Vector2((1.2) * levelDistances, 0)
+		var p1 = Vector2(p2.x, p0.y) 
+		
+		if not isDark:
+			p3 = switches[w.switch-1].global_position + Vector2(0,68/2)
+			p0 = lamps[w.lamp-1].global_position + minVec + Vector2(0, 118/2)
+			
+			p2 = p3 + pad*Vector2((4 - w.level) * levelDistances, 0) + pad*minswicthVec
+			if w.level == 1:
+				p2 = p3 + pad*Vector2((1.2) * levelDistances, 0)
+			p1 = Vector2(p2.x, p0.y) 
+		 
+		# lamp to level
+		draw_line(p0, p1, w.color, line_width)
+		# level
+		draw_line(p3, p2, w.color, line_width)
+	 	# switch - level
+		draw_line(p1, p2, w.color, line_width)
+			
+func _draw():
+	createWires()

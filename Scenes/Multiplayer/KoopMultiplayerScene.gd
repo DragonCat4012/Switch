@@ -37,8 +37,8 @@ var currentNumber = 0
 var goalNumber = -1
 
 # Map
+@onready var mapNode = $Map
 var mapping_dict = {} # key=switch, value=lamp
-#@onready var timerLabel = $VBoxContainer/TimerLabel
 const WireHandler = preload("res://Util/Wire.gd")
 @onready var wireHandler = WireHandler.WireHandler.new()
 
@@ -171,57 +171,17 @@ func updateCurrentNumber(_init = false):
 		dark_score_label.text = "Score: " + str(score)
 		light_score_label.text = "Score: " + str(score)
 		_init_game()
+		
 # Map
 func createWires():
 	var arr = wireHandler.createKoopMapping()
 	setDict(arr)
-	var minDiff = 56
-	var minVec = Vector2(minDiff, 0)
-	var minDiffSwitch = 160/2
-	var minswicthVec = Vector2(minDiffSwitch, 0)
-
+	
 	var switches = [switch1, switch2, switch3, switch4, switch5, switch6, switch7, switch8]
 	var lamps = [lamp1, lamp2, lamp3, lamp4, lamp5, lamp6, lamp7]
+	mapNode.setStuff(arr, switches, lamps)
+	mapNode.createWires()
 	
-	var darkDistances = switch5.global_position.x - lamp1.global_position.x + minDiff - minDiffSwitch
-	var lightDistances = lamp1.global_position.x - switch1.global_position.x - minDiff + minDiffSwitch
-	var levelDistances = 0
-	var line_width = 5
-
-	for w in arr:
-		levelDistances = (lightDistances if w.switch < 5 else darkDistances) / 4
-		var isDark = true
-		if w.switch < 5: # light
-			isDark = false
-		var pad = -1 if isDark else 1
-		
-		var p3 = switches[w.switch-1].global_position + Vector2(0,68/2) + pad*2*minswicthVec
-		var p0 = lamps[w.lamp-1].global_position - pad*2*minVec -pad*Vector2(0,minDiff)
-		var p2 = p3 + pad*Vector2((4 - w.level) * levelDistances, 0) + pad*minswicthVec
-		if w.level == 1:
-			p2 = p3 + pad*Vector2((1.2) * levelDistances, 0)
-		var p1 = Vector2(p2.x, p0.y) 
-		
-		if not isDark:
-			print("light")
-			p3 = switches[w.switch-1].global_position + Vector2(0,68/2)
-			p0 = lamps[w.lamp-1].global_position + minVec + Vector2(0, 118/2)
-			
-			p2 = p3 + pad*Vector2((4 - w.level) * levelDistances, 0) + pad*minswicthVec
-			if w.level == 1:
-				p2 = p3 + pad*Vector2((1.2) * levelDistances, 0)
-			p1 = Vector2(p2.x, p0.y) 
-		 
-		# lamp to level
-		draw_line(p0, p1, w.color, line_width)
-		# level
-		draw_line(p3, p2, w.color, line_width)
-	 	# switch - level
-		draw_line(p1, p2, w.color, line_width)
-		if w.level != 2 and w.level != 3:
-			print("w=", w, " p3: ", p3, ", level:, ", w.level, " -> ", (4 - (w.level -1)) * levelDistances)
-			print(w.level," -> ",p0,p1,p2,p3)
-			
 func setDict(mapping):
 	var dict = {} # switch: lamp
 	for w in mapping:

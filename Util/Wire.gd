@@ -28,7 +28,6 @@ class WireHandler:
 		
 		# Pair lamps & switches with level
 		for lamp in arrLamps:
-			print(levelArr_dark, levelArr)
 			var level = levelArr_dark.pick_random() if lamp > 4  else levelArr.pick_random()
 			if lamp > 4:
 				levelArr_dark.erase(level)
