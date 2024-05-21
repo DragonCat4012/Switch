@@ -31,6 +31,8 @@ extends Node2D
 @onready var light_current_number = $LightNums/LightCurrent
 @onready var dark_current_number = $DarkNums/DarkCurrent
 
+
+@onready var backButton = $buttonBackTexture/BackButon
 # Current Game
 var score = 0
 var currentNumber = 0
@@ -70,7 +72,13 @@ func _process(delta):
 		var red = Color(1.0,0.0,0.0,1.0)
 		light_timer_label.set("theme_override_colors/font_color", red)
 		dark_timer_label.set("theme_override_colors/font_color", red)
-
+		
+func _input(event): # Handle Touch Inut
+	var globalRect = backButton.get_global_rect()
+	if globalRect.has_point(get_global_mouse_position()) and event is InputEventScreenTouch:
+		GameManager.jsonHandler.saveScore(score)
+		get_tree().change_scene_to_file("res://Scenes/menu.tscn") 
+		
 func _on_timer_timeout():
 	timer.stop()
 	GameManager.jsonHandler.saveScore(score)

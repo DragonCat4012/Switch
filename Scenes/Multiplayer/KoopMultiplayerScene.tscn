@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://d3lv4k7ojl51"]
+[gd_scene load_steps=12 format=3 uid="uid://d3lv4k7ojl51"]
 
 [ext_resource type="Script" path="res://Scenes/Multiplayer/KoopMultiplayerScene.gd" id="1_3myuo"]
 [ext_resource type="Script" path="res://Scenes/Multiplayer/Map_Multiplayer.gd" id="2_5ap3r"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cpiutjtj20tfu" path="res://Sprites/Lamps/off.PNG" id="6_nnwuf"]
 [ext_resource type="Script" path="res://Sprites/Lamps/Lamp.gd" id="7_gjff7"]
 [ext_resource type="FontFile" uid="uid://b2cswqm32sj5f" path="res://Ressources/Lex.ttf" id="9_l6at7"]
+[ext_resource type="Texture2D" uid="uid://cf83i6ab4h457" path="res://Sprites/button.PNG" id="11_t4ynn"]
 
 [node name="KoopMultiplayerScene" type="Node2D"]
 script = ExtResource("1_3myuo")
@@ -399,3 +400,21 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("9_l6at7")
 theme_override_font_sizes/font_size = 100
 text = ">"
+
+[node name="buttonBackTexture" type="Sprite2D" parent="."]
+position = Vector2(1078, 1020)
+scale = Vector2(0.218072, 0.218072)
+texture = ExtResource("11_t4ynn")
+
+[node name="BackButon" type="CenterContainer" parent="buttonBackTexture"]
+offset_left = -450.157
+offset_top = -163.559
+offset_right = -220.157
+offset_bottom = -73.5588
+scale = Vector2(3.73412, 3.73412)
+
+[node name="Label" type="Label" parent="buttonBackTexture/BackButon"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("9_l6at7")
+theme_override_font_sizes/font_size = 70
+text = "Back"
