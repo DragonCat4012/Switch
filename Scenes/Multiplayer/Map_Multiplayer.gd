@@ -39,7 +39,7 @@ func createWires():
 		
 		if not isDark:
 			p3 = switches[w.switch-1].global_position + Vector2(0,68/2)
-			p0 = lamps[w.lamp-1].global_position + minVec + Vector2(0, 118/2)
+			p0 = lamps[w.lamp-1].global_position + Vector2(0, 118/2)
 			
 			p2 = p3 + pad*Vector2((4 - w.level) * levelDistances, 0) + pad*minswicthVec
 			if w.level == 1:
