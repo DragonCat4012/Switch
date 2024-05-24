@@ -1,6 +1,6 @@
 # Switch
 Binary Lamp Switch Game - Crewate Binary Numbers (from 0 to 127) using Lamps :3
-With each iteration your time becomes less :3 yay :3 Every ten seconds the time gets less unless you jsut have 10s uwu
+With each iteration your time becomes less :3 Every 10 seconds the time gets less unless you just have 10s uwu
 
 > **_NOTE:_**  The options Menu content Box is kinda weird, so just try clicking on differnet places a few times uwu
 
@@ -16,17 +16,17 @@ Arrow Keys Up/Down: Navigate Main Menu
 
 Enter/Sapcebar: Confirm selection in main menu
 
-ArrowK Keys Left/Right & Sapcebar/Enter: naviagte in Tutorial
+ArrowK Keys Left/Right & Sapcebar/Enter: navigate in Tutorial
 
 
 ## Game Loop
 * The game generates a random decimal number like 42
   * You have to translate this number into binary using the lamps
-  * lamp on = 1 * 2^x, lamp of = 0 * 2^x
-  * the little arrow on the left/right of the löamps indicates from where to read the number
+  * lamp on = 1 * 2^x, lamp of = 0 * 2^x (x beeing the exponent beeing equal to the lamps number)
+    	* Note: the lamp counts from the side where the arrow is pointing to the lamp row, the arrow defines the endianess of the lamp row
 * when you have corectly replicated the number the remaining time will be added to your score
-  * on every 10 iterations your time will get less
-  * there is a point where the game ends ;3, but you will always have atleast 10 seconds for a number  
+  * on every 10 iterations your time will get less, but you will always have atleast 10 seconds for a number  
+  * there is a actually a point where the game will end ;3
 	
 ## Supported Plattforms
 | Plattform         | Status | Supported | Tested |
