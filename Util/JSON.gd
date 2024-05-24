@@ -24,8 +24,7 @@ class JSONHandler:
 		for key in currentData.keys():
 			saveDict[key] = currentData[key]
 
-		print("save")
-		print(saveDict)
+		print("Saving: ", saveDict)
 		
 		file.store_string(JSON.stringify(saveDict))
 		file.close()
@@ -35,8 +34,7 @@ class JSONHandler:
 		
 			var file = FileAccess.open(File_name, FileAccess.READ)
 			var dict = JSON.parse_string(file.get_as_text())
-			print("Load File Save")
-			print(dict)
+			print("Load File Save: ", dict)
 			
 			for key in currentData.keys():
 				if key in dict.keys():
