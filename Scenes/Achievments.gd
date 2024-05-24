@@ -12,6 +12,7 @@ const AchievementsHandler = preload("res://Util/AchievementHandler.gd")
 @onready var a7 = $MarginContainer/ScrollContainer/VBoxContainer/Win100Times/Label
 @onready var a8 = $MarginContainer/ScrollContainer/VBoxContainer/Loose10Times/Label
 @onready var a9 = $MarginContainer/ScrollContainer/VBoxContainer/Loose100Times/Label
+@onready var a10 = $MarginContainer/ScrollContainer/VBoxContainer/WinKoop/Label
 
 @onready var backButton = $buttonBackTexture/BackButon
 
@@ -28,7 +29,7 @@ func _input(event): # Handle Touch Inut
 		get_tree().change_scene_to_file("res://Scenes/menu.tscn") 
 		
 func _setLabels():
-	var labels = [a1,a2,a3,a4,a5,a6,a7,a8,a9]
+	var labels = [a1,a2,a3,a4,a5,a6,a7,a8,a9,a10]
 	var white = Color(1.0,1.0,1.0,1.0)
 	var gray = Color(1.0,1.0,1.0,0.3)
 	for l in labels:
@@ -62,3 +63,6 @@ func _setLabels():
 	if achievementHandler.lost100:
 		a9.text = "Skill Issue - Loose 100 Times"
 		a9.set("theme_override_colors/font_color", white)
+	if achievementHandler.winKoop:
+		a10.text = "Team Player - wind a multiplayer map"
+		a10.set("theme_override_colors/font_color", white)

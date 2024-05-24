@@ -180,8 +180,8 @@ func updateCurrentNumber(_init = false):
 	if x == 127:
 		GameManager.jsonHandler.addAllLightsOn()
 	
-	if x == goalNumber and _init: # prevent instant success qwq
-		lamp1.toggleStatus()
+	if _init: # prevent instant success qwq
+		return
 	elif x == goalNumber:
 		score += int(timer.time_left)
 		GameManager.jsonHandler.saveWonMap()

@@ -128,6 +128,26 @@ theme_override_fonts/font = ExtResource("1_d44rw")
 theme_override_font_sizes/font_size = 50
 text = "?"
 
+[node name="PlayKoop" type="CenterContainer" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/PlayKoop"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_d44rw")
+theme_override_font_sizes/font_size = 50
+text = "?"
+
+[node name="WinKoop" type="CenterContainer" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/WinKoop"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_d44rw")
+theme_override_font_sizes/font_size = 50
+text = "?"
+
 [node name="buttonBackTexture" type="Sprite2D" parent="."]
 position = Vector2(189, 136)
 scale = Vector2(0.218072, 0.218072)

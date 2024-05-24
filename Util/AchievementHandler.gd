@@ -10,7 +10,8 @@ class AchievementsHandler:
 		"won10": false,
 		"won100": false,
 		"lost10": false,
-		"lost100": false
+		"lost100": false,
+		"winKoop": false
 	}
 
 	func _init():
@@ -74,6 +75,10 @@ class AchievementsHandler:
 		get: 
 			return stats["lost100"]
 			
+	var winKoop: bool:
+		get: 
+			return stats["winKoop"]
+			
 	# Update properties
 	func add_found128():
 		_updateKey("found128")
@@ -101,6 +106,9 @@ class AchievementsHandler:
 		
 	func add_lost100Games():
 		_updateKey("lost100")
+	
+	func add_winKoop():
+		_updateKey("winKoop")
 		
 	func _updateKey(key: String, value: bool = true):
 		if stats[key] == true:

@@ -91,6 +91,9 @@ class JSONHandler:
 		currentData["isEndianSwitchingEnabled"] = status
 		saveGame()
 		
+	func saveWonMultiplayerMap():
+		achievementHandler.add_winKoop()
+		
 # Add Achievements
 	func add128achievement():
 		achievementHandler.add_found128()

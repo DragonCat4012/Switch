@@ -101,6 +101,7 @@ func _init_game():
 	light_timer_label.set("theme_override_colors/font_color", Color.BLACK)
 	dark_timer_label.set("theme_override_colors/font_color", Color.WHITE)
 	timer.start()
+	updateCurrentNumber(true)
 	
 func initNumber():
 	var num = randi_range(1, 128)
@@ -159,12 +160,12 @@ func updateCurrentNumber(_init = false):
 	light_current_number.text = str(currentNumber)
 	if x == 127:
 		GameManager.jsonHandler.addAllLightsOn()
-
-	if x == goalNumber and _init: # prevent instant success qwq
-		lamp1.toggleStatus()
+	
+	if _init: 
+		return
 	elif x == goalNumber:
 		score += int(timer.time_left)
-		GameManager.jsonHandler.saveWonMap()
+		GameManager.jsonHandler.saveWonMultiplayerMap()
 		
 		timerIteration += 1
 		if timerIteration == 40:
