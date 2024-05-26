@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://cygmp3elu4kij"]
+[gd_scene load_steps=11 format=3 uid="uid://cygmp3elu4kij"]
 
 [ext_resource type="Script" path="res://Scenes/game.gd" id="1_67put"]
 [ext_resource type="Texture2D" uid="uid://cf83i6ab4h457" path="res://Sprites/button.PNG" id="2_cvfho"]
 [ext_resource type="FontFile" uid="uid://b2cswqm32sj5f" path="res://Ressources/Lex.ttf" id="2_q8ujg"]
 [ext_resource type="Script" path="res://Sprites/Switch/Switch.gd" id="3_gwxeo"]
 [ext_resource type="Texture2D" uid="uid://bg2v8g0rhtklx" path="res://Sprites/Maps/map_deco.PNG" id="4_tswrj"]
+[ext_resource type="Texture2D" uid="uid://duac6v6i1u8lx" path="res://Sprites/Lamps/lamp_off.svg" id="4_w1ryu"]
 [ext_resource type="Texture2D" uid="uid://cpiutjtj20tfu" path="res://Sprites/Lamps/off.PNG" id="5_4jnr2"]
 [ext_resource type="Texture2D" uid="uid://bwvpxew6qd2m5" path="res://Sprites/Maps/map_border.PNG" id="5_nvd4p"]
 [ext_resource type="Texture2D" uid="uid://c2pe7fupsvd5j" path="res://Sprites/Switch/white_off.svg" id="6_1cxes"]
@@ -65,7 +66,7 @@ offset_top = 296.0
 offset_right = 1343.0
 offset_bottom = 1486.0
 scale = Vector2(0.0910947, 0.0910947)
-texture = ExtResource("5_4jnr2")
+texture = ExtResource("4_w1ryu")
 expand_mode = 2
 script = ExtResource("6_ampmk")
 metadata/ID = 1

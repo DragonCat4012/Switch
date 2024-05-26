@@ -1,7 +1,7 @@
 extends TextureRect
 
-var onTexture = load("res://Sprites/Lamps/on.PNG")
-var offTexture = load("res://Sprites/Lamps/off.PNG")
+var onTexture = load("res://Sprites/Lamps/lamp_on.svg")
+var offTexture = load("res://Sprites/Lamps/lamp_off.svg")
 var isOn = false
 
 func _ready():
