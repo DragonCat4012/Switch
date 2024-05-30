@@ -27,6 +27,9 @@ ArrowK Keys Left/Right & Sapcebar/Enter: navigate in Tutorial
 * when you have corectly replicated the number the remaining time will be added to your score
   * on every 10 iterations your time will get less, but you will always have atleast 10 seconds for a number  
   * there is a actually a point where the game will end ;3
+ 
+### Multiplayer
+Play together to solve numbers
 	
 ## Supported Plattforms
 | Plattform         | Status | Supported | Tested |
