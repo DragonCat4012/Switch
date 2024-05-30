@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cygmp3elu4kij"]
+[gd_scene load_steps=12 format=3 uid="uid://cygmp3elu4kij"]
 
 [ext_resource type="Script" path="res://Scenes/game.gd" id="1_67put"]
 [ext_resource type="Texture2D" uid="uid://cf83i6ab4h457" path="res://Sprites/button.PNG" id="2_cvfho"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bwvpxew6qd2m5" path="res://Sprites/Maps/map_border.PNG" id="5_nvd4p"]
 [ext_resource type="Texture2D" uid="uid://c2pe7fupsvd5j" path="res://Sprites/Switch/white_off.svg" id="6_1cxes"]
 [ext_resource type="Script" path="res://Sprites/Lamps/Lamp.gd" id="6_ampmk"]
+[ext_resource type="Script" path="res://Util/Map.gd" id="11_nsi7u"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_67put")
@@ -393,3 +394,7 @@ theme_override_fonts/font = ExtResource("2_q8ujg")
 theme_override_font_sizes/font_size = 60
 text = "OwO
 "
+
+[node name="Map" type="Node2D" parent="."]
+script = ExtResource("11_nsi7u")
+metadata/isMultiplayer = false

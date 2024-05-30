@@ -189,7 +189,7 @@ func createWires():
 	var switches = [switch1, switch2, switch3, switch4, switch5, switch6, switch7, switch8]
 	var lamps = [lamp1, lamp2, lamp3, lamp4, lamp5, lamp6, lamp7]
 	mapNode.setStuff(arr, switches, lamps)
-	mapNode.createWires()
+	mapNode.createWires_multiplayer()
 	
 func setDict(mapping):
 	var dict = {} # switch: lamp

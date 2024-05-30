@@ -27,6 +27,7 @@ var isEndianSwitchingEnabled = true
 @onready var backButton = $buttonBackTexture/BackButon
 
 # Map
+@onready var mapNode = $Map
 var mapping_dict = {} # key=switch, value=lamp
 @onready var timerLabel = $VBoxContainer/TimerLabel
 const WireHandler = preload("res://Util/Wire.gd")
@@ -200,35 +201,13 @@ func updateCurrentNumber(_init = false):
 	
 # Map
 func createWires():
-	var arr = wireHandler.createMapping()
+	var arr = wireHandler.createKoopMapping()
 	setDict(arr)
-	var minDiff = 40
-	var minVec = Vector2(0, minDiff)
-	var minDiffSwitch = 55
-	var minswicthVec = Vector2(0, minDiffSwitch)
-
+	
 	var switches = [switch1, switch2, switch3, switch4, switch5, switch6, switch7, switch8]
 	var lamps = [lamp1, lamp2, lamp3, lamp4, lamp5, lamp6, lamp7]
-	
-	var levelDistances = (switch1.getCenterPoint().y - lamp1.getCenterPoint().y) / lamps.size() - minDiffSwitch + minDiff
-	var line_width = 3
-	
-	for w in arr:
-		var minY = switches[w.lamp-1].getCenterPoint().y - minDiffSwitch
-		var maxLevelks = levelDistances * lamps.size() 
-		
-		var p3 = switches[w.switch-1].getCenterPoint() - minswicthVec
-		var p2 =  p3 - Vector2(0, maxLevelks - w.level * levelDistances) -  minswicthVec
-		
-		var p0 = lamps[w.lamp-1].getCenterPoint() + minVec
-		var p1 = Vector2(p0.x, p2.y)
-		
-		# up -down
-		draw_line(p0, p1, w.color, line_width)
-		# down-> up
-		draw_line(p3, p2, w.color, line_width)
-	 	# horizontal line
-		draw_line(p1, p2, w.color, line_width)
+	mapNode.setStuff(arr, switches, lamps)
+	mapNode.createWires()
 		
 func setDict(mapping):
 	var dict = {} # switch: lamp
