@@ -173,6 +173,7 @@ texture = ExtResource("6_nnwuf")
 expand_mode = 2
 stretch_mode = 4
 script = ExtResource("7_gjff7")
+metadata/ID = 1
 
 [node name="Lamp_2" type="TextureRect" parent="."]
 custom_minimum_size = Vector2(100, 100)
@@ -192,6 +193,7 @@ texture = ExtResource("6_nnwuf")
 expand_mode = 2
 stretch_mode = 4
 script = ExtResource("7_gjff7")
+metadata/ID = 2
 
 [node name="Lamp_3" type="TextureRect" parent="."]
 custom_minimum_size = Vector2(100, 100)
@@ -211,6 +213,7 @@ texture = ExtResource("6_nnwuf")
 expand_mode = 2
 stretch_mode = 4
 script = ExtResource("7_gjff7")
+metadata/ID = 3
 
 [node name="Lamp_4" type="TextureRect" parent="."]
 custom_minimum_size = Vector2(100, 100)
@@ -230,6 +233,7 @@ texture = ExtResource("6_nnwuf")
 expand_mode = 2
 stretch_mode = 4
 script = ExtResource("7_gjff7")
+metadata/ID = 4
 
 [node name="Lamp_5" type="TextureRect" parent="."]
 custom_minimum_size = Vector2(100, 100)
@@ -249,6 +253,7 @@ texture = ExtResource("6_nnwuf")
 expand_mode = 2
 stretch_mode = 4
 script = ExtResource("7_gjff7")
+metadata/ID = 5
 
 [node name="Lamp_6" type="TextureRect" parent="."]
 custom_minimum_size = Vector2(100, 100)
@@ -268,6 +273,7 @@ texture = ExtResource("6_nnwuf")
 expand_mode = 2
 stretch_mode = 4
 script = ExtResource("7_gjff7")
+metadata/ID = 6
 
 [node name="Lamp_7" type="TextureRect" parent="."]
 custom_minimum_size = Vector2(100, 100)
@@ -287,6 +293,7 @@ texture = ExtResource("6_nnwuf")
 expand_mode = 2
 stretch_mode = 4
 script = ExtResource("7_gjff7")
+metadata/ID = 7
 
 [node name="Lamps" type="VBoxContainer" parent="."]
 offset_left = 900.0

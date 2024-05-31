@@ -7,6 +7,7 @@ extends Node2D
 @onready var lamp5 = $Lamp_5
 @onready var lamp6 = $Lamp_6
 @onready var lamp7 = $Lamp_7
+@onready var lamps = [lamp1, lamp2, lamp3, lamp4, lamp5, lamp6, lamp7]
 
 @onready var switch1 = $Switch_1
 @onready var switch2 = $Switch_2
@@ -88,13 +89,9 @@ func _on_timer_timeout():
 func _init_game():
 	queue_redraw()
 	
-	lamp1.reset()
-	lamp2.reset()
-	lamp3.reset()
-	lamp4.reset()
-	lamp5.reset()
-	lamp6.reset()
-	lamp7.reset()
+	for lamp in lamps:
+		lamp.reset()
+		
 	initNumber()
 	
 	timer.wait_time = timerTime
@@ -122,38 +119,19 @@ func switch_activated(_switch_number, _isOn):
 	toggleLamp(mapping_dict[_switch_number])
 	
 func toggleLamp(_lampID):
-	if _lampID == 1:
-		lamp1.toggleStatus()
-	elif _lampID == 2:
-		lamp2.toggleStatus()
-	elif _lampID == 3:
-		lamp3.toggleStatus()
-	elif _lampID == 4:
-		lamp4.toggleStatus()
-	elif _lampID == 5:
-		lamp5.toggleStatus()
-	elif _lampID == 6:
-		lamp6.toggleStatus()
-	elif _lampID == 7:
-		lamp7.toggleStatus()
+	for lamp in lamps:
+		if _lampID == lamp.get_meta("ID"):
+			lamp.toggleStatus()
 	updateCurrentNumber()
 	
 func updateCurrentNumber(_init = false):
 	var x = 0
-	if lamp1.isOn:
-		x += 1
-	if lamp2.isOn:
-		x += 2
-	if lamp3.isOn:
-		x += 4
-	if lamp4.isOn:
-		x += 8
-	if lamp5.isOn:
-		x += 16
-	if lamp6.isOn:
-		x += 32
-	if lamp7.isOn:
-		x += 64
+		
+	for index in range(lamps.size()):
+		var pw = index
+		if lamps[index].isOn:
+			x+= 2**pw
+			
 	currentNumber = x
 	
 	dark_current_number.text = str(currentNumber)
@@ -187,7 +165,6 @@ func createWires():
 	setDict(arr)
 	
 	var switches = [switch1, switch2, switch3, switch4, switch5, switch6, switch7, switch8]
-	var lamps = [lamp1, lamp2, lamp3, lamp4, lamp5, lamp6, lamp7]
 	mapNode.setStuff(arr, switches, lamps)
 	mapNode.createWires_multiplayer()
 	

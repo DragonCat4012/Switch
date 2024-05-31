@@ -64,5 +64,5 @@ func _setLabels():
 		a9.text = "Skill Issue - Loose 100 Times"
 		a9.set("theme_override_colors/font_color", white)
 	if achievementHandler.winKoop:
-		a10.text = "Team Player - wind a multiplayer map"
+		a10.text = "Team Player - Win a multiplayer map"
 		a10.set("theme_override_colors/font_color", white)
