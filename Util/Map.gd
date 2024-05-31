@@ -11,8 +11,6 @@ func setStuff(arr2, switches2, lamps2):
 	
 # Map
 func createWires():
-	#var arr = wireHandler.createMapping()
-	#setDict(arr)
 	var minDiff = 40
 	var minVec = Vector2(0, minDiff)
 	var minDiffSwitch = 55

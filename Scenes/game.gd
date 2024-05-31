@@ -46,7 +46,6 @@ var timerIteration = 0
 var timer = Timer.new()
 
 func _ready():
-	#AudioManager.play_music_background()
 	GameManager.jsonHandler.loadGame()
 	isEndianSwitchingEnabled = GameManager.jsonHandler.endian
 	scoreLabel.text = "Score: 0"
@@ -56,14 +55,7 @@ func _ready():
 	
 	_init_game()
 	createWires()
-	
-func _on_timer_timeout():
-	timer.stop()
-	GameManager.jsonHandler.saveScore(score)
-	GameManager.jsonHandler.saveLostMap()
-	get_tree().change_scene_to_file("res://Scenes/GameOver.tscn")
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if Input.is_action_just_pressed("ui_cancel"):
 		get_tree().change_scene_to_file("res://Scenes/menu.tscn") 
@@ -79,6 +71,14 @@ func _input(event): # Handle Touch Inut
 		GameManager.jsonHandler.saveScore(score)
 		get_tree().change_scene_to_file("res://Scenes/menu.tscn") 
 
+# Timer
+func _on_timer_timeout():
+	timer.stop()
+	GameManager.jsonHandler.saveScore(score)
+	GameManager.jsonHandler.saveLostMap()
+	get_tree().change_scene_to_file("res://Scenes/GameOver.tscn")
+
+# Game
 func _init_game():
 	queue_redraw()
 	
@@ -201,7 +201,7 @@ func updateCurrentNumber(_init = false):
 	
 # Map
 func createWires():
-	var arr = wireHandler.createKoopMapping()
+	var arr = wireHandler.createMapping()
 	setDict(arr)
 	
 	var switches = [switch1, switch2, switch3, switch4, switch5, switch6, switch7, switch8]
