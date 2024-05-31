@@ -46,7 +46,7 @@ var timerIteration = 0
 var timer = Timer.new()
 
 func _ready():
-	AudioManager.play_music_background()
+	#AudioManager.play_music_background()
 	GameManager.jsonHandler.loadGame()
 	isEndianSwitchingEnabled = GameManager.jsonHandler.endian
 	scoreLabel.text = "Score: 0"

@@ -3,8 +3,12 @@ extends AudioStreamPlayer
 const main_backgorund_music = preload("res://Sounds/daylight.mp3")
 const zap_sound = preload("res://Sounds/ping.mp3")
 var should_play_background_music = true
+var backgroundSoundEnabled = true
+var soundEffectsEnabled = true
 
 func _play_music(music: AudioStream, volume = -30.0):
+	if not backgroundSoundEnabled:
+		return
 	should_play_background_music = true
 	
 	stream = music
@@ -16,9 +20,14 @@ func playZap():
 	_play_single_sound_effect(zap_sound)
 	
 func play_music_background():
+	if playing:
+		return
 	_play_music(zap_sound)
 
 func _play_single_sound_effect(stream: AudioStream, volume = -40.0):
+	if not soundEffectsEnabled:
+		return
+		
 	var player = AudioStreamPlayer.new()
 	player.stream = stream
 	player.name = "Single Sound Player"

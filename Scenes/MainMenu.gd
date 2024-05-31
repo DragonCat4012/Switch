@@ -19,6 +19,7 @@ var currentSelection = 0
 var lastSelection = 0
 
 func _ready():
+	AudioManager.play_music_background()
 	GameManager.jsonHandler.loadGame()
 	if GameManager.jsonHandler.highScore > 0:
 		labelHighScore.text = "Highscore: " + str(GameManager.jsonHandler.highScore)

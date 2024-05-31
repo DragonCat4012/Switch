@@ -51,7 +51,7 @@ var timerIteration = 0
 var timer = Timer.new()
 
 func _ready():
-	AudioManager.play_music_background()
+	#AudioManager.play_music_background()
 	GameManager.jsonHandler.loadGame()
 	
 	light_score_label.text = "Score: 0"
