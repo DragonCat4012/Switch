@@ -6,6 +6,11 @@ var should_play_background_music = true
 var backgroundSoundEnabled = true
 var soundEffectsEnabled = true
 
+func toggledBackgroundMusic():
+	'''Stop palying music if is already playing'''
+	if not backgroundSoundEnabled:
+		stop()
+	
 func _play_music(music: AudioStream, volume = -30.0):
 	if not backgroundSoundEnabled:
 		return
