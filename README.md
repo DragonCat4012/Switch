@@ -30,6 +30,8 @@ ArrowK Keys Left/Right & Sapcebar/Enter: navigate in Tutorial
  
 ### Multiplayer
 Play together to solve numbers
+
+<img src="https://kiarar.moe/images/Switch/game2.png">
 	
 ## Supported Plattforms
 | Plattform         | Status | Supported | Tested |
