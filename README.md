@@ -2,8 +2,6 @@
 Binary Lamp Switch Game - Crewate Binary Numbers (from 0 to 127) using Lamps :3
 With each Iteration your time becomes less :3 Every 10 seconds the time gets less unless you just have 10s uwu
 
-> **_NOTE:_**  The options Menu content Box is kinda weird, so just try clicking on differnet places a few times uwu
-
 > **_NOTE:_**  Tutorial is currently for the old UI, Textfields have been moved etc
 
 ## Showcase
