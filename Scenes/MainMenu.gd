@@ -71,7 +71,8 @@ func handle_selection(_current_selection):
 	elif _current_selection == 2: # Tutorial
 		get_tree().change_scene_to_file("res://Scenes/Tutorial.tscn")
 	elif _current_selection == 3: # Options
-		get_tree().change_scene_to_file("res://Scenes/OptionsScene.tscn")
+		print("e")
+		get_tree().change_scene_to_file("res://Scenes/Options/OptionsScene.tscn")
 	elif _current_selection == 4: # Multiplayer
 		get_tree().change_scene_to_file("res://Scenes/Multiplayer/KoopMultiplayerScene.tscn")
 	elif _current_selection == 5: # Exit
