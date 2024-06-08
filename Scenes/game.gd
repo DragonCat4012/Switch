@@ -169,6 +169,7 @@ func createWires():
 	
 	var switches = [switch1, switch2, switch3, switch4, switch5, switch6, switch7, switch8]
 	mapNode.setStuff(arr, switches, lamps)
+	mapNode.queue_redraw()
 	mapNode.createWires()
 		
 func setDict(mapping):
