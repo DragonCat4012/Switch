@@ -20,8 +20,13 @@ var lastSelection = 0
 var mobileFlag = false
 
 func _ready():
-	AudioManager.play_music_background()
 	GameManager.jsonHandler.loadGame()
+	
+	# init audio settings
+	AudioManager.backgroundSoundEnabled = GameManager.jsonHandler.backgroundMusicEnabled
+	AudioManager.soundEffectsEnabled = GameManager.jsonHandler.soundEffectsEnabled
+	AudioManager.play_music_background()
+	
 	if GameManager.jsonHandler.highScore > 0:
 		labelHighScore.text = "Highscore: " + str(GameManager.jsonHandler.highScore)
 	else:
