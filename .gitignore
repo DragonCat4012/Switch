@@ -17,3 +17,7 @@ mono_crash.*.json
 # Build
 iOS/
 .DS_STORE
+android
+*.apk
+*.idsig
+*.zip
