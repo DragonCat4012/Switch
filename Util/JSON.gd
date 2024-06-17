@@ -8,7 +8,9 @@ class JSONHandler:
 		"score": 0,
 		"highScore": 0,
 		"mapsWon": 0,
-		"mapsLost": 0
+		"mapsLost": 0,
+		"backgroundMusicEnabled": true,
+		"soundEffectsEnabled": true
 	}
 
 	func _init():
@@ -34,11 +36,15 @@ class JSONHandler:
 		
 			var file = FileAccess.open(File_name, FileAccess.READ)
 			var dict = JSON.parse_string(file.get_as_text())
-			print("Load File Save: ", dict)
+			print("Load File Save: ", printData(dict))
+			if not dict:
+				return
 			
 			for key in currentData.keys():
 				if key in dict.keys():
 					currentData[key] = dict[key]
+				else:
+					print("Missing key: ", key)
 		else:
 			print("Save File doesnt exist")
 
@@ -47,6 +53,14 @@ class JSONHandler:
 		get:
 			return currentData["isEndianSwitchingEnabled"]
 	
+	var backgroundMusicEnabled: bool:
+		get:
+			return currentData["backgroundMusicEnabled"]
+
+	var soundEffectsEnabled: bool:
+		get:
+			return currentData["soundEffectsEnabled"]
+
 	var score: int:
 		get:
 			return currentData["score"]
@@ -88,13 +102,40 @@ class JSONHandler:
 	func updatEndian(status: bool):
 		currentData["isEndianSwitchingEnabled"] = status
 		saveGame()
+	
+	func updateBackgroundMusicEnabled():
+		currentData["backgroundMusicEnabled"] = !currentData["backgroundMusicEnabled"]
+		saveGame()
+	
+	func updateSoundEffectsEnabled():
+		currentData["soundEffectsEnabled"] = !currentData["soundEffectsEnabled"]
+		saveGame()
 		
+# Add Achievements
 	func saveWonMultiplayerMap():
 		achievementHandler.add_winKoop()
 		
-# Add Achievements
 	func add128achievement():
 		achievementHandler.add_found128()
 		
 	func addAllLightsOn():
 		achievementHandler.add_allLightsOn()
+
+# Util - Formatting 
+	func printData(dict):
+		if not dict:
+			return "Dict not found"
+		print(dict)
+		var keys = dict.keys()
+		var str = ""
+		for k in keys:
+			var val = "-1"
+			if dict[k] is int:
+				val = String(dict[k])
+			elif dict[k] is float:
+				val = str(dict[k]).pad_decimals(0)
+			elif dict[k] is bool:
+				val = "✓" if dict[k] else "×"
+			str+= k + ": " + val + ", "
+		return str
+		
