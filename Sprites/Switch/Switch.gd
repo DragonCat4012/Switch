@@ -7,6 +7,7 @@ var white_off_texture = load("res://Sprites/Switch/white_off.svg")
 
 var isOn = false
 var lastClick = Time.get_ticks_msec()
+var shouldListenToClick = true
 
 func _ready():
 	set_process_input(true)
@@ -14,6 +15,9 @@ func _ready():
 	self.gui_input.connect(_on_gui_input)
 
 func _on_gui_input(event):
+	if not shouldListenToClick:
+		return
+		
 	var currentClickTime = Time.get_ticks_msec()
 	if event is InputEventMouseButton and currentClickTime > lastClick + 0.2*1000:
 		isOn = !isOn
@@ -32,6 +36,13 @@ func toggleStatus(_isOn):
 	if get_tree().current_scene.has_method("switch_activated"):
 		get_tree().current_scene.switch_activated(get_meta("ID"), isOn)
 
+func updateFromTutorial():
+	var isDark = self.get_meta("isDark")
+	isOn = !isOn
+	if isOn:
+		texture = black_on_texture if isDark else white_on_texture
+	else:
+		texture = black_off_texture if isDark else white_off_texture
 # Geo
 func getCenterPoint():
 	return get_rect().get_center()

@@ -80,7 +80,10 @@ func handle_selection(_current_selection):
 	elif _current_selection == 1: # Achievments
 		get_tree().change_scene_to_file("res://Scenes/Achievments.tscn")
 	elif _current_selection == 2: # Tutorial
-		get_tree().change_scene_to_file("res://Scenes/Tutorial.tscn")
+		if mobileFlag:
+			get_tree().change_scene_to_file("res://Scenes/Tutorial.tscn")
+		else: 
+			get_tree().change_scene_to_file("res://Scenes/Tutoial/Hotkeys/Hotkeys.tscn")
 	elif _current_selection == 3: # Options
 		get_tree().change_scene_to_file("res://Scenes/Options/OptionsScene.tscn")
 	elif _current_selection == 4: # Multiplayer

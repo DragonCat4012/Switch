@@ -1,3 +1,158 @@
-[gd_scene format=3 uid="uid://dbfqrr2mwuuf6"]
+[gd_scene load_steps=5 format=3 uid="uid://dbfqrr2mwuuf6"]
+
+[ext_resource type="Script" path="res://Scenes/Tutoial/Hotkeys/Hotkeys.gd" id="1_jvfpe"]
+[ext_resource type="FontFile" uid="uid://b2cswqm32sj5f" path="res://Ressources/Lex.ttf" id="2_7v77n"]
+[ext_resource type="Texture2D" uid="uid://c2pe7fupsvd5j" path="res://Sprites/Switch/white_off.svg" id="3_f5pjn"]
+[ext_resource type="Script" path="res://Sprites/Switch/Switch.gd" id="4_fy8lk"]
 
 [node name="Hotkeys" type="Node2D"]
+script = ExtResource("1_jvfpe")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_right = 1911.0
+offset_bottom = 1082.0
+theme_override_constants/separation = 23
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="VBoxContainer/CenterContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_7v77n")
+theme_override_font_sizes/font_size = 86
+text = "Hotkeys"
+
+[node name="ColorRect2" type="ColorRect" parent="VBoxContainer"]
+custom_minimum_size = Vector2(1000, 1)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Keys" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="CenterContainer2" type="CenterContainer" parent="VBoxContainer/Keys"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="VBoxContainer/Keys/CenterContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_7v77n")
+theme_override_font_sizes/font_size = 45
+text = "0...7 Switches"
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/Keys"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="VBoxContainer/Keys/CenterContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_7v77n")
+theme_override_font_sizes/font_size = 45
+text = "ESC Return to menu"
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/Keys"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="TODO" type="CenterContainer" parent="VBoxContainer/Keys"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Keys/TODO"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer/Keys/TODO/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_7v77n")
+theme_override_font_sizes/font_size = 40
+text = "Press these Keys:"
+
+[node name="TODONumbers" type="Label" parent="VBoxContainer/Keys/TODO/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.831973, 0, 0.24478, 1)
+theme_override_fonts/font = ExtResource("2_7v77n")
+theme_override_font_sizes/font_size = 40
+text = "0"
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/Keys"]
+custom_minimum_size = Vector2(1000, 1)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Keys"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="CenterContainer2" type="CenterContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/CenterContainer2"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="Switch_0" type="TextureRect" parent="VBoxContainer/CenterContainer2/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_f5pjn")
+expand_mode = 3
+script = ExtResource("4_fy8lk")
+metadata/isDark = false
+metadata/ID = 0
+
+[node name="Switch_1" type="TextureRect" parent="VBoxContainer/CenterContainer2/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_f5pjn")
+expand_mode = 3
+script = ExtResource("4_fy8lk")
+metadata/isDark = false
+metadata/ID = 1
+
+[node name="Switch_2" type="TextureRect" parent="VBoxContainer/CenterContainer2/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_f5pjn")
+expand_mode = 3
+script = ExtResource("4_fy8lk")
+metadata/isDark = false
+metadata/ID = 2
+
+[node name="Switch_3" type="TextureRect" parent="VBoxContainer/CenterContainer2/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_f5pjn")
+expand_mode = 3
+script = ExtResource("4_fy8lk")
+metadata/isDark = false
+metadata/ID = 3
+
+[node name="Switch_4" type="TextureRect" parent="VBoxContainer/CenterContainer2/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_f5pjn")
+expand_mode = 3
+script = ExtResource("4_fy8lk")
+metadata/isDark = false
+metadata/ID = 4
+
+[node name="Switch_5" type="TextureRect" parent="VBoxContainer/CenterContainer2/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_f5pjn")
+expand_mode = 3
+script = ExtResource("4_fy8lk")
+metadata/isDark = false
+metadata/ID = 5
+
+[node name="Switch_6" type="TextureRect" parent="VBoxContainer/CenterContainer2/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_f5pjn")
+expand_mode = 3
+script = ExtResource("4_fy8lk")
+metadata/isDark = false
+metadata/ID = 6
+
+[node name="Switch_7" type="TextureRect" parent="VBoxContainer/CenterContainer2/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_f5pjn")
+expand_mode = 3
+script = ExtResource("4_fy8lk")
+metadata/isDark = false
+metadata/ID = 7
