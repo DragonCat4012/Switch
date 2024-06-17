@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dbfqrr2mwuuf6"]
 
-[ext_resource type="Script" path="res://Scenes/Tutoial/Hotkeys/Hotkeys.gd" id="1_jvfpe"]
+[ext_resource type="Script" path="res://Scenes/Tutorial/Hotkeys/Hotkeys.gd" id="1_jvfpe"]
 [ext_resource type="FontFile" uid="uid://b2cswqm32sj5f" path="res://Ressources/Lex.ttf" id="2_7v77n"]
 [ext_resource type="Texture2D" uid="uid://c2pe7fupsvd5j" path="res://Sprites/Switch/white_off.svg" id="3_f5pjn"]
 [ext_resource type="Script" path="res://Sprites/Switch/Switch.gd" id="4_fy8lk"]
