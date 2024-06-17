@@ -17,6 +17,7 @@ extends MarginContainer
 
 var currentSelection = 0
 var lastSelection = 0
+var mobileFlag = false
 
 func _ready():
 	AudioManager.play_music_background()
@@ -26,6 +27,11 @@ func _ready():
 	else:
 		labelHighScore.text = ""
 	set_current_selection()
+	
+	if OS.has_feature("android") or OS.has_feature("ios"): # mobile hide exit option
+		mobileFlag = true
+		labelExit.visible = false
+		selector_six.visible = false
 	
 func _input(event): # Handle Touch Inut
 	var newSelection = -1
@@ -40,7 +46,7 @@ func _input(event): # Handle Touch Inut
 			newSelection = 3
 		elif labelMultiplayer.get_global_rect().has_point(get_global_mouse_position()):
 			newSelection = 4
-		elif labelExit.get_global_rect().has_point(get_global_mouse_position()):
+		elif labelExit.get_global_rect().has_point(get_global_mouse_position()) and not mobileFlag:
 			newSelection = 5
 		else:
 			return
@@ -80,7 +86,9 @@ func handle_selection(_current_selection):
 func set_current_selection():
 	if currentSelection < 0:
 		currentSelection = 5
-	if currentSelection > 5:
+	if currentSelection > 5 - 1 and mobileFlag:
+		currentSelection = 0
+	elif currentSelection > 5:
 		currentSelection = 0
 		
 	if currentSelection != lastSelection:
