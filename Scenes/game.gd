@@ -66,6 +66,24 @@ func _process(delta):
 		var red = Color(1.0,0.0,0.0,1.0)
 		timerLabel.set("theme_override_colors/font_color",red)
 		
+	# Handle Number Inputs
+	if Input.is_action_just_pressed("0"):
+		switch_activated(1, false)
+	elif Input.is_action_just_pressed("1"):
+		switch_activated(2, false)
+	elif Input.is_action_just_pressed("2"):
+		switch_activated(3, false)
+	elif Input.is_action_just_pressed("3"):
+		switch_activated(4, false)
+	elif Input.is_action_just_pressed("4"):
+		switch_activated(5, false)
+	elif Input.is_action_just_pressed("5"):
+		switch_activated(6, false)
+	elif Input.is_action_just_pressed("6"):
+		switch_activated(7, false)
+	elif Input.is_action_just_pressed("7"):
+		switch_activated(8, false)
+		
 func _input(event): # Handle Touch Inut
 	var globalRect = backButton.get_global_rect()
 	if globalRect.has_point(get_global_mouse_position()) and event is InputEventScreenTouch:
