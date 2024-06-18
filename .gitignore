@@ -21,3 +21,4 @@ android
 *.apk
 *.idsig
 *.zip
+*.tmp
