@@ -2,7 +2,6 @@
 Binary Lamp Switch Game - Crewate Binary Numbers (from 0 to 127) using Lamps :3
 With each Iteration your time becomes less :3 Every 10 seconds the time gets less unless you just have 10s uwu
 
-> **_NOTE:_**  Tutorial is currently for the old UI, Textfields have been moved etc
 
 ## Showcase
 <img src="https://kiarar.moe/images/Switch/game.png">
@@ -15,6 +14,8 @@ Arrow Keys Up/Down: Navigate Main Menu
 Enter/Sapcebar: Confirm selection in main menu
 
 ArrowK Keys Left/Right & Sapcebar/Enter: navigate in Tutorial
+
+0...7 Number Keys: Toggle Swicthes in Single Player
 
 
 ## Game Loop
@@ -36,12 +37,16 @@ Play together to solve numbers
 |--------------|:-----:| :----: | :----: |
 | iOS | Testflight | :heavy_check_mark: | :heavy_check_mark:
 | MacOS      |  Testflight | :heavy_check_mark:| :x:
-| Android |  WIP  | :heavy_check_mark: | :x:
+| Android |  WIP  | :heavy_check_mark: | :heavy_check_mark:
 | Windows      |  WIP | :heavy_check_mark:| :heavy_check_mark:
 
 ### Compiling for iOS
 > **_NOTE:_**  Pls edit the build version in the project file to not be the same as the version number
 
+
+### Compiling for Android (apk)
+> **_NOTE:_** Keystore requiered
+> 
 ## Development
 ### Map Generation
 #### Pairing Lamps and Switches
@@ -62,6 +67,7 @@ Each lamp becomes a random switch assigned, one random lamps becomes a second ra
 
 ## Game Options
 * Endian Switching (Changes the direction form where you have to read the number in binary)
+* Sound Settings
 
 ## Requierements
 * Gdoot 4.2.2
