@@ -99,6 +99,7 @@ offset_right = 1186.0
 offset_bottom = 469.0
 
 [node name="Label" type="Label" parent="Endian"]
+layout_mode = 0
 offset_left = -390.0
 offset_top = -43.0
 offset_right = -143.0
@@ -123,6 +124,7 @@ offset_right = 2063.0
 offset_bottom = 1075.0
 
 [node name="Label" type="Label" parent="Pages"]
+layout_mode = 0
 offset_left = -390.0
 offset_top = -43.0
 offset_right = -143.0
@@ -148,6 +150,7 @@ offset_right = -436.0
 offset_bottom = -12.0
 
 [node name="Label" type="Label" parent="Lamp"]
+layout_mode = 0
 offset_left = -390.0
 offset_top = -43.0
 offset_right = -143.0
@@ -166,6 +169,7 @@ offset_right = 1198.0
 offset_bottom = 857.0
 
 [node name="Label" type="Label" parent="Switch2"]
+layout_mode = 0
 offset_left = -390.0
 offset_top = -43.0
 offset_right = -143.0
@@ -177,6 +181,7 @@ text = "Switch
 "
 
 [node name="ColorRect2" type="ColorRect" parent="Switch2"]
+layout_mode = 0
 offset_left = -630.0
 offset_top = -18.0
 offset_right = -430.0
@@ -210,12 +215,14 @@ text = "Current Number
 "
 
 [node name="ColorRect3" type="ColorRect" parent="Numbers"]
+layout_mode = 0
 offset_left = -223.0
 offset_top = 27.0
 offset_right = -23.0
 offset_bottom = 31.0
 
 [node name="ColorRect4" type="ColorRect" parent="Numbers"]
+layout_mode = 0
 offset_left = -232.0
 offset_top = 103.0
 offset_right = -32.0

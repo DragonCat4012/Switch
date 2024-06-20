@@ -119,8 +119,8 @@ func _init_game():
 	timer.start()
 	
 func updateEndian():
-	$HBoxContainer/LeftArrow.text = ">" if smallEndian else ""
-	$HBoxContainer/RightArrow.text = "" if smallEndian else "<"
+	$HBoxContainer/RightArrow.text = "<" if smallEndian else ""
+	$HBoxContainer/LeftArrow.text = "" if smallEndian else ">"
 	updateCurrentNumber()
 		
 func switch_activated(_switch_number, _isOn):
