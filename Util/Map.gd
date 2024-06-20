@@ -13,7 +13,7 @@ func setStuff(arr2, switches2, lamps2):
 func createWires():
 	var minDiff = 40
 	var minVec = Vector2(0, minDiff)
-	var minDiffSwitch = 55
+	var minDiffSwitch = 70
 	var minswicthVec = Vector2(0, minDiffSwitch)
 	
 	var levelDistances = (switches[0].getCenterPoint().y - lamps[0].getCenterPoint().y) / lamps.size() - minDiffSwitch + minDiff

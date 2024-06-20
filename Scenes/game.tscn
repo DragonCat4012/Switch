@@ -140,9 +140,9 @@ metadata/ID = 7
 
 [node name="Switch_1" type="TextureRect" parent="."]
 offset_left = 223.0
-offset_top = 875.0
-offset_right = 1413.0
-offset_bottom = 2065.0
+offset_top = 849.0
+offset_right = 1673.0
+offset_bottom = 2310.0
 scale = Vector2(0.048, 0.096)
 texture = ExtResource("6_1cxes")
 expand_mode = 2
@@ -152,9 +152,9 @@ metadata/ID = 1
 
 [node name="Switch_2" type="TextureRect" parent="."]
 offset_left = 342.0
-offset_top = 875.0
-offset_right = 1532.0
-offset_bottom = 2065.0
+offset_top = 849.0
+offset_right = 1803.0
+offset_bottom = 2310.0
 scale = Vector2(0.048, 0.096)
 texture = ExtResource("6_1cxes")
 expand_mode = 2
@@ -164,9 +164,9 @@ metadata/ID = 2
 
 [node name="Switch_3" type="TextureRect" parent="."]
 offset_left = 454.0
-offset_top = 875.0
-offset_right = 1644.0
-offset_bottom = 2065.0
+offset_top = 849.0
+offset_right = 1915.0
+offset_bottom = 2310.0
 scale = Vector2(0.048, 0.096)
 texture = ExtResource("6_1cxes")
 expand_mode = 2
@@ -176,9 +176,9 @@ metadata/ID = 3
 
 [node name="Switch_4" type="TextureRect" parent="."]
 offset_left = 571.0
-offset_top = 875.0
-offset_right = 1761.0
-offset_bottom = 2065.0
+offset_top = 849.0
+offset_right = 2032.0
+offset_bottom = 2310.0
 scale = Vector2(0.048, 0.096)
 texture = ExtResource("6_1cxes")
 expand_mode = 2
@@ -188,9 +188,9 @@ metadata/ID = 4
 
 [node name="Switch_5" type="TextureRect" parent="."]
 offset_left = 1291.0
-offset_top = 875.0
-offset_right = 2481.0
-offset_bottom = 2065.0
+offset_top = 849.0
+offset_right = 2752.0
+offset_bottom = 2310.0
 scale = Vector2(0.048, 0.096)
 texture = ExtResource("6_1cxes")
 expand_mode = 2
@@ -200,9 +200,9 @@ metadata/ID = 5
 
 [node name="Switch_6" type="TextureRect" parent="."]
 offset_left = 1410.0
-offset_top = 875.0
-offset_right = 2600.0
-offset_bottom = 2065.0
+offset_top = 849.0
+offset_right = 2871.0
+offset_bottom = 2310.0
 scale = Vector2(0.048, 0.096)
 texture = ExtResource("6_1cxes")
 expand_mode = 2
@@ -212,9 +212,9 @@ metadata/ID = 6
 
 [node name="Switch_7" type="TextureRect" parent="."]
 offset_left = 1522.0
-offset_top = 875.0
-offset_right = 2712.0
-offset_bottom = 2065.0
+offset_top = 849.0
+offset_right = 2983.0
+offset_bottom = 2310.0
 scale = Vector2(0.048, 0.096)
 texture = ExtResource("6_1cxes")
 expand_mode = 2
@@ -224,9 +224,9 @@ metadata/ID = 7
 
 [node name="Switch_8" type="TextureRect" parent="."]
 offset_left = 1639.0
-offset_top = 875.0
-offset_right = 2829.0
-offset_bottom = 2065.0
+offset_top = 849.0
+offset_right = 3100.0
+offset_bottom = 2310.0
 scale = Vector2(0.048, 0.096)
 texture = ExtResource("6_1cxes")
 expand_mode = 2
