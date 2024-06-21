@@ -49,14 +49,14 @@
     <circle
        style="fill:#000000;fill-opacity:1;stroke:#ffffff;stroke-width:19.6871;stroke-dasharray:none;stroke-opacity:1"
        id="path1"
-       cx="370.54596"
-       cy="363.8349"
+       cx="360"
+       cy="360"
        r="233.02266" />
     <circle
        style="fill:#000000;fill-opacity:1;stroke:#ffffff;stroke-width:9.18727;stroke-dasharray:none;stroke-opacity:1"
        id="path1-3"
-       cx="372.39285"
-       cy="360.35333"
+       cx="360"
+       cy="360"
        r="166.31064" />
   </g>
 </svg>
