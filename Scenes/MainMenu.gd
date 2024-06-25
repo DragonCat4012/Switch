@@ -1,11 +1,11 @@
 extends MarginContainer
 
-@onready var selector_one = $CenterContainer/VBoxContainer/CenterContainer2/HBoxContainer2/VBoxContainer/Selector
-@onready var selector_two = $CenterContainer/VBoxContainer/CenterContainer2/HBoxContainer2/VBoxContainer/Selector2
-@onready var selector_three = $CenterContainer/VBoxContainer/CenterContainer2/HBoxContainer2/VBoxContainer/Selector3
-@onready var selector_four =$CenterContainer/VBoxContainer/CenterContainer2/HBoxContainer2/VBoxContainer/Selector4
-@onready var selector_five =$CenterContainer/VBoxContainer/CenterContainer2/HBoxContainer2/VBoxContainer/Selector5
-@onready var selector_six =$CenterContainer/VBoxContainer/CenterContainer2/HBoxContainer2/VBoxContainer/Selector6
+@onready var selector_one := $CenterContainer/VBoxContainer/CenterContainer2/HBoxContainer2/VBoxContainer/Selector
+@onready var selector_two := $CenterContainer/VBoxContainer/CenterContainer2/HBoxContainer2/VBoxContainer/Selector2
+@onready var selector_three := $CenterContainer/VBoxContainer/CenterContainer2/HBoxContainer2/VBoxContainer/Selector3
+@onready var selector_four := $CenterContainer/VBoxContainer/CenterContainer2/HBoxContainer2/VBoxContainer/Selector4
+@onready var selector_five := $CenterContainer/VBoxContainer/CenterContainer2/HBoxContainer2/VBoxContainer/Selector5
+@onready var selector_six := $CenterContainer/VBoxContainer/CenterContainer2/HBoxContainer2/VBoxContainer/Selector6
 
 @onready var labelStart := $CenterContainer/VBoxContainer/CenterContainer2/HBoxContainer2/VBoxContainer2/LabelStart
 @onready var labelAchievemnts := $CenterContainer/VBoxContainer/CenterContainer2/HBoxContainer2/VBoxContainer2/AchievLabel
@@ -13,9 +13,9 @@ extends MarginContainer
 @onready var labelOptions := $CenterContainer/VBoxContainer/CenterContainer2/HBoxContainer2/VBoxContainer2/LabelOptions
 @onready var labelExit := $CenterContainer/VBoxContainer/CenterContainer2/HBoxContainer2/VBoxContainer2/LabelExit
 @onready var labelMultiplayer := $CenterContainer/VBoxContainer/CenterContainer2/HBoxContainer2/VBoxContainer2/LabelMultiplayer
-@onready var labelHighScore: Label = $CenterContainer/VBoxContainer/CenterContainer/VBoxContainer/HighScoreLabel
+@onready var labelHighScore := $CenterContainer/VBoxContainer/CenterContainer/VBoxContainer/HighScoreLabel
 
-@onready var creditsButton:= $"../buttonBackTexture/BackButon"
+@onready var creditsButton := $"../buttonBackTexture/BackButon"
 	
 var currentSelection = 0
 var lastSelection = 0
