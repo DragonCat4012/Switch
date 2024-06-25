@@ -1,20 +1,20 @@
 extends Node2D
 const AchievementsHandler = preload("res://Util/AchievementHandler.gd")
-@onready var achievementHandler = AchievementsHandler.AchievementsHandler.new()
+@onready var achievementHandler := AchievementsHandler.AchievementsHandler.new()
 	
 # Labels
-@onready var a1 = $MarginContainer/ScrollContainer/VBoxContainer/Found128/Label
-@onready var a2 = $MarginContainer/ScrollContainer/VBoxContainer/ScoreOver50/Label
-@onready var a3 = $MarginContainer/ScrollContainer/VBoxContainer/ScoreOver100/Label
-@onready var a4 = $MarginContainer/ScrollContainer/VBoxContainer/ScoreOver1000/Label
-@onready var a5 = $MarginContainer/ScrollContainer/VBoxContainer/AllLightsOn/Label
-@onready var a6 = $MarginContainer/ScrollContainer/VBoxContainer/Win10Times/Label
-@onready var a7 = $MarginContainer/ScrollContainer/VBoxContainer/Win100Times/Label
-@onready var a8 = $MarginContainer/ScrollContainer/VBoxContainer/Loose10Times/Label
-@onready var a9 = $MarginContainer/ScrollContainer/VBoxContainer/Loose100Times/Label
-@onready var a10 = $MarginContainer/ScrollContainer/VBoxContainer/WinKoop/Label
+@onready var a1 := $MarginContainer/ScrollContainer/VBoxContainer/Found128/Label
+@onready var a2 := $MarginContainer/ScrollContainer/VBoxContainer/ScoreOver50/Label
+@onready var a3 := $MarginContainer/ScrollContainer/VBoxContainer/ScoreOver100/Label
+@onready var a4 := $MarginContainer/ScrollContainer/VBoxContainer/ScoreOver1000/Label
+@onready var a5 := $MarginContainer/ScrollContainer/VBoxContainer/AllLightsOn/Label
+@onready var a6 := $MarginContainer/ScrollContainer/VBoxContainer/Win10Times/Label
+@onready var a7 := $MarginContainer/ScrollContainer/VBoxContainer/Win100Times/Label
+@onready var a8 := $MarginContainer/ScrollContainer/VBoxContainer/Loose10Times/Label
+@onready var a9 := $MarginContainer/ScrollContainer/VBoxContainer/Loose100Times/Label
+@onready var a10 := $MarginContainer/ScrollContainer/VBoxContainer/WinKoop/Label
 
-@onready var backButton = $buttonBackTexture/BackButon
+@onready var backButton := $buttonBackTexture/BackButon
 
 func _ready():
 	_setLabels()

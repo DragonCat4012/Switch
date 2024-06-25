@@ -1,49 +1,49 @@
 extends Node2D
 # Nodes
-@onready var lamp1 = $Lamp_1
-@onready var lamp2 = $Lamp_2
-@onready var lamp3 = $Lamp_3
-@onready var lamp4 = $Lamp_4
-@onready var lamp5 = $Lamp_5
-@onready var lamp6 = $Lamp_6
-@onready var lamp7 = $Lamp_7
-@onready var lamps = [lamp1, lamp2, lamp3, lamp4, lamp5, lamp6, lamp7]
+@onready var lamp1 := $Lamp_1
+@onready var lamp2 := $Lamp_2
+@onready var lamp3 := $Lamp_3
+@onready var lamp4 := $Lamp_4
+@onready var lamp5 := $Lamp_5
+@onready var lamp6 := $Lamp_6
+@onready var lamp7 := $Lamp_7
+@onready var lamps := [lamp1, lamp2, lamp3, lamp4, lamp5, lamp6, lamp7]
 
-@onready var switch1 = $Switch_1
-@onready var switch2 = $Switch_2
-@onready var switch3 = $Switch_3
-@onready var switch4 = $Switch_4
-@onready var switch5 = $Switch_5
-@onready var switch6 = $Switch_6
-@onready var switch7 = $Switch_7
-@onready var switch8 = $Switch_8
+@onready var switch1 := $Switch_1
+@onready var switch2 := $Switch_2
+@onready var switch3 := $Switch_3
+@onready var switch4 := $Switch_4
+@onready var switch5 := $Switch_5
+@onready var switch6 := $Switch_6
+@onready var switch7 := $Switch_7
+@onready var switch8 := $Switch_8
 
 #UtilNodes
-@onready var light_score_label = $VBoxContainer/LightScore
-@onready var dark_score_label = $DarkInfo/DarkScore
+@onready var light_score_label := $VBoxContainer/LightScore
+@onready var dark_score_label := $DarkInfo/DarkScore
 
-@onready var light_timer_label = $VBoxContainer/LightTime
-@onready var dark_timer_label = $DarkInfo/DarkTime
+@onready var light_timer_label := $VBoxContainer/LightTime
+@onready var dark_timer_label := $DarkInfo/DarkTime
 
 # Number Nodes
-@onready var light_goal_number = $LightNums/LightGoal
-@onready var dark_goal_number = $DarkNums/DarkGoal
+@onready var light_goal_number := $LightNums/LightGoal
+@onready var dark_goal_number := $DarkNums/DarkGoal
 
-@onready var light_current_number = $LightNums/LightCurrent
-@onready var dark_current_number = $DarkNums/DarkCurrent
+@onready var light_current_number := $LightNums/LightCurrent
+@onready var dark_current_number := $DarkNums/DarkCurrent
 
+@onready var backButton := $buttonBackTexture/BackButon
 
-@onready var backButton = $buttonBackTexture/BackButon
 # Current Game
 var score = 0
 var currentNumber = 0
 var goalNumber = -1
 
 # Map
-@onready var mapNode = $Map
+@onready var mapNode := $Map
 var mapping_dict = {} # key=switch, value=lamp
 const WireHandler = preload("res://Util/Wire.gd")
-@onready var wireHandler = WireHandler.WireHandler.new()
+@onready var wireHandler := WireHandler.WireHandler.new()
 
 # Timer
 var timerLeft = 0

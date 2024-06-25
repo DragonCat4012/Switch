@@ -4,35 +4,35 @@ extends Node2D
 var isEndianSwitchingEnabled = true
 
 # Nodes
-@onready var lamp1 = $Lamp_1
-@onready var lamp2 = $Lamp_2
-@onready var lamp3 = $Lamp_3
-@onready var lamp4 = $Lamp_4
-@onready var lamp5 = $Lamp_5
-@onready var lamp6 = $Lamp_6
-@onready var lamp7 = $Lamp_7
-@onready var lamps = [lamp1, lamp2, lamp3, lamp4, lamp5, lamp6, lamp7]
+@onready var lamp1 := $Lamp_1
+@onready var lamp2 := $Lamp_2
+@onready var lamp3 := $Lamp_3
+@onready var lamp4 := $Lamp_4
+@onready var lamp5 := $Lamp_5
+@onready var lamp6 := $Lamp_6
+@onready var lamp7 := $Lamp_7
+@onready var lamps := [lamp1, lamp2, lamp3, lamp4, lamp5, lamp6, lamp7]
 
-@onready var switch1 = $Switch_1
-@onready var switch2 = $Switch_2
-@onready var switch3 = $Switch_3
-@onready var switch4 = $Switch_4
-@onready var switch5 = $Switch_5
-@onready var switch6 = $Switch_6
-@onready var switch7 = $Switch_7
-@onready var switch8 = $Switch_8
+@onready var switch1 := $Switch_1
+@onready var switch2 := $Switch_2
+@onready var switch3 := $Switch_3
+@onready var switch4 := $Switch_4
+@onready var switch5 := $Switch_5
+@onready var switch6 := $Switch_6
+@onready var switch7 := $Switch_7
+@onready var switch8 := $Switch_8
 
-@onready var numberLabel = $CenterContainer/VBoxContainer/NumberLabel
-@onready var numberPreviewLabel = $CenterContainer/VBoxContainer/NumberPreview
-@onready var scoreLabel = $VBoxContainer/ScoreLabel
-@onready var backButton = $buttonBackTexture/BackButon
+@onready var numberLabel := $CenterContainer/VBoxContainer/NumberLabel
+@onready var numberPreviewLabel := $CenterContainer/VBoxContainer/NumberPreview
+@onready var scoreLabel := $VBoxContainer/ScoreLabel
+@onready var backButton := $buttonBackTexture/BackButon
 
 # Map
-@onready var mapNode = $Map
+@onready var mapNode := $Map
 var mapping_dict = {} # key=switch, value=lamp
-@onready var timerLabel = $VBoxContainer/TimerLabel
+@onready var timerLabel := $VBoxContainer/TimerLabel
 const WireHandler = preload("res://Util/Wire.gd")
-@onready var wireHandler = WireHandler.WireHandler.new()
+@onready var wireHandler := WireHandler.WireHandler.new()
 
 # Current Game
 var score = 0

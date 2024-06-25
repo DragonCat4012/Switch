@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var backButton = $buttonBackTexture/BackButon
+@onready var backButton := $buttonBackTexture/BackButon
 
 func _process(delta):
 	if Input.is_action_just_pressed("ui_cancel"):

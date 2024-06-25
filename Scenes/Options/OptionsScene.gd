@@ -1,8 +1,8 @@
 extends Node2D
 
-@onready var endianToggle = $CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/HBoxContainer/TextureRect
-@onready var backgroundMusicToggle = $CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/HBoxContainer2/TextureRect
-@onready var soundeffectsToggle = $CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/HBoxContainer3/TextureRect
+@onready var endianToggle := $CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/HBoxContainer/TextureRect
+@onready var backgroundMusicToggle := $CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/HBoxContainer2/TextureRect
+@onready var soundeffectsToggle := $CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/HBoxContainer3/TextureRect
 
 var lastClick = Time.get_ticks_msec()
 

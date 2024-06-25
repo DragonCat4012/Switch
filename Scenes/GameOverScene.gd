@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var scoreLabel = $ColorRect/CenterContainer/VBoxContainer/Label
+@onready var scoreLabel := $ColorRect/CenterContainer/VBoxContainer/Label
 @onready var backButton := $ColorRect/CenterContainer/buttonBackTexture/BackButon
 
 func _ready():
