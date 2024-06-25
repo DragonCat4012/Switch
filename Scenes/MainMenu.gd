@@ -15,6 +15,8 @@ extends MarginContainer
 @onready var labelMultiplayer := $CenterContainer/VBoxContainer/CenterContainer2/HBoxContainer2/VBoxContainer2/LabelMultiplayer
 @onready var labelHighScore: Label = $CenterContainer/VBoxContainer/CenterContainer/VBoxContainer/HighScoreLabel
 
+@onready var creditsButton:= $"../buttonBackTexture/BackButon"
+	
 var currentSelection = 0
 var lastSelection = 0
 var mobileFlag = false
@@ -39,6 +41,11 @@ func _ready():
 		selector_six.visible = false
 	
 func _input(event): # Handle Touch Inut
+	var globalRect = creditsButton.get_global_rect()
+	if globalRect.has_point(get_global_mouse_position()) and event is InputEventScreenTouch:
+		get_tree().change_scene_to_file("res://Scenes/Credits.tscn") 
+		return
+		
 	var newSelection = -1
 	if event is InputEventScreenTouch:
 		if labelStart.get_global_rect().has_point(get_global_mouse_position()):
