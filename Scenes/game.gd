@@ -22,6 +22,15 @@ var isEndianSwitchingEnabled = true
 @onready var switch7 := $Switch_7
 @onready var switch8 := $Switch_8
 
+@onready var e_1 = $Eponents/E1
+@onready var e_2 = $Eponents/E2
+@onready var e_3 = $Eponents/E3
+@onready var e_4 = $Eponents/E4
+@onready var e_5 = $Eponents/E5
+@onready var e_6 = $Eponents/E6
+@onready var e_7 = $Eponents/E7
+@onready var ees = [e_1, e_2, e_3, e_4, e_5, e_6, e_7]
+
 @onready var numberLabel := $CenterContainer/VBoxContainer/NumberLabel
 @onready var numberPreviewLabel := $CenterContainer/VBoxContainer/NumberPreview
 @onready var scoreLabel := $VBoxContainer/ScoreLabel
@@ -151,11 +160,16 @@ func updateCurrentNumber(_init = false):
 	
 	if smallEndian: # reverse order if big endian
 		arrSmallEndian.reverse()
-		
+	
 	for index in range(arrSmallEndian.size()):
 		var pw = index
+		if smallEndian: # reverse indizes
+			pw = arrSmallEndian.size() - index - 1
+		ees[index].text = "[color=7a7a7a][sup]2[/sup][font_size={30}]" + str(pw) + "[/font_size][/color]"
+		#[color={code/name}]{text}[/color]
 		if arrSmallEndian[index].isOn:
-			x+= 2**pw
+			x+= 2**index
+			ees[index].text = "[color=ffffff][sup]2[/sup][font_size={30}]" + str(pw) + "[/font_size][/color]"
 
 	currentNumber = x
 	numberPreviewLabel.text = str(currentNumber)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cygmp3elu4kij"]
+[gd_scene load_steps=14 format=3 uid="uid://cygmp3elu4kij"]
 
 [ext_resource type="Script" path="res://Scenes/game.gd" id="1_67put"]
 [ext_resource type="Texture2D" uid="uid://cf83i6ab4h457" path="res://Sprites/button.PNG" id="2_cvfho"]
@@ -11,6 +11,10 @@
 [ext_resource type="Texture2D" uid="uid://c2pe7fupsvd5j" path="res://Sprites/Switch/white_off.svg" id="6_1cxes"]
 [ext_resource type="Script" path="res://Sprites/Lamps/Lamp.gd" id="6_ampmk"]
 [ext_resource type="Script" path="res://Util/Map.gd" id="11_nsi7u"]
+[ext_resource type="Script" path="res://Ressources/BBSuperScript.gd" id="12_gkqng"]
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_hgu8r"]
+script = ExtResource("12_gkqng")
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_67put")
@@ -398,3 +402,98 @@ text = "OwO
 [node name="Map" type="Node2D" parent="."]
 script = ExtResource("11_nsi7u")
 metadata/isMultiplayer = false
+
+[node name="Eponents" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1.0
+offset_top = 280.0
+offset_right = 1922.0
+offset_bottom = 351.0
+
+[node name="E1" type="RichTextLabel" parent="Eponents"]
+layout_mode = 0
+offset_left = 249.0
+offset_top = -3.0
+offset_right = 297.0
+offset_bottom = 61.0
+theme_override_fonts/normal_font = ExtResource("2_q8ujg")
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "[sup]2[/sup][font_size={30}]4[/font_size]"
+scroll_active = false
+custom_effects = [SubResource("RichTextEffect_hgu8r")]
+
+[node name="E2" type="RichTextLabel" parent="Eponents"]
+layout_mode = 0
+offset_left = 497.0
+offset_top = -3.0
+offset_right = 545.0
+offset_bottom = 61.0
+theme_override_fonts/normal_font = ExtResource("2_q8ujg")
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "[sup]2[/sup][font_size={30}]4[/font_size]"
+scroll_active = false
+custom_effects = [SubResource("RichTextEffect_hgu8r")]
+
+[node name="E3" type="RichTextLabel" parent="Eponents"]
+layout_mode = 0
+offset_left = 728.0
+offset_top = -3.0
+offset_right = 776.0
+offset_bottom = 61.0
+theme_override_fonts/normal_font = ExtResource("2_q8ujg")
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "[sup]2[/sup][font_size={30}]4[/font_size]"
+scroll_active = false
+custom_effects = [SubResource("RichTextEffect_hgu8r")]
+
+[node name="E4" type="RichTextLabel" parent="Eponents"]
+layout_mode = 0
+offset_left = 976.0
+offset_right = 1024.0
+offset_bottom = 64.0
+theme_override_fonts/normal_font = ExtResource("2_q8ujg")
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "[sup]2[/sup][font_size={30}]4[/font_size]"
+scroll_active = false
+custom_effects = [SubResource("RichTextEffect_hgu8r")]
+
+[node name="E5" type="RichTextLabel" parent="Eponents"]
+layout_mode = 0
+offset_left = 1230.0
+offset_right = 1278.0
+offset_bottom = 64.0
+theme_override_fonts/normal_font = ExtResource("2_q8ujg")
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "[sup]2[/sup][font_size={30}]4[/font_size]"
+scroll_active = false
+custom_effects = [SubResource("RichTextEffect_hgu8r")]
+
+[node name="E6" type="RichTextLabel" parent="Eponents"]
+layout_mode = 0
+offset_left = 1461.0
+offset_right = 1509.0
+offset_bottom = 64.0
+theme_override_fonts/normal_font = ExtResource("2_q8ujg")
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "[sup]2[/sup][font_size={30}]4[/font_size]"
+scroll_active = false
+custom_effects = [SubResource("RichTextEffect_hgu8r")]
+
+[node name="E7" type="RichTextLabel" parent="Eponents"]
+layout_mode = 0
+offset_left = 1686.0
+offset_right = 1734.0
+offset_bottom = 64.0
+theme_override_fonts/normal_font = ExtResource("2_q8ujg")
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "[sup]2[/sup][font_size={30}]4[/font_size]"
+scroll_active = false
+custom_effects = [SubResource("RichTextEffect_hgu8r")]
