@@ -69,6 +69,28 @@ graph TD;
 * p3: Postion of sx with padding pad2
 * p2: p3 extended on the y-axis to the assigned level fx
 
+```mermaid
+
+block-beta
+   columns 3
+   P0 space space 
+   space space space
+   P0' space space 
+   space space space
+   P1 space P2 
+   space space space
+   space space P3
+   space space space
+   space space P3'
+
+
+    P0("P0") --- P0'("P0'")
+    P0'("P0'") --- P1("P1")
+    P1("P1") --- P2("P2")
+    P2("P2") ---P3("P3")
+    P3("P3") ---P3'("P3'")
+```
+
 <img src="https://kiarar.moe/images/Switch/map1.png" height= 300>
 
 ## Game Options
