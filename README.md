@@ -3,6 +3,8 @@ Binary Lamp Switch Game - Crewate Binary Numbers (from 0 to 127) using Lamps :3
 With each Iteration your time becomes less :3 Every 10 seconds the time gets less unless you just have 10s uwu
 
 
+[<img src="Sprites/appstoreImage.svg" height="50">](https://apps.apple.com/de/app/switch-binary-game/id6502103845)
+
 ## Showcase
 <img src="https://kiarar.moe/images/Switch/game.png">
 
