@@ -52,7 +52,13 @@ Play together to solve numbers
 #### Pairing Lamps and Switches
 Each lamp becomes a random switch assigned, one random lamps becomes a second random switch
 
-<img src="https://kiarar.moe/images/Switch/map2.png" height= 250>
+```mermaid
+graph TD;
+    A[Lamp 1] --- B[Switch 1];
+    A[Lamp 1] --- C[Switch 2];
+    D[Lamp 2] --- F[Switch 3];
+    E[Lamp 3] --- G[Switch 4];
+```
 
 #### Drawing Wires
 * p0': Position of the lamp lx

@@ -166,7 +166,6 @@ func updateCurrentNumber(_init = false):
 		if smallEndian: # reverse indizes
 			pw = arrSmallEndian.size() - index - 1
 		ees[index].text = "[color=7a7a7a][sup]2[/sup][font_size={30}]" + str(pw) + "[/font_size][/color]"
-		#[color={code/name}]{text}[/color]
 		if arrSmallEndian[index].isOn:
 			x+= 2**index
 			ees[index].text = "[color=ffffff][sup]2[/sup][font_size={30}]" + str(pw) + "[/font_size][/color]"
