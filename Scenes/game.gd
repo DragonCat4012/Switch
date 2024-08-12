@@ -163,11 +163,13 @@ func updateCurrentNumber(_init = false):
 	
 	for index in range(arrSmallEndian.size()):
 		var pw = index
-		if smallEndian: # reverse indizes
+		
+		if smallEndian: # reverse indizes to beginn from right
 			pw = arrSmallEndian.size() - index - 1
+			
 		ees[index].text = "[color=7a7a7a][sup]2[/sup][font_size={30}]" + str(pw) + "[/font_size][/color]"
-		if arrSmallEndian[index].isOn:
-			x+= 2**index
+		if arrSmallEndian[pw].isOn:
+			x+= 2**pw
 			ees[index].text = "[color=ffffff][sup]2[/sup][font_size={30}]" + str(pw) + "[/font_size][/color]"
 
 	currentNumber = x
