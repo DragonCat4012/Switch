@@ -39,7 +39,7 @@ func _setLabels():
 		a1.text = "Find the hidden number - 128"
 		a1.set("theme_override_colors/font_color", white)
 	if achievementHandler.scoreOver50:
-		a2.text = "Achieve a score over 50"
+		a2.text = "Achieve a Score over 50"
 		a2.set("theme_override_colors/font_color", white)
 	if achievementHandler.scoreOver100:
 		a3.text = "Achieve a Score over 100"
