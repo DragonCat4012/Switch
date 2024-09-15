@@ -4,10 +4,12 @@
 [ext_resource type="Script" path="res://Scenes/Credits.gd" id="1_vtwff"]
 [ext_resource type="Texture2D" uid="uid://cf83i6ab4h457" path="res://Sprites/button.PNG" id="2_lwigk"]
 
-[node name="Credits" type="Node2D"]
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_vtwff")
 
-[node name="Label" type="Label" parent="."]
+[node name="Title" type="Label" parent="."]
 offset_top = 59.0
 offset_right = 1919.0
 offset_bottom = 170.0
@@ -19,46 +21,50 @@ vertical_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 offset_left = 5.0
-offset_top = 281.0
+offset_top = 318.0
 offset_right = 1912.0
-offset_bottom = 634.0
+offset_bottom = 671.0
 theme_override_constants/separation = 30
 
-[node name="Label4" type="Label" parent="VBoxContainer"]
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_byce8")
-theme_override_font_sizes/font_size = 30
-text = "Godot Engine
-https://godotengine.org/"
-horizontal_alignment = 1
-vertical_alignment = 1
 
-[node name="Label" type="Label" parent="VBoxContainer"]
+[node name="Engine" type="LinkButton" parent="VBoxContainer/CenterContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_byce8")
-theme_override_font_sizes/font_size = 30
-text = "Background Sound
-https://pixabay.com/sound-effects/daylight-14872"
-horizontal_alignment = 1
-vertical_alignment = 1
+theme_override_font_sizes/font_size = 60
+text = "Godot Engine"
+uri = "https://godotengine.org/"
 
-[node name="Label2" type="Label" parent="VBoxContainer"]
+[node name="CenterContainer2" type="CenterContainer" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_byce8")
-theme_override_font_sizes/font_size = 30
-text = "SFX
-https://pixabay.com/sound-effects/ping-82822"
-horizontal_alignment = 1
-vertical_alignment = 1
 
-[node name="Label3" type="Label" parent="VBoxContainer"]
+[node name="BackgroundSound" type="LinkButton" parent="VBoxContainer/CenterContainer2"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_byce8")
-theme_override_font_sizes/font_size = 30
-text = "Font
-http://www.pentacom.jp/pentacom/bitfontmaker2/gallery/?id=646"
-horizontal_alignment = 1
-vertical_alignment = 1
+theme_override_font_sizes/font_size = 60
+text = "Background Sound"
+uri = "https://pixabay.com/sound-effects/daylight-14872"
+
+[node name="CenterContainer3" type="CenterContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="SFX" type="LinkButton" parent="VBoxContainer/CenterContainer3"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_byce8")
+theme_override_font_sizes/font_size = 60
+text = "SFX"
+uri = "https://pixabay.com/sound-effects/ping-82822"
+
+[node name="CenterContainer4" type="CenterContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Font" type="LinkButton" parent="VBoxContainer/CenterContainer4"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_byce8")
+theme_override_font_sizes/font_size = 60
+text = "Font"
+uri = "http://www.pentacom.jp/pentacom/bitfontmaker2/gallery/?id=646"
 
 [node name="buttonBackTexture" type="Sprite2D" parent="."]
 position = Vector2(194, 122)
