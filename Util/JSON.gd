@@ -70,15 +70,15 @@ class JSONHandler:
 			return currentData["highScore"]
 
 # Update properties
-	func saveScore(score: int):
-		currentData["score"] = score
-		if score > currentData["highScore"]:
-			currentData["highScore"] = score
-		if score > 50:
+	func saveScore(newscore: int):
+		currentData["score"] = newscore
+		if newscore > currentData["highScore"]:
+			currentData["highScore"] = newscore
+		if newscore > 50:
 			achievementHandler.add_scoreOver50()
-		if score > 100:
+		if newscore > 100:
 			achievementHandler.add_scoreOver100()
-		if score > 1000:
+		if newscore > 1000:
 			achievementHandler.add_scoreOver1000()
 	
 		saveGame()

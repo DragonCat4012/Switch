@@ -2,7 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://b2cswqm32sj5f" path="res://Ressources/Lex.ttf" id="1_byce8"]
 [ext_resource type="Script" path="res://Scenes/Credits.gd" id="1_vtwff"]
-[ext_resource type="Texture2D" uid="uid://cf83i6ab4h457" path="res://Sprites/button.PNG" id="2_lwigk"]
+[ext_resource type="PackedScene" uid="uid://67ks36ginjia" path="res://Sprites/BackButtonScene.tscn" id="3_262l0"]
 
 [node name="Credits" type="Control"]
 layout_mode = 3
@@ -66,20 +66,4 @@ theme_override_font_sizes/font_size = 60
 text = "Font"
 uri = "http://www.pentacom.jp/pentacom/bitfontmaker2/gallery/?id=646"
 
-[node name="buttonBackTexture" type="Sprite2D" parent="."]
-position = Vector2(194, 122)
-scale = Vector2(0.218072, 0.218072)
-texture = ExtResource("2_lwigk")
-
-[node name="BackButon" type="CenterContainer" parent="buttonBackTexture"]
-offset_left = -450.157
-offset_top = -163.559
-offset_right = -220.157
-offset_bottom = -73.5588
-scale = Vector2(3.73412, 3.73412)
-
-[node name="Label" type="Label" parent="buttonBackTexture/BackButon"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("1_byce8")
-theme_override_font_sizes/font_size = 70
-text = "Back"
+[node name="BackButtonScene" parent="." instance=ExtResource("3_262l0")]

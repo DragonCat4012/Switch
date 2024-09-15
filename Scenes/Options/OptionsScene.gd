@@ -4,22 +4,12 @@ extends Node2D
 @onready var backgroundMusicToggle := $CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/HBoxContainer2/TextureRect
 @onready var soundeffectsToggle := $CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/HBoxContainer3/TextureRect
 
-var lastClick = Time.get_ticks_msec()
-
-@onready var backButton := $CenterContainer/buttonBackTexture/BackButon
-
 func _ready():
 	endianToggle.initValues(GameManager.jsonHandler.endian)
 	backgroundMusicToggle.initValues(GameManager.jsonHandler.backgroundMusicEnabled)
 	soundeffectsToggle.initValues(GameManager.jsonHandler.soundEffectsEnabled)
-	
-func _input(event):
-	var currentClickTime = Time.get_ticks_msec()
-	if backButton.get_global_rect().has_point(get_global_mouse_position()) and event is InputEventScreenTouch:
-		get_tree().change_scene_to_file("res://Scenes/menu.tscn") 
-	lastClick = Time.get_ticks_msec()	
 
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed("ui_cancel"):
 		#GameManager.jsonHandler.saveGame()
 		get_tree().change_scene_to_file("res://Scenes/menu.tscn")
