@@ -9,8 +9,6 @@ class WireHandler:
 		
 	func createKoopMapping():
 		# Init everything
-		var dict = {} # lamp: swicth
-		var levels = nr_lamps
 		var arrLamps = [1,2,3,4,5,6,7,8,9,10,11,12]
 		arrLamps.resize(nr_lamps)
 		var randomLamp = arrLamps.pick_random()
@@ -53,8 +51,6 @@ class WireHandler:
 		
 	func createMapping():
 		# Init everything
-		var dict = {} # lamp: swicth
-		var levels = nr_lamps
 		var arrLamps = [1,2,3,4,5,6,7,8,9,10,11,12]
 		arrLamps.resize(nr_lamps)
 		var randomLamp = arrLamps.pick_random()

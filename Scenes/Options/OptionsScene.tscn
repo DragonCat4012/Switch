@@ -3,9 +3,9 @@
 [ext_resource type="FontFile" uid="uid://b2cswqm32sj5f" path="res://Ressources/Lex.ttf" id="1_4y4xp"]
 [ext_resource type="Script" path="res://Scenes/Options/OptionsScene.gd" id="1_xolb3"]
 [ext_resource type="Texture2D" uid="uid://cijsqo584bssp" path="res://Sprites/Toggle/off.PNG" id="3_4lyrj"]
-[ext_resource type="Texture2D" uid="uid://cf83i6ab4h457" path="res://Sprites/button.PNG" id="4_iasye"]
 [ext_resource type="Script" path="res://Scenes/Options/Toggle.gd" id="4_l4ibm"]
 [ext_resource type="Texture2D" uid="uid://dofknt3s3xf8m" path="res://Sprites/Toggle/on.PNG" id="4_t8td2"]
+[ext_resource type="PackedScene" uid="uid://67ks36ginjia" path="res://Sprites/BackButtonScene.tscn" id="7_2ux7o"]
 
 [node name="OptionsScene" type="Node2D"]
 script = ExtResource("1_xolb3")
@@ -109,20 +109,4 @@ stretch_mode = 4
 script = ExtResource("4_l4ibm")
 metadata/ID = 2
 
-[node name="buttonBackTexture" type="Sprite2D" parent="CenterContainer"]
-position = Vector2(189, 136)
-scale = Vector2(0.218072, 0.218072)
-texture = ExtResource("4_iasye")
-
-[node name="BackButon" type="CenterContainer" parent="CenterContainer/buttonBackTexture"]
-offset_left = -450.157
-offset_top = -163.559
-offset_right = -220.157
-offset_bottom = -73.5588
-scale = Vector2(3.73412, 3.73412)
-
-[node name="Label" type="Label" parent="CenterContainer/buttonBackTexture/BackButon"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("1_4y4xp")
-theme_override_font_sizes/font_size = 70
-text = "Back"
+[node name="BackButtonScene" parent="." instance=ExtResource("7_2ux7o")]

@@ -69,7 +69,7 @@ func _input(event): # Handle Touch Inut
 			currentSelection = newSelection
 			set_current_selection()
 	
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed("ui_down"):
 		currentSelection += 1
 	elif Input.is_action_just_pressed("ui_up"):

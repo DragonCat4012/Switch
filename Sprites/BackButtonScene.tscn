@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://67ks36ginjia"]
+
+[ext_resource type="Texture2D" uid="uid://cf83i6ab4h457" path="res://Sprites/button.PNG" id="1_g45ip"]
+[ext_resource type="Script" path="res://Sprites/BackButtonScene.gd" id="1_sg0v4"]
+[ext_resource type="FontFile" uid="uid://b2cswqm32sj5f" path="res://Ressources/Lex.ttf" id="2_hfwpt"]
+
+[node name="BackButtonScene" type="Node2D"]
+script = ExtResource("1_sg0v4")
+
+[node name="buttonBackTexture" type="Sprite2D" parent="."]
+position = Vector2(194, 122)
+scale = Vector2(0.218072, 0.218072)
+texture = ExtResource("1_g45ip")
+
+[node name="BackButonClass" type="CenterContainer" parent="buttonBackTexture"]
+unique_name_in_owner = true
+offset_left = -450.157
+offset_top = -163.559
+offset_right = -220.157
+offset_bottom = -73.5588
+scale = Vector2(3.73412, 3.73412)
+
+[node name="Label" type="Label" parent="buttonBackTexture/BackButonClass"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_hfwpt")
+theme_override_font_sizes/font_size = 70
+text = "Back"

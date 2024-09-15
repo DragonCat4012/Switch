@@ -43,5 +43,5 @@ func _play_single_sound_effect(stream: AudioStream, volume = -40.0):
 	await player.finished
 	player.queue_free()
 	
-func _on_loop_sound(player):
+func _on_loop_sound(_player):
 	_play_music(main_backgorund_music)
