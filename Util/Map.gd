@@ -20,7 +20,7 @@ func createWires():
 	var line_width = 3
 	
 	for w in arr:
-		var minY = switches[w.lamp-1].getCenterPoint().y - minDiffSwitch
+		var _minY = switches[w.lamp-1].getCenterPoint().y - minDiffSwitch
 		var maxLevelks = levelDistances * lamps.size() 
 		
 		var p3 = switches[w.switch-1].getCenterPoint() - minswicthVec
