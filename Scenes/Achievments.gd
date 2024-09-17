@@ -13,7 +13,11 @@ const AchievementsHandler = preload("res://Util/AchievementHandler.gd")
 @onready var a8 := $MarginContainer/ScrollContainer/VBoxContainer/Loose10Times/Label
 @onready var a9 := $MarginContainer/ScrollContainer/VBoxContainer/Loose100Times/Label
 @onready var a10 := $MarginContainer/ScrollContainer/VBoxContainer/WinKoop/Label
+@onready var a11 = $MarginContainer/ScrollContainer/VBoxContainer/PlayKoop/Label
 
+var white = Color(1.0,1.0,1.0,1.0)
+var gray = Color(1.0,1.0,1.0,0.3)
+	
 func _ready():
 	_setLabels()
 	
@@ -22,11 +26,11 @@ func _process(_delta):
 		get_tree().change_scene_to_file("res://Scenes/menu.tscn") 
 		
 func _setLabels():
-	var labels = [a1,a2,a3,a4,a5,a6,a7,a8,a9,a10]
-	var white = Color(1.0,1.0,1.0,1.0)
-	var gray = Color(1.0,1.0,1.0,0.3)
+	var labels = [a1,a2,a3,a4,a5,a6,a7,a8,a9,a10, a11]
+	
 	for l in labels:
-		l.set("theme_override_colors/font_color", gray)
+		if l is  Label:
+			_update_label(l, "?", gray)
 	
 	if achievementHandler.found128:
 		a1.text = "Find the hidden number - 128"
@@ -45,17 +49,18 @@ func _setLabels():
 		a5.set("theme_override_colors/font_color", white)
 		
 	if achievementHandler.won10:
-		a6.text = "Solve 10 Maps"
-		a6.set("theme_override_colors/font_color", white)
+		_update_label(a6, "Solve 10 Maps", white)
 	if achievementHandler.won100:
-		a7.text = "Solve 100 Maps"
-		a7.set("theme_override_colors/font_color", white)
+		_update_label(a7, "Solve 100 Map", white)
 	if achievementHandler.lost10:
-		a8.text = "Loose 10 Times"
-		a8.set("theme_override_colors/font_color", white)
+		_update_label(a8, "Loose 10 Times", white)
 	if achievementHandler.lost100:
-		a9.text = "Skill Issue - Loose 100 Times"
-		a9.set("theme_override_colors/font_color", white)
+		_update_label(a9, "Skill Issue - Loose 100 Times", white)
 	if achievementHandler.winKoop:
-		a10.text = "Team Player - Win a multiplayer map"
-		a10.set("theme_override_colors/font_color", white)
+		_update_label(a10, "Team Player - Win a multiplayer map", white)
+	if achievementHandler.playKoop:
+		_update_label(a11, "Play a coop game", white)
+
+func _update_label(label: Label, text: String, color: Color):
+	label.text = text
+	label.set("theme_override_colors/font_color", color)

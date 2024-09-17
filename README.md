@@ -38,7 +38,7 @@ Play together to solve numbers
 | Plattform         | Status | Supported | Tested |
 |--------------|:-----:| :----: | :----: |
 | iOS | Testflight | :heavy_check_mark: | :heavy_check_mark:
-| MacOS      |  Testflight | :heavy_check_mark:| :x:
+| MacOS      |  Testflight | ???| :x:
 | Android |  WIP  | :heavy_check_mark: | :heavy_check_mark:
 | Windows      |  WIP | :heavy_check_mark:| :heavy_check_mark:
 
@@ -56,10 +56,10 @@ Each lamp becomes a random switch assigned, one random lamps becomes a second ra
 
 ```mermaid
 graph TD;
-    A[Lamp 1] --- B[Switch 1];
-    A[Lamp 1] --- C[Switch 2];
-    D[Lamp 2] --- F[Switch 3];
-    E[Lamp 3] --- G[Switch 4];
+	A[Lamp 1] --- B[Switch 1];
+	A[Lamp 1] --- C[Switch 2];
+	D[Lamp 2] --- F[Switch 3];
+	E[Lamp 3] --- G[Switch 4];
 ```
 
 #### Drawing Wires
@@ -86,11 +86,11 @@ block-beta
    space space P3'
 
 
-    P0("P0") --- P0'("P0'")
-    P0'("P0'") --- P1("P1")
-    P1("P1") --- P2("P2")
-    P2("P2") ---P3("P3")
-    P3("P3") ---P3'("P3'")
+	P0("P0") --- P0'("P0'")
+	P0'("P0'") --- P1("P1")
+	P1("P1") --- P2("P2")
+	P2("P2") ---P3("P3")
+	P3("P3") ---P3'("P3'")
 ```
 
 <img src="https://kiarar.moe/images/Switch/map1.png" height= 300>

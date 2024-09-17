@@ -61,6 +61,8 @@ func _ready():
 	add_child(timer)
 	timer.connect("timeout", _on_timer_timeout)
 	
+	GameManager.jsonHandler.savePlayedMultiplayerMap()
+	
 	_init_game()
 	
 func _process(delta):

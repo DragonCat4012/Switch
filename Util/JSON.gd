@@ -115,6 +115,9 @@ class JSONHandler:
 	func saveWonMultiplayerMap():
 		achievementHandler.add_winKoop()
 		
+	func savePlayedMultiplayerMap():
+		achievementHandler.add_playKoop()
+		
 	func add128achievement():
 		achievementHandler.add_found128()
 		
